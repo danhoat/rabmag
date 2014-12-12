@@ -1,0 +1,88 @@
+input[type="text"]{
+	border:1px solid #ccc;
+	width: 80%;
+	height: 35px;
+	border-radius: 2px;
+}
+.alignright{
+	float: right;
+}
+textarea{
+	border:1px solid #ccc;
+	width: 80%;
+	height: 133px;
+	border-radius: 2px;
+
+}
+.rab-left{
+	width: 130px;
+	float: left;
+	padding-right: 20px;
+	border: 0px;
+
+}
+.rab-left ul li{
+	padding: 10px;
+	border-bottom: 1px solid #ccc;
+}
+.rab-left ul li a:before{
+	content: '\f111';
+	font:400 20px/1 dashicons !important;
+	padding-right: 7px;
+	display: block;
+	text-align: center;
+	vertical-align: bottom;
+}
+.rab-left ul li a{
+	font-size: 13px;	
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+	display: block;
+}
+.wrap-right-rab{
+	float: left;
+	width: 80%;
+	padding-left: 2%;
+	border-left: 1px solid #ccc;
+	min-height: 521px;
+}
+.wrap-right-rab .heading{
+	display: block;
+	border-bottom: 1px solid #ccc;
+}
+.wrap-right-rab .heading h2{
+	display: block;	
+	padding: 10px 0;
+}
+.wrap-right-rab .heading span{
+	display: block;
+	padding: 5px 0;
+}
+.rab-content{
+
+}
+.rab-content .general label{
+	display: block;
+}
+.wrap-rab{
+	border:1px solid #ccc;
+	border-radius: 5px;
+	padding: 0px 20px;
+	overflow: hidden;
+	background: #fff;
+	min-height: 520px;
+}
+.form-item{
+	padding: 5px;
+}
+.form-item label{
+	display: block;
+	padding-bottom: 7px;
+}
+.wp-admin .rab-content select{
+	display: block;
+    height: 33px;
+    padding-top: 5px;
+    width: 80%;
+}

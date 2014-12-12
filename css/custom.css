@@ -1,0 +1,26 @@
+.alignleft{
+	float: left;
+}
+.alignright {
+	float: right;
+}
+img{
+	max-width: 100%;
+	overflow: hidden;
+}
+h1{
+	font-size: 20px;
+}
+.title{
+	font-family: 'PT Sans Narrow',sans-serif;
+	text-transform: uppercase;
+	
+}
+.post-title, .post-title a, .title, .title a{
+	text-align: justify;
+}
+
+
+.container{
+	max-width: 1240px;
+}
