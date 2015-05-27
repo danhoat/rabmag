@@ -20,7 +20,7 @@ register_sidebar( array(
 		) 
 	);
 register_sidebar( array(
-		'name'          => __( 'Content  Sidebar', 'rabsite' ),
+		'name'          => __( 'Main  Sidebar', 'rabsite' ),
 		'id'            => 'main',
 		'description'   => __( 'Main sidebar that appears on the left.', 'rabsite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
