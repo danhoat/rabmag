@@ -20,7 +20,8 @@ h1{
 	text-align: justify;
 }
 .container{
-	max-width: 1240px;
+	max-width: 1170px;
+	padding: 0 15px;
 }
 
 /** Custom menu bootraps **/

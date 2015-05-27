@@ -7,7 +7,7 @@
 
 <div class="container main-wrap">
     <div class="main-content">
-        <div id="main-content" class="col-sm-8 blog-main">
+        <div id="main-content" class="col-lg-9 blog-main">
            <?php
             if(is_active_sidebar('top_content')){
                 echo '<div class="row">';
