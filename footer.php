@@ -1,7 +1,7 @@
  <div class="main-footer">
     	<div class="container">
-            <?php 
-                if(is_active_sidebar('footer')){                    
+            <?php
+                if(is_active_sidebar('footer')){
                     dynamic_sidebar('footer');
                 }
             ?>
@@ -33,7 +33,7 @@
             <div class="alignleft">
             <a href="http://rabthemes.com">Rab themes</a> &copy; Copyright 2012, All Rights Reserved </div>
             <div class="clear"></div>
-        </div> 
-    </div>   
+        </div>
+    </div>
   </body>
 </html>

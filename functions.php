@@ -3,7 +3,7 @@
 define('TEMPLATEURL', get_bloginfo('template_url') );
 define('TEMPLATE_PATH',get_template_directory());
 if(!defined('RAB_DOMAIN'))
-define('RAB_DOMAIN','RAB_DOMAIN');
+define('RAB_DOMAIN','rabtheme');
 
 require get_template_directory() . '/class/class_post.php';
 require get_template_directory() . '/inc/index.php';
@@ -31,20 +31,26 @@ Class RAB_Site{
 	public function __construct(){
 		$this->options = RAB_Option::get_option();
 
-		$this->add_action( 'after_setup_theme', 'rab_setup');
-		$this->add_action('init','rab_init');
-		$this->add_action('wp_head','rab_wp_head');
-		$this->add_action('wp_footer','rab_wp_footer');
-		$this->add_action('wp_enqueue_scripts','rab_enqueue_scripts');
-		
-		$this->add_action('widgets_init','rab_widgets_init');
+		$this->add_action( 'after_setup_theme', 'after_setup_rabtheme');
+		$this->add_action( 'init','rab_init');
+		$this->add_action( 'wp_head', 'rab_wp_head');
+		$this->add_action( 'wp_footer', 'rab_wp_footer');
+		$this->add_action( 'wp_enqueue_scripts', 'rab_enqueue_scripts');
+
+		$this->add_action( 'widgets_init', 'rab_widgets_init');
 		$this->add_filter( 'post_thumbnail_html', 'rab_thumbnail_html', 10, 3 );
-		
-		
+
 	}
-	function rab_setup(){
-		
-		add_theme_support('post-thumbnails' );		
+	function after_setup_rabtheme(){
+		add_theme_support( 'less', array(
+		    'enable'  => true,
+		    'develop' => true,
+		    'watch'  => true
+		) );
+		// add_theme_support( 'less', array(
+		//     'minify' => true
+		// ) );
+		add_theme_support('post-thumbnails' );
 		add_image_size( 'thumbnail-show', '207','207', true );
 		add_theme_support('custom-header');
 		add_theme_support('post-formats');
@@ -68,20 +74,18 @@ Class RAB_Site{
 		wp_register_style('flex.slider',TEMPLATEURL.'/css/flexslider.css');
 		//wp_register_style('flex.demo',TEMPLATEURL.'/css/demo.css');
 
-		
 		load_textdomain('RAB_DOMAIN', get_template_directory().'/lang/vi_VI.mo');
-		ob_start();		
+		ob_start();
 		if(is_singular('post') || is_singular('product')){
 			$this->rab_process_single();
 		}
 	}
 	public function rab_wp_head(){
-		
-		
+
 		wp_enqueue_style('google-font',$this->options['site_google_font']['url']);
 		echo stripslashes($this->options['site_google_script']);
 		?>
-		
+
 		<style type="text/css">
 		body p,body,body .post-content{
 				font-family: <?php echo $this->options['site_google_font']['title']?>,Arial,Verdana,sans-serif;
@@ -90,11 +94,11 @@ Class RAB_Site{
 				outline-color: #333;
 			}
 		</style>
-		<?php 
-		wp_enqueue_style('bootraps-css',get_stylesheet_directory_uri().'/css/bootstrap.css');		 
-		wp_enqueue_style('bootraps-grid',get_stylesheet_directory_uri().'/css/grid.css');		
-		wp_enqueue_style('front-rab', get_stylesheet_directory_uri().'/fonts.css');
-		wp_enqueue_style('rab-style-custom', get_stylesheet_directory_uri().'/custom.css');
+		<?php
+			wp_enqueue_style('bootraps-css', get_stylesheet_directory_uri().'/css/bootstrap.css');
+			wp_enqueue_style('bootraps-grid', get_stylesheet_directory_uri().'/css/grid.css');
+			wp_enqueue_style('front-rab', get_stylesheet_directory_uri().'/fonts.css');
+			wp_enqueue_style('rab-style-custom', get_stylesheet_directory_uri().'/custom.css');
 	}
 	public function rab_wp_footer(){
 		wp_enqueue_script('jquery.ajax');
@@ -106,8 +110,8 @@ Class RAB_Site{
 		wp_enqueue_script('bootstrap-js',get_stylesheet_directory_uri().'/js/bootstrap.min.js');
 		wp_enqueue_style('google-fonts',$http.'://fonts.googleapis.com/css?family=PT+Sans+Narrow');
 		wp_enqueue_style('google-font-content',$http.'://fonts.googleapis.com/css?family=Open+Sans&subset=latin,vietnamese');
-		
 	}
+
 	function rab_process_single(){
 		global $post;
 		$id 	= $post->ID;
@@ -126,8 +130,8 @@ Class RAB_Site{
 	function rab_widgets_init(){
 		register_widget( 'RAB_Slider_Widget' );
 		register_widget( 'RAB_Facebook_Fan_Page');
-		register_widget( 'RAB_Twitter_Time_line');		
-		
+		register_widget( 'RAB_Twitter_Time_line');
+
 	}
 	/**
 	 * get html for case that the post no thumbnail.
@@ -135,7 +139,7 @@ Class RAB_Site{
 
 	function rab_thumbnail_html($html, $post_id, $post_image_id){
 
-		if(!has_post_thumbnail($post_id) || empty($html)){			
+		if(!has_post_thumbnail($post_id) || empty($html)){
 			$html = '<img src="' . get_bloginfo( 'stylesheet_directory' ) . '/images/no-images.png" title ="'.get_the_title($post_id).'"  alt ="'.get_the_title($post_id).'"  />';
 		}
 		return $html;
@@ -211,41 +215,13 @@ function rab_access_upload_file($file, $author = 0, $parent=0, $mimes=array() ){
 	}
 
 }
-// function rab_paging(){
-// 	 $args = array(
-// 		'base'         => '%_%',
-// 		'format'       => '?page=%#%',
-// 		'total'        => 1,
-// 		'current'      => 0,
-// 		'show_all'     => False,
-// 		'end_size'     => 1,
-// 		'mid_size'     => 2,
-// 		'prev_next'    => True,
-// 		'prev_text'    => __('« Previous',RAB_DOMAIN),
-// 		'next_text'    => __('Next »',RAB_DOMAIN),
-// 		'type'         => 'plain',
-// 		'add_args'     => False,
-// 		'add_fragment' => ''
-// 	);
 
-// 	global $wp_query;
-// 	$big = 999999999; // need an unlikely integer
-// 	echo paginate_links( array(
-// 		'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-// 		'format' => '?paged=%#%',
-// 		'current' => max( 1, get_query_var('paged') ),
-// 		'total' => $wp_query->max_num_pages,
-// 		'prev_text'    => __('« Prev',RAB_DOMAIN),
-// 		'next_text'    => __('Next »',RAB_DOMAIN),
-// 	) );
-// }
 function rab_pagination(){
     global $wp_query;
 
     $big = 999999999; // need an unlikely integer
     echo '<nav class="woocommerce-pagination">';
 
- 
         echo paginate_links( apply_filters( 'woocommerce_pagination_args', array(
             'base'         => esc_url( str_replace( 999999999, '%#%', remove_query_arg( 'add-to-cart', get_pagenum_link( 999999999, false ) ) ) ),
             'format'       => '',
