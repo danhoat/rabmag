@@ -97,7 +97,7 @@ Class RAB_Site{
 		<?php
 			wp_enqueue_style('bootraps-css', get_stylesheet_directory_uri().'/css/bootstrap.css');
 			wp_enqueue_style('bootraps-grid', get_stylesheet_directory_uri().'/css/grid.css');
-			wp_enqueue_style('front-rab', get_stylesheet_directory_uri().'/fonts.css');
+			wp_enqueue_style('front-rab', get_stylesheet_directory_uri().'/font/css/font-awesome.min.css');
 			wp_enqueue_style('rab-style-custom', get_stylesheet_directory_uri().'/custom.css');
 	}
 	public function rab_wp_footer(){

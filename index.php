@@ -7,14 +7,15 @@
 
 <div class="container main-wrap">
     <div class="main-content">
+        <?php get_sidebar();?>
         <div id="main-content" class="col-lg-9 blog-main">
-           <?php
+            <?php
             if(is_active_sidebar('top_content')){
                 echo '<div class="row">';
                 dynamic_sidebar('top_content');
                 echo '</div>';
             }
-           ?>
+            ?>
 
             <div class="row-item">
                 <?php do_action("rab_before_loop") ?>
@@ -41,7 +42,6 @@
             </div>
 
         </div>
-        <?php get_sidebar();?>
 
     </div>
 </div> <!-- End main-content!-->
