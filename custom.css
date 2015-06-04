@@ -38,6 +38,14 @@ h1{
 
 /*------------------------ */
 /* Category Product menu */
+ul, ol {
+    margin: 0 0 1.5em 3em;
+    padding: 0;
+}
+.block-menu-category ul{
+
+	margin: auto;
+}
 @media (max-width: 1199px) {
   .block-menu-category .list-menu {
     display: none;
