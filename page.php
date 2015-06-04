@@ -1,24 +1,41 @@
-  <?php get_header();?>
-    <div class="container main-wrap">
-        <div class="main-content">
-            <div id="main-content" class="col-sm-8">
-                <div class="page-content row">
-                   <?php 
-                   the_post();
-                   echo '<h1 class="title page-title">'.get_the_title().'</h1>';
-                   echo '<div class="post-detail">';
-                    the_content();
-                   echo '</div>';
-                   ?>
-                   
-                </div>
-                <?php
-                if( is_active_sidebar('sidebar-content') )
-                    dynamic_sidebar('sidebar-content');
-                ?>
-            </div>
-            <?php get_sidebar();?>
-        </div>
-    </div> <!-- End main-content!-->
-
-   <?php get_footer();?>
+<?php
+/**
+ * index template default
+ */
+?>
+<?php get_header(); ?>
+
+<div class="container">
+    <div class="main-banner row">
+        <?php get_sidebar();?>
+        <div id="main-content" class="col-lg-9 blog-main">
+            <div class="row-item">
+                <?php do_action("rab_before_loop") ?>
+                <?php
+
+                    if(have_posts()):
+
+                        while(have_posts()): the_post();
+
+                            $format     = apply_filters("post_format_default",get_post_format() );
+                            get_template_part( 'content', $format );
+
+                        endwhile;
+                        rab_pagination();
+
+                    else :
+                        get_template_part('template/none' );
+
+                    endif;
+
+                ?>
+                <?php do_action("rab_after_loop") ?>
+
+            </div>
+
+        </div>
+
+    </div>
+</div> <!-- End main-content!-->
+
+<?php get_footer();?>

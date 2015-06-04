@@ -3,7 +3,7 @@
         <div class="row footer-top">
             <div class="col-md-6">
                 <div class="entry-footer-widget">
-                    <aside class="widget widget_black_studio_tinymce" id="black-studio-tinymce-2"><h3 class="title-widget">CÔNG TY CỔ PHẦN NỘI THẤT VĂN PHÒNG HÒA PHÁT SÀI GÒN</h3> <div class="entry-post"><div class="textwidget"><p style="text-align: justify;">Địa chỉ: 106 Quốc lộ 1K , P.Linh Xuân, Quận Thủ Đức,TP.Hồ Chí Minh<br>Điện thoại: 08.6272.7374- Fax: 08.6283.6287<br>Di động:&nbsp;<strong>0908 758 256</strong><br>Email: cnhoaphatsaigon@gmail.com<br>Website:&nbsp;<a href="http://noithathoaphatsaigon.com/">http://noithathoaphatsaigon.com</a></p>
+                    <aside class="widget widget_black_studio_tinymce" id="black-studio-tinymce-2"><h3 class="title-widget">CÔNG TY NỘI THẤT NAM HÀ PHÁT</h3> <div class="entry-post"><div class="textwidget"><p style="text-align: justify;">Địa chỉ: 106 Quốc lộ 1K , P.Linh Xuân, Quận Thủ Đức,TP.Hồ Chí Minh<br>Điện thoại: 08.6272.7374- Fax: 08.6283.6287<br>Di động:&nbsp;<strong>0908 758 256</strong><br>Email: cnhoaphatsaigon@gmail.com<br>Website:&nbsp;<a href="http://noithathoaphatsaigon.com/">http://noithathoaphatsaigon.com</a></p>
 </div></div></aside>                </div> 
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6">
