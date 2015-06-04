@@ -5,8 +5,8 @@
 ?>
 <?php get_header(); ?>
 
-<div class="container main-wrap">
-    <div class="main-content">
+<div class="container">
+    <div class="main-banner row">
         <?php get_sidebar();?>
         <div id="main-content" class="col-lg-9 blog-main">
             <?php

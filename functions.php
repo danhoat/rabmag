@@ -99,6 +99,7 @@ Class RAB_Site{
 			wp_enqueue_style('bootraps-grid', get_stylesheet_directory_uri().'/css/grid.css');
 			wp_enqueue_style('front-rab', get_stylesheet_directory_uri().'/font/css/font-awesome.min.css');
 			wp_enqueue_style('rab-style-custom', get_stylesheet_directory_uri().'/custom.css');
+			wp_enqueue_style('rab-style-clone', get_stylesheet_directory_uri().'/css/clone.css');
 	}
 	public function rab_wp_footer(){
 		wp_enqueue_script('jquery.ajax');
@@ -128,7 +129,7 @@ Class RAB_Site{
 	 */
 
 	function rab_widgets_init(){
-		register_widget( 'RAB_Slider_Widget' );
+		//register_widget( 'RAB_Slider_Widget' );
 		register_widget( 'RAB_Facebook_Fan_Page');
 		register_widget( 'RAB_Twitter_Time_line');
 
