@@ -3,35 +3,7 @@
 		<ul class="mcategory" id="menu-danh-muc-san-pham">
 			<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-2958" id="menu-item-2958"><a href="http://namhatphat.com/ma-mau-san-pham/">Mã màu sản phẩm</a></li>
 			<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-1812" id="menu-item-1812"><a href="http://namhatphat.com/product-category/ban-quay/">Quầy tiếp tân</a>
-			<ul class="sub-menu">
-				<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1813" id="menu-item-1813"><a href="http://namhatphat.com/product-category/ban-quay/quay-giao-dich/">Quầy giao dịch</a></li>
-				<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1814" id="menu-item-1814"><a href="http://namhatphat.com/product-category/ban-quay/quay-le-tan/">Quầy lễ tân</a></li>
-			</ul>
-			</li>
-			<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-1815" id="menu-item-1815"><a href="http://namhatphat.com/product-category/ban-van-phong/">Bàn văn phòng</a>
-			<ul class="sub-menu">
-				<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-3542" id="menu-item-3542"><a href="http://namhatphat.com/product-category/ban-van-phong/ban-chan-sat/">Bàn chân sắt</a></li>
-				<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1821" id="menu-item-1821"><a href="http://namhatphat.com/product-category/ban-van-phong/ban-nhan-vien/">Bàn nhân viên</a></li>
-				<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1822" id="menu-item-1822"><a href="http://namhatphat.com/product-category/ban-van-phong/ban-truong-phong/">Bàn trưởng Phòng</a></li>
-				<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1818" id="menu-item-1818"><a href="http://namhatphat.com/product-category/ban-van-phong/ban-giam-doc/">Bàn giám đốc</a></li>
-				<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1819" id="menu-item-1819"><a href="http://namhatphat.com/product-category/ban-van-phong/ban-hop/">Bàn họp</a></li>
-				<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1816" id="menu-item-1816"><a href="http://namhatphat.com/product-category/ban-van-phong/ban-cao-cap/">Bàn cao cấp</a></li>
-				<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1820" id="menu-item-1820"><a href="http://namhatphat.com/product-category/ban-van-phong/ban-may-tinh/">Bàn máy tính</a></li>
-				<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1817" id="menu-item-1817"><a href="http://namhatphat.com/product-category/ban-van-phong/ban-ghe-hoa-phat/">Bàn ghế Hòa Phát</a></li>
-			</ul>
-			</li>
-			<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-1823" id="menu-item-1823"><a href="http://namhatphat.com/product-category/ghe-van-phong/">Ghế văn phòng</a>
-			<ul class="sub-menu">
-				<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1827" id="menu-item-1827"><a href="http://namhatphat.com/product-category/ghe-van-phong/ghe-nhan-vien/">Ghế nhân viên</a></li>
-				<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1830" id="menu-item-1830"><a href="http://namhatphat.com/product-category/ghe-van-phong/ghe-truong-phong/">Ghế trưởng phòng</a></li>
-				<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1825" id="menu-item-1825"><a href="http://namhatphat.com/product-category/ghe-van-phong/ghe-giam-doc/">Ghế giám đốc</a></li>
-				<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1826" id="menu-item-1826"><a href="http://namhatphat.com/product-category/ghe-van-phong/ghe-luoi/">Ghế lưới</a></li>
-				<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1828" id="menu-item-1828"><a href="http://namhatphat.com/product-category/ghe-van-phong/ghe-phong-hop/">Ghế phòng họp</a></li>
-				<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1831" id="menu-item-1831"><a href="http://namhatphat.com/product-category/ghe-van-phong/ghe-xep/">Ghế xếp</a></li>
-				<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1829" id="menu-item-1829"><a href="http://namhatphat.com/product-category/ghe-van-phong/ghe-sofa/">Ghế sofa</a></li>
-				<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1824" id="menu-item-1824"><a href="http://namhatphat.com/product-category/ghe-van-phong/ghe-bang-cho/">Ghế băng chờ</a></li>
-			</ul>
-			</li>
+			
 			<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-1852" id="menu-item-1852"><a href="http://namhatphat.com/product-category/tu-tai-lieu/">Tủ tài liệu</a>
 			<ul class="sub-menu">
 				<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1853" id="menu-item-1853"><a href="http://namhatphat.com/product-category/tu-tai-lieu/hoc-tu-phu/">Hộc &ndash; Tủ phụ</a></li>
@@ -56,6 +28,7 @@
 			</li>
 
 		</ul>
+
 	</div>
 	<?php
 		if(is_active_sidebar('main')){
