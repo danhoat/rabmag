@@ -1,225 +1,72 @@
 <?php
-
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
-
 /**
- * Product Categories Widget
- *
- * @author   WooThemes
- * @category Widgets
- * @package  WooCommerce/Widgets
- * @version  2.3.0
- * @extends  WC_Widget
- */
-class WC_Widget_Product_Categories extends WP_Widget {
+ * display list category product.
+ * @author : danng
+ * @version : 1.0
+  */
+class RAB_Widget_Product_Categories extends WP_Widget {
 
 	/**
-	 * Category ancestors
-	 *
-	 * @var array
+	 * Register widget with WordPress.
 	 */
-	public $cat_ancestors;
-
-	/**
-	 * Current Category
-	 *
-	 * @var bool
-	 */
-	public $current_cat;
-
-	/**
-	 * Constructor
-	 */
-	public function __construct() {
-		$this->widget_cssclass    = 'woocommerce widget_product_categories';
-		$this->widget_description = __( 'A list or dropdown of product categories.', 'woocommerce' );
-		$this->widget_id          = 'woocommerce_product_categories';
-		$this->widget_name        = __( 'WooCommerce Product Categories', 'woocommerce' );
-		$this->settings           = array(
-			'title'  => array(
-				'type'  => 'text',
-				'std'   => __( 'Product Categories', 'woocommerce' ),
-				'label' => __( 'Title', 'woocommerce' )
-			),
-			'orderby' => array(
-				'type'  => 'select',
-				'std'   => 'name',
-				'label' => __( 'Order by', 'woocommerce' ),
-				'options' => array(
-					'order' => __( 'Category Order', 'woocommerce' ),
-					'name'  => __( 'Name', 'woocommerce' )
-				)
-			),
-			'dropdown' => array(
-				'type'  => 'checkbox',
-				'std'   => 0,
-				'label' => __( 'Show as dropdown', 'woocommerce' )
-			),
-			'count' => array(
-				'type'  => 'checkbox',
-				'std'   => 0,
-				'label' => __( 'Show product counts', 'woocommerce' )
-			),
-			'hierarchical' => array(
-				'type'  => 'checkbox',
-				'std'   => 1,
-				'label' => __( 'Show hierarchy', 'woocommerce' )
-			),
-			'show_children_only' => array(
-				'type'  => 'checkbox',
-				'std'   => 0,
-				'label' => __( 'Only show children of the current category', 'woocommerce' )
-			)
+	function __construct() {
+		parent::__construct(
+			'rab_product_categories', // Base ID
+			__( 'Product Categories', RAB_DOMAIN ), // Name
+			array( 'description' => __( 'List Product categories', RAB_DOMAIN ), ) // Args
 		);
-
 	}
 
 	/**
-	 * widget function.
+	 * Front-end display of widget.
 	 *
-	 * @see WP_Widget
+	 * @see WP_Widget::widget()
 	 *
-	 * @param array $args
-	 * @param array $instance
-	 *
-	 * @return void
+	 * @param array $args     Widget arguments.
+	 * @param array $instance Saved values from database.
 	 */
 	public function widget( $args, $instance ) {
-		global $wp_query, $post;
+		$list_args = $instance;
+		$list_args = array( 'show_count' => $c, 'hierarchical' => $h, 'taxonomy' => 'product_cat', 'hide_empty' => false );
+		//echo $args['before_widget'];
+		echo '<div class="block-menu-category">';
+		echo '<ul id="menu-danh-muc-san-pham" class="mcategory">';
 
-		$c             = isset( $instance['count'] ) ? $instance['count'] : $this->settings['count']['std'];
-		$h             = isset( $instance['hierarchical'] ) ? $instance['hierarchical'] : $this->settings['hierarchical']['std'];
-		$s             = isset( $instance['show_children_only'] ) ? $instance['show_children_only'] : $this->settings['show_children_only']['std'];
-		$d             = isset( $instance['dropdown'] ) ? $instance['dropdown'] : $this->settings['dropdown']['std'];
-		$o             = isset( $instance['orderby'] ) ? $instance['orderby'] : $this->settings['orderby']['std'];
-		$dropdown_args = array( 'hide_empty' => false );
-		$list_args     = array( 'show_count' => $c, 'hierarchical' => $h, 'taxonomy' => 'product_cat', 'hide_empty' => false );
+			wp_list_categories(  $list_args );
 
-		// Menu Order
-		$list_args['menu_order'] = false;
-		if ( $o == 'order' ) {
-			$list_args['menu_order'] = 'asc';
-		} else {
-			$list_args['orderby']    = 'title';
-		}
-
-		// Setup Current Category
-		$this->current_cat   = false;
-		$this->cat_ancestors = array();
-
-		if ( is_tax( 'product_cat' ) ) {
-
-			$this->current_cat   = $wp_query->queried_object;
-			$this->cat_ancestors = get_ancestors( $this->current_cat->term_id, 'product_cat' );
-
-		} elseif ( is_singular( 'product' ) ) {
-
-			$product_category = wc_get_product_terms( $post->ID, 'product_cat', array( 'orderby' => 'parent' ) );
-
-			if ( $product_category ) {
-				$this->current_cat   = end( $product_category );
-				$this->cat_ancestors = get_ancestors( $this->current_cat->term_id, 'product_cat' );
-			}
-
-		}
-
-		// Show Siblings and Children Only
-		if ( $s && $this->current_cat ) {
-
-			// Top level is needed
-			$top_level = get_terms(
-				'product_cat',
-				array(
-					'fields'       => 'ids',
-					'parent'       => 0,
-					'hierarchical' => true,
-					'hide_empty'   => false
-				)
-			);
-
-			// Direct children are wanted
-			$direct_children = get_terms(
-				'product_cat',
-				array(
-					'fields'       => 'ids',
-					'parent'       => $this->current_cat->term_id,
-					'hierarchical' => true,
-					'hide_empty'   => false
-				)
-			);
-
-			// Gather siblings of ancestors
-			$siblings  = array();
-			if ( $this->cat_ancestors ) {
-				foreach ( $this->cat_ancestors as $ancestor ) {
-					$ancestor_siblings = get_terms(
-						'product_cat',
-						array(
-							'fields'       => 'ids',
-							'parent'       => $ancestor,
-							'hierarchical' => false,
-							'hide_empty'   => false
-						)
-					);
-					$siblings = array_merge( $siblings, $ancestor_siblings );
-				}
-			}
-
-			if ( $h ) {
-				$include = array_merge( $top_level, $this->cat_ancestors, $siblings, $direct_children, array( $this->current_cat->term_id ) );
-			} else {
-				$include = array_merge( $direct_children );
-			}
-
-			$dropdown_args['include'] = implode( ',', $include );
-			$list_args['include']     = implode( ',', $include );
-
-			if ( empty( $include ) ) {
-				return;
-			}
-
-		} elseif ( $s ) {
-			$dropdown_args['depth']        = 1;
-			$dropdown_args['child_of']     = 0;
-			$dropdown_args['hierarchical'] = 1;
-			$list_args['depth']            = 1;
-			$list_args['child_of']         = 0;
-			$list_args['hierarchical']     = 1;
-		}
-
-
-
-		// Dropdown
-		if ( $d ) {
-			$dropdown_defaults = array(
-				'show_counts'        => $c,
-				'hierarchical'       => $h,
-				'show_uncategorized' => 0,
-				'orderby'            => $o,
-				'selected'           => $this->current_cat ? $this->current_cat->slug : ''
-			);
-			$dropdown_args = wp_parse_args( $dropdown_args, $dropdown_defaults );
-
-			// Stuck with this until a fix for http://core.trac.wordpress.org/ticket/13258
-			//wc_product_dropdown_categories( apply_filters( 'woocommerce_product_categories_widget_dropdown_args', $dropdown_args ) );
-
-		// List
-		} else {
-
-			$list_args['title_li']                   = '';
-			$list_args['pad_counts']                 = 1;
-			$list_args['show_option_none']           = __('No product categories exist.', 'woocommerce' );
-			$list_args['current_category']           = ( $this->current_cat ) ? $this->current_cat->term_id : '';
-			$list_args['current_category_ancestors'] = $this->cat_ancestors;
-
-			echo '<ul class="product-categories">';
-
-			wp_list_categories( apply_filters( 'woocommerce_product_categories_widget_args', $list_args ) );
-
-			echo '</ul>';
-		}
-
+		echo '</ul>';
+		echo '</div>';
+		//echo $args['after_widget'];
 	}
+
+	/**
+	 * Back-end widget form.
+	 *
+	 * @see WP_Widget::form()
+	 *
+	 * @param array $instance Previously saved values from database.
+	 */
+	public function form( $instance ) {
+		
+	}
+
+	/**
+	 * Sanitize widget form values as they are saved.
+	 *
+	 * @see WP_Widget::update()
+	 *
+	 * @param array $new_instance Values just sent to be saved.
+	 * @param array $old_instance Previously saved values from database.
+	 *
+	 * @return array Updated safe values to be saved.
+	 */
+	public function update( $new_instance, $old_instance ) {
+		$instance = array();
+		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+
+		return $instance;
+	}
+
 }
+
+?>
