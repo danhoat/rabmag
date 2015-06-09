@@ -377,13 +377,13 @@ a:hover {
     margin-top: 15px;
   }
 }
-.block-menu-category {
+.main-sidebar .widget_nav_menu {
   margin-right: -15px;
   position: relative;
   background: white;
 }
 @media (max-width: 1199px) {
-  .block-menu-category {
+  .main-sidebar .widget_nav_menu {
     position: relative;
     top: 0;
     z-index: 9999;
@@ -392,19 +392,19 @@ a:hover {
     margin-right: 0;
   }
 }
-.block-menu-category ul {
+.main-sidebar .widget_nav_menu ul {
   margin: auto;
 }
-.block-menu-category .list-menu {
+.main-sidebar .widget_nav_menu .list-menu {
   border: 1px solid #EBEEF2;
   border-top: none;
 }
 @media (max-width: 1199px) {
-  .block-menu-category .list-menu {
+  .main-sidebar .widget_nav_menu .list-menu {
     display: none;
   }
 }
-.block-menu-category .title {
+.main-sidebar .widget_nav_menu .title {
   font-size: 18px !important;
   border: medium none;
   text-transform: uppercase;
@@ -415,12 +415,12 @@ a:hover {
   letter-spacing: normal;
   position: relative;
 }
-.block-menu-category .title .fa {
+.main-sidebar .widget_nav_menu .title .fa {
   font-size: 16px;
   padding-right: 10px;
 }
-.block-menu-category .menu a,
-.block-menu-category .mcategory a {
+.main-sidebar .widget_nav_menu .menu a,
+.main-sidebar .widget_nav_menu .mcategory a {
   display: block;
   color: #3E474B;
   padding: 10px;
@@ -428,8 +428,8 @@ a:hover {
   font-weight: 400;
   background: white;
 }
-.block-menu-category .menu a:before,
-.block-menu-category .mcategory a:before {
+.main-sidebar .widget_nav_menu .menu a:before,
+.main-sidebar .widget_nav_menu .mcategory a:before {
   color: #AAB2BD;
   content: "";
   display: inline-block;
@@ -438,8 +438,8 @@ a:hover {
   color: #6052DB;
   padding: 0px 5px;
 }
-.block-menu-category .menu li,
-.block-menu-category .mcategory li {
+.main-sidebar .widget_nav_menu .menu li,
+.main-sidebar .widget_nav_menu .mcategory li {
   list-style: none;
   width: 100%;
   height: auto;
@@ -448,25 +448,25 @@ a:hover {
   position: relative;
 }
 @media (min-width: 992px) {
-  .block-menu-category .menu li:hover > a,
-  .block-menu-category .mcategory li:hover > a {
+  .main-sidebar .widget_nav_menu .menu li:hover > a,
+  .main-sidebar .widget_nav_menu .mcategory li:hover > a {
     position: relative;
     z-index: 9999;
     background-color: white;
   }
-  .block-menu-category .menu li:hover > a,
-  .block-menu-category .mcategory li:hover > a,
-  .block-menu-category .menu li:hover > a:before,
-  .block-menu-category .mcategory li:hover > a:before {
+  .main-sidebar .widget_nav_menu .menu li:hover > a,
+  .main-sidebar .widget_nav_menu .mcategory li:hover > a,
+  .main-sidebar .widget_nav_menu .menu li:hover > a:before,
+  .main-sidebar .widget_nav_menu .mcategory li:hover > a:before {
     color: #FF6346 !important;
   }
-  .block-menu-category .menu li:hover .sub-menu,
-  .block-menu-category .mcategory li:hover .sub-menu {
+  .main-sidebar .widget_nav_menu .menu li:hover .sub-menu,
+  .main-sidebar .widget_nav_menu .mcategory li:hover .sub-menu {
     display: block;
   }
 }
-.block-menu-category .menu .sub-menu,
-.block-menu-category .mcategory .sub-menu {
+.main-sidebar .widget_nav_menu .menu .sub-menu,
+.main-sidebar .widget_nav_menu .mcategory .sub-menu {
   display: none;
   position: absolute;
   top: 0;
@@ -478,13 +478,13 @@ a:hover {
   box-shadow: 0px 0 5px rgba(0, 0, 0, 0.5);
   margin-left: -2px;
 }
-.block-menu-category .menu .sub-menu.active,
-.block-menu-category .mcategory .sub-menu.active {
+.main-sidebar .widget_nav_menu .menu .sub-menu.active,
+.main-sidebar .widget_nav_menu .mcategory .sub-menu.active {
   display: block;
 }
 @media (max-width: 480px) {
-  .block-menu-category .menu .sub-menu,
-  .block-menu-category .mcategory .sub-menu {
+  .main-sidebar .widget_nav_menu .menu .sub-menu,
+  .main-sidebar .widget_nav_menu .mcategory .sub-menu {
     position: static;
     box-shadow: none;
     border-left: 3px solid #E14938;
@@ -493,8 +493,8 @@ a:hover {
   }
 }
 @media (max-width: 1199px) {
-  .block-menu-category .menu .sub-menu,
-  .block-menu-category .mcategory .sub-menu {
+  .main-sidebar .widget_nav_menu .menu .sub-menu,
+  .main-sidebar .widget_nav_menu .mcategory .sub-menu {
     display: block;
     top: 0;
     left: 100%;
@@ -510,13 +510,13 @@ a:hover {
     margin-left: 33px;
     width: auto;
   }
-  .block-menu-category .menu .sub-menu.active,
-  .block-menu-category .mcategory .sub-menu.active {
+  .main-sidebar .widget_nav_menu .menu .sub-menu.active,
+  .main-sidebar .widget_nav_menu .mcategory .sub-menu.active {
     display: block;
   }
 }
 @media (max-width: 1199px) {
-  .home .block-menu-category {
+  .home .main-sidebar .widget_nav_menu {
     position: absolute;
     top: 0;
     left: 15px;

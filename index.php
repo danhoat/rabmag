@@ -8,7 +8,7 @@
 <div class="container">
     <div class="main-banner row">
         <?php get_sidebar();?>
-        <div id="main-content" class="col-lg-9 blog-main">
+        <div class="col-lg-9 main-content">
             <?php
             if(is_active_sidebar('top_content')){
                 echo '<div class="row">';
@@ -17,7 +17,7 @@
             }
             ?>
 
-            <div class="row-item">
+            <div class="row">
                 <?php do_action("rab_before_loop") ?>
                 <?php
 

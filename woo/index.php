@@ -10,8 +10,9 @@ if(class_exists('WooCommerce')){
 			add_filter('body_class', array($this,'multisite_body_classes') );
 
 			add_filter("woocommerce_output_related_products_args", array($this, "woocommerce_output_related_products_args_custom") );
+			//add_action('woocommerce_before_main_content', array($this, 'add_div_before_main_content') );
 
-			
+
 		}
 
 		function woocommerce_output_related_products_args_custom($args){
@@ -23,9 +24,8 @@ if(class_exists('WooCommerce')){
 			    return $args;
 
 			}
-		function multisite_body_classes($classes) {		      
+		function multisite_body_classes($classes) {
 		        $classes[] = 'woocommerce';
-		      
 		        return $classes;
 		}
 
@@ -41,9 +41,9 @@ if(class_exists('WooCommerce')){
 			</div>
 			<?php 
 		}
-		
+
 		function woocommerce_enqueue_styles_override($args){
-		  
+
 		            $args['woocommerce-general'] =  array(
 		                'src'     => str_replace( array( 'http:', 'https:' ), '', get_template_directory_uri() ) . '/woocommerce.css',
 		                'deps'    => '',
@@ -51,6 +51,13 @@ if(class_exists('WooCommerce')){
 		                'media'   => 'all'
 		            );
 		        return $args;
+		}
+		/**
+		 * [add_div_before_main_content description]
+		 *  add new div before main_content of category prduct page
+		 */
+		function add_div_before_main_content(){
+			echo '123';
 		}
 
 
@@ -72,28 +79,27 @@ if(class_exists('WooCommerce')){
 		    $orderby = isset($_GET['orderby']) ? $_GET['orderby'] : '';
 		    switch ($orderby) {
 		    	case 'views':
-		    		
 		    	 	//add_filter('posts_orderby', 'posts_orderby_for_search' );
 		    		$query->set("orderby","meta_value_num");
 		    		$query->set("meta_key","post_views");
 
-		    		$query->set('meta_query', array(
-		                                        'relation' => 'OR',
-		                                        array(
-		                                            'key'       => 'post_views',
-		                                            'compare'   => '',
-		                                            'value'     => 0
-		                                        ),
+		    		$query->set('meta_query', 	array(
+                        'relation' => 'OR',
+	                        array(
+	                            'key'       => 'post_views',
+	                            'compare'   => '',
+	                            'value'     => 0
+	                        ),
 
-		                                        array(
-		                                            'key'       => 'post_views',
-		                                            'compare'   => 'NOT EXISTS'                        
-		                                        ),
-		                                        
-		                                    )
-		                        );
+	                        array(
+	                            'key'       => 'post_views',
+	                            'compare'   => 'NOT EXISTS'
+	                        ),
+
+                    	)
+                    );
 		            $query->set("order","DESC");
-								
+
 		    		break;
 
 		    	case 'price' :
@@ -109,12 +115,11 @@ if(class_exists('WooCommerce')){
 		    		$query->set("order","DESC");
 
 		    		break;
-		    	
 		    	default:
 		    		# code...
 		    		break;
 		    }
-		    
+
 			$tax_id = (int) isset($_GET["p_cat"]) ? $_GET["p_cat"] : "";
 			if(!empty($tax_id) && $tax_id > 0 )
 		        $query->set('tax_query',array(array("taxonomy"=>"product_cat", "terms"=>$tax_id, "field" => "id")));
@@ -127,5 +132,37 @@ if(class_exists('WooCommerce')){
 	}
 	new RAB_Woo();
 }
+/**
+ * override function woocommerce_output_content_wrapper in woo
+ * override the template/global/wrapper-start.php file in woo
+ * @return  echo the element before main content
+ */
+function woocommerce_output_content_wrapper(){
+	$template = get_option( 'template' );
+
+	switch( $template ) {
+		case 'twentyeleven' :
+			echo '<div id="primary"><div id="content" role="main" class="twentyeleven">';
+			break;
+		case 'twentytwelve' :
+			echo '<div id="primary" class="site-content"><div id="content" role="main" class="twentytwelve">';
+			break;
+		case 'twentythirteen' :
+			echo '<div id="primary" class="site-content"><div id="content" role="main" class="entry-content twentythirteen">';
+			break;
+		case 'twentyfourteen' :
+			echo '<div id="primary" class="content-area"><div id="content" role="main" class="site-content twentyfourteen"><div class="tfwc">';
+			break;
+		case 'twentyfifteen' :
+			echo '<div id="primary" role="main" class="content-area twentyfifteen"><div id="main" class="site-main t15wc">';
+			break;
+		default :
+			echo '<div id="container" class=""><div id="content" class="container" role="main">';
+			break;
+	}
+
+
+}
+remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
 
 ?>
