@@ -5,6 +5,7 @@ define('TEMPLATE_PATH',get_template_directory());
 if(!defined('RAB_DOMAIN'))
 define('RAB_DOMAIN','rabtheme');
 
+require get_template_directory() . '/inc/global.php';
 require get_template_directory() . '/class/class_post.php';
 require get_template_directory() . '/inc/index.php';
 require get_template_directory() . '/woo/index.php';
@@ -65,7 +66,7 @@ Class RAB_Site{
 		//wp_enqueue_script('jquery.ajax');
 	}
 	function rab_init(){
-
+		// should move js
 		//wp_register_script('rab',TEMPLATEURL.'/js/rab.js');
 		wp_dequeue_script('jquery');
 		wp_register_script('jquery.ajax','http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js',array(),false,false);
@@ -77,7 +78,10 @@ Class RAB_Site{
 		//wp_register_style('flex.demo',TEMPLATEURL.'/css/demo.css');
 
 		load_textdomain('RAB_DOMAIN', get_template_directory().'/lang/vi_VI.mo');
+		rab_register_post_type();
 		ob_start();
+		// should move count post to template_redirect.
+		// tag : should_move
 		if(is_singular('post') || is_singular('product')){
 			$this->rab_process_single();
 		}
