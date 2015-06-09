@@ -26,11 +26,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	margin-left: auto;
 	margin-right: auto;
 }
-.main-sidebar{
-	min-height: 500px !important;
-}
 .main-page .entry-page{
-	min-height: 450px;
+	min-height: 350px;
 }
 #sidebar{
 	padding-left: 0;
