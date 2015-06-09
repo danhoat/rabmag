@@ -21,7 +21,7 @@
          <nav class="menu-main">
 
            <div class="container">
-                   <?php wp_nav_menu(array( 'theme_location' => apply_filters( RAB_DOMAIN, 'header' ) ,'menu_class' => 'main-menu' ,'container_class' => 'menu-main-menu-container' ));?>
+                   <?php wp_nav_menu(array( 'theme_location' => apply_filters( RAB_DOMAIN, 'main_menu' ) ,'menu_class' => 'main-menu' ,'container_class' => 'menu-main-menu-container' ));?>
            </div>
 
          </nav>

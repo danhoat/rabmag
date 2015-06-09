@@ -4,8 +4,8 @@ if(class_exists('WooCommerce')){
 		function __construct(){
 			add_filter( "pre_get_posts", array($this,'pre_get_posts'), 10000 );
 			add_filter( "post_format_default", array($this,"rab_get_post_format"));
-			add_action( "rab_before_loop", array($this,"rab_before_loop"));
-			add_action( "rab_after_loop", array($this,"rab_after_loop"));
+			//add_action( "rab_before_loop", array($this,"rab_before_loop"));
+			//add_action( "rab_after_loop", array($this,"rab_after_loop"));
 			add_filter( "woocommerce_enqueue_styles", array($this,"woocommerce_enqueue_styles_override"),12 );
 			add_filter('body_class', array($this,'multisite_body_classes') );
 
@@ -157,7 +157,7 @@ function woocommerce_output_content_wrapper(){
 			echo '<div id="primary" role="main" class="content-area twentyfifteen"><div id="main" class="site-main t15wc">';
 			break;
 		default :
-			echo '<div id="container" class=""><div id="content" class="container" role="main">';
+			echo '<div id="container" class=""><div id="content" class="container main-page" role="main">';
 			break;
 	}
 

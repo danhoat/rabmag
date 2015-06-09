@@ -5,37 +5,38 @@
 ?>
 <?php get_header(); ?>
 
-<div class="container">
-    <div class="main-banner row">
-        <?php get_sidebar();?>
-        <div class="col-lg-9 main-content">
-            <div class="row-item">
-                <?php do_action("rab_before_loop") ?>
-                <?php
+<div class="container main-page">
 
-                    if(have_posts()):
+    <?php get_sidebar();?>
+    <div class="col-lg-9 main-content">
+        <div class="entry-page">
+            <?php
 
-                        while(have_posts()): the_post();
+            do_action("rab_before_loop");
 
-                            $format     = apply_filters("post_format_default",get_post_format() );
-                            get_template_part( 'content', $format );
+            if(have_posts()):
 
-                        endwhile;
-                        rab_pagination();
+                while(have_posts()): the_post();
 
-                    else :
-                        get_template_part('template/none' );
+                    $format     = apply_filters("post_format_default",get_post_format() );
+                    get_template_part( 'content', $format );
 
-                    endif;
+                endwhile;
+                rab_pagination();
 
-                ?>
-                <?php do_action("rab_after_loop") ?>
+            else :
+                get_template_part('template/none' );
 
-            </div>
+            endif;
 
-        </div>
+            ?>
+            <?php do_action("rab_after_loop") ?>
+
+        </div> <!-- .endtry end !-->
 
     </div>
+
+
 </div> <!-- End main-content!-->
 
 <?php get_footer();?>

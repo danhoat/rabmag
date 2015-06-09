@@ -9,10 +9,12 @@
  * @version     1.6.4
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 
 get_header( 'shop' ); ?>
-	<div class="container">
+
 	<?php
 		/**
 		 * woocommerce_before_main_content hook
@@ -46,6 +48,5 @@ get_header( 'shop' ); ?>
 		 */
 		do_action( 'woocommerce_sidebar' );
 	?>
-	</div>
 
 <?php get_footer( 'shop' ); ?>

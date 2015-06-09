@@ -54,7 +54,9 @@ Class RAB_Site{
 		add_image_size( 'thumbnail-show', '207','207', true );
 		add_theme_support('custom-header');
 		add_theme_support('post-formats');
-		$locations 	= array('header'=>__('Header Menu',RAB_DOMAIN));
+		$locations 	= array(
+			'main_menu' =>__('Main Menu',RAB_DOMAIN),
+			'left_menu' =>__('Left Menu',RAB_DOMAIN) );
 		register_nav_menus( $locations );
 	}
 	function rab_enqueue_scripts(){
