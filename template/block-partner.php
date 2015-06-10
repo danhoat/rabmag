@@ -5,15 +5,15 @@
 
 	// The Loop
 	if ( have_posts() ):
-		echo '<ul>';
+		echo '<div class="row">';
 		while ( have_posts() ) : the_post();
-		    echo '<li>';
+		    echo ' <div class="col-md-3 portfolio-item">';
 		    //the_title();
 		    if(has_post_thumbnail())
 		    	the_post_thumbnail();
-		    echo '</li>';
+		    echo '</div>';
 		endwhile;
-		echo '</ul>';
+		echo '</div>';
 	endif;
 
 	// Reset Query
