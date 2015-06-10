@@ -7,7 +7,7 @@
                             <?php $text = get_option('rab_coppyright_text',true); ?>
                             <div class="entry-post">
                                 <div class="textwidget">
-                                    <p style="text-align: justify;"><?php echo $text;?></p>
+                                    <p style="text-align: justify;"><?php echo html_entity_decode($text);?></p>
                                 </div>
                             </div>
                         </aside>

@@ -58,7 +58,7 @@ Class RAB_Settings extends RAB_Add_Menu_Backend{
 
 					<div class="form-item">
 						<label> Copyright footer</label>
-					 	<textarea type="text"   class="option" name="rab_coppyright_text" /><?php echo $rab_coppyright_text;?></textarea>
+					 	<textarea type="text"   class="option" name="rab_coppyright_text" /><?php echo html_entity_decode($rab_coppyright_text);?></textarea>
 					</div>
 
 					<div class="form-item">
