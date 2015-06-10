@@ -38,8 +38,8 @@
 
         </div> <!-- .endtry end !-->
 
-    </div>
-
+    </div> <!-- end . col-lg-9 !-->
+    <?php get_template_part('template/block-partner' ); ?>
 
 </div> <!-- End main-content!-->
 
