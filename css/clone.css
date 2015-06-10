@@ -195,13 +195,16 @@ a:hover {
     transition: all 350ms;
     opacity: 0;
   }
-  .menu-main .menu-main-menu-container li:hover:after {
+  .menu-main .menu-main-menu-container li:hover:after ,
+  .menu-main .menu-main-menu-container li.current-menu-item:after{
     color: #FF6346;
   }
-  .menu-main .menu-main-menu-container li:hover > a {
+  .menu-main .menu-main-menu-container li:hover > a ,
+  .menu-main .menu-main-menu-container li.current-menu-item a{
     color: #FF6346;
   }
-  .menu-main .menu-main-menu-container li:hover > a:after {
+  .menu-main .menu-main-menu-container li:hover > a:after,
+  .menu-main .menu-main-menu-container li.current-menu-item  > a:after {
     left: 0;
     right: 0;
     opacity: 1;
