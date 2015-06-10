@@ -127,10 +127,6 @@ Class RAB_Site{
 	}
 	public function rab_wp_footer(){
 		wp_enqueue_script('jquery.ajax');
-		//wp_enqueue_script('backbone');
-		//wp_enqueue_script('underscore');
-		//wp_enqueue_script('plupload');
-		//wp_enqueue_script('rab',get_stylesheet_directory_uri().'/js/rab.js',array('backbone','underscore','plupload'));
 		$http  = is_ssl() ? 'https'  : 'http';
 		wp_enqueue_script('bootstrap-js',get_stylesheet_directory_uri().'/js/bootstrap.min.js');
 		wp_enqueue_style('google-fonts',$http.'://fonts.googleapis.com/css?family=PT+Sans+Narrow');
