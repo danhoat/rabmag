@@ -27,7 +27,7 @@ Class RAB_Site{
 		add_action($hook, array($this, $function_to_add), $priority, $accepted_args);
 	}
 	public function add_filter( $tag, $function_to_add, $priority = 10, $accepted_args =1 ){
-		add_filter( $tag, array($this, $function_to_add), $priority, $accepted_args );
+		add_filter( $tag, array( $this, $function_to_add), $priority, $accepted_args );
 	}
 	public function __construct(){
 		$this->options = RAB_Option::get_option();
@@ -100,9 +100,9 @@ Class RAB_Site{
 		ob_start();
 		// should move count post to template_redirect.
 		// tag : should_move
-		if(is_singular('post') || is_singular('product')){
-			$this->rab_process_single();
-		}
+		// if(is_singular('post') || is_singular('product')){
+		// 	$this->rab_process_single();
+		// }
 	}
 	public function rab_wp_head(){
 
@@ -110,15 +110,16 @@ Class RAB_Site{
 		echo stripslashes($this->options['site_google_script']);
 		?>
 
-		<style type="text/css">
-		body p,body,body .post-content{
-				font-family: <?php echo $this->options['site_google_font']['title']?>,Arial,Verdana,sans-serif;
-				color: #333;
-				font-size: 14px;
-				outline-color: #333;
-			}
-		</style>
+			<style type="text/css">
+			body p,body,body .post-content{
+					font-family: <?php echo $this->options['site_google_font']['title']?>,Arial,Verdana,sans-serif;
+					color: #333;
+					font-size: 14px;
+					outline-color: #333;
+				}
+			</style>
 		<?php
+
 			wp_enqueue_style('bootraps-css', get_stylesheet_directory_uri().'/css/bootstrap.css');
 			wp_enqueue_style('bootraps-grid', get_stylesheet_directory_uri().'/css/grid.css');
 			wp_enqueue_style('front-rab', get_stylesheet_directory_uri().'/font/css/font-awesome.min.css');
