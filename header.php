@@ -16,8 +16,8 @@
   	<body <?php body_class();?>>
   	<div class="main-header header-site">
          <div class="container">
-          <?php if ( !empty( get_header_image() )) { ?>
-            <img src="<?php echo( get_header_image() ); ?>" alt="<?php echo( get_bloginfo( 'title' ) ); ?>" />
+          <?php if (  get_header_image()  != '' ) { ?>
+            <img src="<?php echo get_header_image() ; ?>" alt="<?php echo( get_bloginfo( 'title' ) ); ?>" />
           <?php } ?>
          </div>
          <nav class="menu-main">
