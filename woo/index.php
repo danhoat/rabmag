@@ -1,5 +1,6 @@
 <?php
 if(class_exists('WooCommerce')){
+
 	class RAB_Woo{
 		function __construct(){
 			add_filter( "pre_get_posts", array($this,'pre_get_posts'), 10000 );
@@ -108,8 +109,7 @@ if(class_exists('WooCommerce')){
 		    		$query->set("order","ASC");
 		    		break;
 
-
-		    	case 'price-desc' :    	
+		    	case 'price-desc' :
 		    		$query->set("orderby","meta_value_num");
 		    		$query->set("meta_key","_price");
 		    		$query->set("order","DESC");

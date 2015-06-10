@@ -36,7 +36,13 @@ Class RAB_Site{
 		$this->add_action( 'init','rab_init');
 		$this->add_action( 'wp_head', 'rab_wp_head');
 		$this->add_action( 'wp_footer', 'rab_wp_footer');
+		/*
+		 * Scrip hook and aceed
+		 */
+
 		$this->add_action( 'wp_enqueue_scripts', 'rab_enqueue_scripts');
+		$this->add_action( 'wp_print_scripts', 'rab_deenqueue_scripts');
+		/** END SCRIPT  */
 
 		$this->add_action( 'widgets_init', 'rab_widgets_init');
 		$this->add_filter( 'post_thumbnail_html', 'rab_thumbnail_html', 10, 3 );
@@ -60,22 +66,34 @@ Class RAB_Site{
 			'left_menu' =>__('Left Menu',RAB_DOMAIN) );
 		register_nav_menus( $locations );
 	}
-	function rab_enqueue_scripts(){
-		wp_enqueue_style('rab-style', get_stylesheet_uri() );
-		//wp_register_script('jquery.ajax','http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js',array(),false,false);
-		//wp_enqueue_script('jquery.ajax');
-	}
-	function rab_init(){
-		// should move js
-		//wp_register_script('rab',TEMPLATEURL.'/js/rab.js');
+
+	/**
+	 * deenque some js  default file of WordPress.
+	 * @author danng
+	 * @version 1.0
+	 * @return remove js from enqueue array
+	 */
+	function rab_deenqueue_scripts(){
 		wp_dequeue_script('jquery');
+	}
+	/**
+	 * register new script, style and enquee js to theme
+	 * @author danng
+	 * @version 1.0
+	 * @return  add js to enquery array.
+	 */
+	function rab_enqueue_scripts(){
+
 		wp_register_script('jquery.ajax','http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js',array(),false,false);
-		//
-		//wp_register_script('jquery.easing',TEMPLATEURL.'/js/jquery.easing.js', array('jquery'));
+
 		wp_register_script('jquery.flexslider',TEMPLATEURL.'/js/jquery.flexslider.js',array('jquery'));
 		wp_register_script('demo',TEMPLATEURL.'/js/demo.js',array('jquery','jquery.flexslider'));
 		wp_register_style('flex.slider',TEMPLATEURL.'/css/flexslider.css');
-		//wp_register_style('flex.demo',TEMPLATEURL.'/css/demo.css');
+
+		wp_enqueue_style('rab-style', get_stylesheet_uri() );
+
+	}
+	function rab_init(){
 
 		load_textdomain('RAB_DOMAIN', get_template_directory().'/lang/vi_VI.mo');
 		rab_register_post_type();
