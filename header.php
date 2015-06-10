@@ -16,7 +16,7 @@
   	<body <?php body_class();?>>
   	<div class="main-header header-site">
          <div class="container">
-          <?php if(!empty($get_header_image)) { ?>
+          <?php if ( !empty( get_header_image() )) { ?>
             <img src="<?php echo( get_header_image() ); ?>" alt="<?php echo( get_bloginfo( 'title' ) ); ?>" />
           <?php } ?>
          </div>
