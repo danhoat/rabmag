@@ -37,3 +37,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	padding-right: 0 !important;
 	padding-top: 0 !important;
 }
+.block-partner img{
+	width: 100%;
+	height: 150px;
+}

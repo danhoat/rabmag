@@ -1,6 +1,6 @@
 <?php
 
-register_sidebar( array(
+	register_sidebar( array(
 		'name'          => __( 'Main  Sidebar', 'rabsite' ),
 		'id'            => 'main',
 		'description'   => __( 'Main sidebar that appears on the left.', 'rabsite' ),
@@ -10,7 +10,7 @@ register_sidebar( array(
 		'after_title'   => '</h5>',
 	) );
 
-register_sidebar( array(
+	register_sidebar( array(
 		'name'          => __( 'Top header  sidebar', 'rabsite' ),
 		'id'            => 'header',
 		'description'   => __( 'Header page.', 'twentyfourteen' ),
@@ -20,7 +20,7 @@ register_sidebar( array(
 		'after_title'   => '</h5>',
 	) );
 
-register_sidebar( array(
+	register_sidebar( array(
 		'name'          => __( 'Top Content', 'rabsite' ),
 		'id'            => 'top_content',
 		'description'   => __( 'Top content.', 'rabsite' ),
@@ -31,13 +31,22 @@ register_sidebar( array(
 		)
 	);
 
-register_sidebar( array(
+	register_sidebar( array(
 		'name'          => __( 'Footer Sidebar', 'rabsite' ),
 		'id'            => 'footer',
 		'description'   => __( 'Main sidebar that appears on the bottom content.', 'rabsite' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s col-sm-4">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h5 class="widget-title">',
+		'after_title'   => '</h5>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Footer Sidebar', 'rabsite' ),
+		'id'            => 'footer',
+		'description'   => __( 'Footer sidebar that appears on footer.', 'rabsite' ),
+		'before_widget' => '<div id="%1$s" class="col-md-2 col-sm-4 col-xs-6 widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h5 class="title-widget">',
 		'after_title'   => '</h5>',
 	) );
 

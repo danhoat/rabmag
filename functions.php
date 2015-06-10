@@ -97,7 +97,7 @@ Class RAB_Site{
 
 		load_textdomain('RAB_DOMAIN', get_template_directory().'/lang/vi_VI.mo');
 		rab_register_post_type();
-		ob_start();
+		//ob_start();
 		// should move count post to template_redirect.
 		// tag : should_move
 		// if(is_singular('post') || is_singular('product')){

@@ -5,12 +5,12 @@
 
 	// The Loop
 	if ( have_posts() ):
-		echo '<div class="row">';
+		echo '<div class="row block-partner">';
 		while ( have_posts() ) : the_post();
 		    echo ' <div class="col-md-3 portfolio-item">';
 		    //the_title();
 		    if(has_post_thumbnail())
-		    	the_post_thumbnail();
+		    	the_post_thumbnail('medium');
 		    echo '</div>';
 		endwhile;
 		echo '</div>';
