@@ -3,7 +3,7 @@
 define('TEMPLATEURL', get_bloginfo('template_url') );
 define('TEMPLATE_PATH',get_template_directory());
 if(!defined('RAB_DOMAIN'))
-define('RAB_DOMAIN','rabtheme');
+define('RAB_DOMAIN','RAB_DOMAIN');
 
 require get_template_directory() . '/inc/global.php';
 require get_template_directory() . '/class/class_post.php';

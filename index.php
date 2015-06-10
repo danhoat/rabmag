@@ -17,7 +17,7 @@
                 echo '</div>';
             }
             do_action("rab_before_loop");
-
+            _e('test language','RAB_DOMAIN');
             if(have_posts()):
 
                 while(have_posts()): the_post();
