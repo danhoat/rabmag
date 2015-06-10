@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: vina\n"
-"POT-Creation-Date: 2015-06-10 07:08+0700\n"
-"PO-Revision-Date: 2015-06-10 07:09+0700\n"
+"POT-Creation-Date: 2015-06-10 07:19+0700\n"
+"PO-Revision-Date: 2015-06-10 07:21+0700\n"
 "Last-Translator: dan <danng@gmail.com>\n"
 "Language-Team: rab <danhoat@gmail.com>\n"
 "Language: vi_VN\n"
@@ -18,7 +18,7 @@ msgstr ""
 
 #: admin/functions.php:89
 msgid "Uplaod file fail"
-msgstr ""
+msgstr "Upload lỗi"
 
 #: admin/functions.php:95
 msgid "Uplaoded file success"
@@ -28,7 +28,7 @@ msgstr ""
 msgid "You don't allow access!"
 msgstr ""
 
-#: admin/functions.php:138
+#: admin/functions.php:138 admin/settings.php:7 admin/settings.php:8
 msgid "Rab Settings"
 msgstr "Cài đặt"
 
@@ -188,14 +188,12 @@ msgid "Reply"
 msgstr ""
 
 #: inc/global.php:15 inc/global.php:17 inc/global.php:18
-#, fuzzy
 msgid "Partners"
-msgstr "cộng sự"
+msgstr "Đối tác"
 
 #: inc/global.php:16
-#, fuzzy
 msgid "Partner"
-msgstr "cộng sự"
+msgstr "Đối tác"
 
 #: inc/global.php:19
 #, fuzzy
@@ -220,7 +218,7 @@ msgstr ""
 
 #: inc/global.php:24
 msgid "All Partners"
-msgstr "cộng sự"
+msgstr "Đối tác"
 
 #: inc/global.php:25
 msgid "Search Partners"

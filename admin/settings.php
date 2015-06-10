@@ -4,8 +4,8 @@ Class RAB_Settings extends RAB_Add_Menu_Backend{
 
 	public function __construct(){
 		$args = array(
-		  		'page_title' 	=> 'Rab Settings',
-		  		'menu_title' 	=> 'Rab Settings',
+		  		'page_title' 	=> __('Rab Settings',RAB_DOMAIN),
+		  		'menu_title' 	=> __('Rab Settings',RAB_DOMAIN),
 		  		'slug' 			=> 'rab-settings',		  		
 	  		);
 		parent::__construct($args);				
