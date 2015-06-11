@@ -23,47 +23,7 @@
                 the_content(); 
                 ?>
                 <div class="post-detail row">
-                    <form role="form">
-                        <div class="form-group">
-                            <div class="col-xs-2">
-                                <label for="email">Ho ten:</label>
-                            </div>
-                            <div class="col-xs-9">
-                                <input type="email" class="form-control" id="email">
-                            </div>
-                        </div>
-                         <div class="form-group">
-                            <div class="col-xs-2">
-                                <label for="email">Dia chi:</label>
-                            </div>
-                            <div class="col-xs-9">
-                                <input type="email" class="form-control" id="email">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-xs-2">
-                                <label for="pwd">Email :</label>
-                            </div>
-                            <div class="col-xs-9">
-                                <input type="password" class="form-control" id="pwd">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-xs-2">
-                                <label for="pwd">Nội dung</label>
-                            </div>
-                            <div class="col-xs-9">
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-xs-9">
-                            </div>
-                            <div class="col-xs-2">
-                                <button type="submit" class="btn btn-default">Submit</button>
-                            </div>
-                        </div>
-                    </form>
+                    <?php get_template_part('template/contact-form');?>
                 </div>
             <?php
             else :

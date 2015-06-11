@@ -46,3 +46,10 @@ body{
 	margin: 0 !important;
 	padding: 0 !important;
 }
+body .form-group input.form-control{
+	height: 40px;
+	border-radius: 3px;
+}
+body .form-group  textarea{
+	border-radius: 3px;
+}
