@@ -33,7 +33,9 @@ Class RAB_Site{
 		$this->options = RAB_Option::get_option();
 
 		$this->add_action( 'after_setup_theme', 'after_setup_rabtheme' );
-		$this->add_action( 'init','rab_init');
+		$this->add_action( 'init','rab_init_first', 1);
+		$this->add_action( 'init','rab_init_second', 2);
+		$this->add_action( 'init','rab_init_thirst', 2);
 		$this->add_action( 'wp_head', 'rab_wp_head');
 		//$this->add_action( 'wp_footer', 'rab_wp_footer');
 		/*
@@ -98,11 +100,19 @@ Class RAB_Site{
 		wp_enqueue_style('rab-style', get_stylesheet_uri() );
 
 	}
-	function rab_init(){
+
+	function rab_init_first(){
 
 		load_textdomain('RAB_DOMAIN', get_template_directory().'/lang/vi_VI.mo');
 
+	}
+
+	function rab_init_second(){
+
 		rab_register_post_type();
+	}
+
+	function rab_init_thirst(){
 
 	}
 	/**
