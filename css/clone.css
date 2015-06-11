@@ -600,7 +600,7 @@ a:hover {
   display: block;
   white-space: nowrap;
   color: #949595;
-  background: url("../img/icon-menu.png") no-repeat scroll 0px 10px transparent;
+  background: url("../images/icon-menu.png") no-repeat scroll 0px 10px transparent;
   line-height: 26px;
   padding: 0px 0px 0px 15px;
 }
@@ -1357,6 +1357,7 @@ body.woocommerce .onsale:after {
   background-color: white;
   border: 1px solid #efefef;
   padding: 15px;
+   text-align: justify;
 }
 .main-page .entry-title {
   color: #FC6346;

@@ -1,16 +1,23 @@
+<?php
+
+  /**
+  * Template Name: Register Page Template
+  */
+?>
+
   <?php get_header();?>
     <div class="container main-wrap">
         <div class="main-content">
             <div id="main-content" class="col-sm-8 ">
                 <div class="page-content row">
-                   <?php 
-                   the_post();
-                   echo '<h1 class="title page-title">'.get_the_title().'</h1>';
-                   echo '<div class="post-detail">';
+                   <?php
+                    the_post();
+                    echo '<h1 class="title page-title">'.get_the_title().'</h1>';
+                    echo '<div class="post-detail">';
                     the_content();
-                   echo '</div>';
+                    echo '</div>';
                    ?>
-                   
+
                 </div>
                 <?php
                 if( is_active_sidebar('sidebar-content') )
