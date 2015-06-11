@@ -10,20 +10,15 @@
     <?php get_sidebar();?>
     <div class="col-lg-9 main-content">
         <div class="entry-page">
+
             <?php
 
             do_action("rab_before_loop");
 
             if(have_posts()):
-
-                while(have_posts()): the_post();
-
-                    $format     = apply_filters("post_format_default",get_post_format() );
-                    get_template_part( 'content', $format );
-
-                endwhile;
-                rab_pagination();
-
+                echo '<h2>'.get_the_title().'</h2>';
+                the_post();
+                the_content();
             else :
                 get_template_part('template/none' );
 
