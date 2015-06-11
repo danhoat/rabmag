@@ -29,23 +29,22 @@ Class RAB_Site{
 	public function add_filter( $tag, $function_to_add, $priority = 10, $accepted_args =1 ){
 		add_filter( $tag, array( $this, $function_to_add), $priority, $accepted_args );
 	}
-
 	public function __construct(){
-
 		$this->options = RAB_Option::get_option();
 
 		$this->add_action( 'after_setup_theme', 'after_setup_rabtheme' );
-		$this->add_action( 'init','rab_init_first', 1);
-		$this->add_action( 'init','rab_init_second', 2);
-		$this->add_action( 'init','rab_init_thirst', 2);
-		$this->add_action( 'wp_head', 'rab_wp_head');
+		$this->add_action( 'init','rab_init_first', 1 );
+		$this->add_action( 'init','rab_init_second', 2 );
+		$this->add_action( 'init','rab_init_thirst', 3 );
+		$this->add_action( 'wp_head', 'rab_wp_head' );
+
 		//$this->add_action( 'wp_footer', 'rab_wp_footer');
 		/*
 		 * Scrip hook and access
 		 */
 
-		//$this->add_action( 'wp_enqueue_scripts', 'rab_enqueue_scripts' );
-		//$this->add_action( 'wp_print_scripts', 'rab_deenqueue_scripts' );
+		$this->add_action( 'wp_enqueue_scripts', 'rab_enqueue_scripts' );
+		$this->add_action( 'wp_print_scripts', 'rab_deenqueue_scripts' );
 		/** END SCRIPT  */
 
 		$this->add_action( 'widgets_init', 'rab_widgets_init' );
@@ -107,10 +106,10 @@ Class RAB_Site{
 
 		load_textdomain('RAB_DOMAIN', get_template_directory().'/lang/vi_VI.mo');
 
+		rab_register_post_type();
 	}
 
-	function rab_init_second(){
-
+	function rab_init_sencond(){
 		rab_register_post_type();
 	}
 
