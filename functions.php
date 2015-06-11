@@ -109,7 +109,7 @@ Class RAB_Site{
 		rab_register_post_type();
 	}
 
-	function rab_init_sencond(){
+	function rab_init_second(){
 		rab_register_post_type();
 	}
 
