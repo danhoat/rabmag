@@ -29,7 +29,9 @@ Class RAB_Site{
 	public function add_filter( $tag, $function_to_add, $priority = 10, $accepted_args =1 ){
 		add_filter( $tag, array( $this, $function_to_add), $priority, $accepted_args );
 	}
+
 	public function __construct(){
+
 		$this->options = RAB_Option::get_option();
 
 		$this->add_action( 'after_setup_theme', 'after_setup_rabtheme' );
