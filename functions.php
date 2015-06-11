@@ -35,7 +35,7 @@ Class RAB_Site{
 		$this->add_action( 'after_setup_theme', 'after_setup_rabtheme');
 		$this->add_action( 'init','rab_init');
 		$this->add_action( 'wp_head', 'rab_wp_head');
-		$this->add_action( 'wp_footer', 'rab_wp_footer');
+		//$this->add_action( 'wp_footer', 'rab_wp_footer');
 		/*
 		 * Scrip hook and aceed
 		 */

@@ -60,7 +60,7 @@ class RAB_Slider_Widget extends WP_Widget {
 		$widget_ops = array('classname' => 'rab_slider', 'description' => __( 'A list of your site&#8217;s Pages.',RAB_DOMAIN) );
 		parent::__construct('slider', __('Rap slider 1',RAB_DOMAIN), $widget_ops);
 
-		add_action('wp_footer',array($this,'add_flex_script_footer'));
+		//add_action('wp_footer',array($this,'add_flex_script_footer'));
 	}
 	function add_flex_script_footer(){
 
