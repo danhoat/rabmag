@@ -48,7 +48,12 @@ Class RAB_Site{
 		$this->add_filter( 'post_thumbnail_html', 'rab_thumbnail_html', 10, 3 );
 
 	}
+	/**
+	 * catch hook after_setup_theme and process.
+	 * @return [type] [description]
+	 */
 	function after_setup_rabtheme(){
+
 		add_theme_support( 'less', array(
 		    'enable'  => true,
 		    'develop' => true,
@@ -96,13 +101,9 @@ Class RAB_Site{
 	function rab_init(){
 
 		load_textdomain('RAB_DOMAIN', get_template_directory().'/lang/vi_VI.mo');
+
 		rab_register_post_type();
-		//ob_start();
-		// should move count post to template_redirect.
-		// tag : should_move
-		// if(is_singular('post') || is_singular('product')){
-		// 	$this->rab_process_single();
-		// }
+
 	}
 	public function rab_wp_head(){
 
