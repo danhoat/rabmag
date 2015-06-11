@@ -37,11 +37,11 @@ Class RAB_Site{
 		$this->add_action( 'wp_head', 'rab_wp_head');
 		//$this->add_action( 'wp_footer', 'rab_wp_footer');
 		/*
-		 * Scrip hook and aceed
+		 * Scrip hook and access
 		 */
 
-		$this->add_action( 'wp_enqueue_scripts', 'rab_enqueue_scripts' );
-		$this->add_action( 'wp_print_scripts', 'rab_deenqueue_scripts' );
+		//$this->add_action( 'wp_enqueue_scripts', 'rab_enqueue_scripts' );
+		//$this->add_action( 'wp_print_scripts', 'rab_deenqueue_scripts' );
 		/** END SCRIPT  */
 
 		$this->add_action( 'widgets_init', 'rab_widgets_init' );
@@ -245,23 +245,4 @@ function rab_access_upload_file($file, $author = 0, $parent=0, $mimes=array() ){
 
 }
 
-function rab_pagination(){
-    global $wp_query;
-
-    $big = 999999999; // need an unlikely integer
-    echo '<nav class="woocommerce-pagination">';
-
-        echo paginate_links( apply_filters( 'woocommerce_pagination_args', array(
-            'base'         => esc_url( str_replace( 999999999, '%#%', remove_query_arg( 'add-to-cart', get_pagenum_link( 999999999, false ) ) ) ),
-            'format'       => '',
-            'current'      => max( 1, get_query_var( 'paged' ) ),
-            'total'        => $wp_query->max_num_pages,
-            'prev_text'    => '&larr;',
-            'next_text'    => '&rarr;',
-            'type'         => 'list',
-            'end_size'     => 3,
-            'mid_size'     => 3
-        ) ) );
-    echo '</nav>';
-}
 ?>

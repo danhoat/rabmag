@@ -1,4 +1,5 @@
 <?php
+
 	/**
 	 * define all global method of rabtheme.
 	 */
@@ -9,7 +10,7 @@
 
 	if( !function_exists( 'rab_register_post_type' ) ) :
 
-		function rab_register_post_type(){
+		function rab_register_post_type() {
 
 			$labels = array(
 				'name'               => _x( 'Partners', 'post type general name', RAB_DOMAIN ),
@@ -47,4 +48,24 @@
 		}
 
 	endif;
+
+	function rab_pagination(){
+	    global $wp_query;
+
+	    $big = 999999999; // need an unlikely integer
+	    echo '<nav class="woocommerce-pagination">';
+
+	        echo paginate_links( apply_filters( 'woocommerce_pagination_args', array(
+	            'base'         => esc_url( str_replace( 999999999, '%#%', remove_query_arg( 'add-to-cart', get_pagenum_link( 999999999, false ) ) ) ),
+	            'format'       => '',
+	            'current'      => max( 1, get_query_var( 'paged' ) ),
+	            'total'        => $wp_query->max_num_pages,
+	            'prev_text'    => '&larr;',
+	            'next_text'    => '&rarr;',
+	            'type'         => 'list',
+	            'end_size'     => 3,
+	            'mid_size'     => 3
+	        ) ) );
+	    echo '</nav>';
+	}
 ?>
