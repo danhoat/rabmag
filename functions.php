@@ -32,7 +32,7 @@ Class RAB_Site{
 	public function __construct(){
 		$this->options = RAB_Option::get_option();
 
-		$this->add_action( 'after_setup_theme', 'after_setup_rabtheme');
+		$this->add_action( 'after_setup_theme', 'after_setup_rabtheme' );
 		$this->add_action( 'init','rab_init');
 		$this->add_action( 'wp_head', 'rab_wp_head');
 		//$this->add_action( 'wp_footer', 'rab_wp_footer');
@@ -40,11 +40,11 @@ Class RAB_Site{
 		 * Scrip hook and aceed
 		 */
 
-		$this->add_action( 'wp_enqueue_scripts', 'rab_enqueue_scripts');
-		$this->add_action( 'wp_print_scripts', 'rab_deenqueue_scripts');
+		$this->add_action( 'wp_enqueue_scripts', 'rab_enqueue_scripts' );
+		$this->add_action( 'wp_print_scripts', 'rab_deenqueue_scripts' );
 		/** END SCRIPT  */
 
-		$this->add_action( 'widgets_init', 'rab_widgets_init');
+		$this->add_action( 'widgets_init', 'rab_widgets_init' );
 		$this->add_filter( 'post_thumbnail_html', 'rab_thumbnail_html', 10, 3 );
 
 	}
@@ -105,6 +105,11 @@ Class RAB_Site{
 		rab_register_post_type();
 
 	}
+	/**
+	 * add style into header theme
+	 * render like html
+	 */
+
 	public function rab_wp_head(){
 
 		wp_enqueue_style('google-font',$this->options['site_google_font']['url']);
@@ -151,8 +156,7 @@ Class RAB_Site{
 	 */
 
 	function rab_widgets_init(){
-		//register_widget( 'RAB_Slider_Widget' );
-		//WC_Widget_Product_Categories
+
 		register_widget( 'RAB_Widget_Product_Categories');
 		register_widget( 'RAB_Facebook_Fan_Page');
 		register_widget( 'RAB_Twitter_Time_line');
