@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: vina\n"
-"POT-Creation-Date: 2015-06-10 07:19+0700\n"
-"PO-Revision-Date: 2015-06-10 07:21+0700\n"
+"POT-Creation-Date: 2015-06-11 21:48+0700\n"
+"PO-Revision-Date: 2015-06-11 21:48+0700\n"
 "Last-Translator: dan <danng@gmail.com>\n"
 "Language-Team: rab <danhoat@gmail.com>\n"
 "Language: vi_VN\n"
@@ -28,7 +28,7 @@ msgstr ""
 msgid "You don't allow access!"
 msgstr ""
 
-#: admin/functions.php:138 admin/settings.php:7 admin/settings.php:8
+#: admin/functions.php:138 admin/settings.php:8 admin/settings.php:9
 msgid "Rab Settings"
 msgstr "Cài đặt"
 
@@ -45,16 +45,20 @@ msgstr ""
 msgid "About Us"
 msgstr ""
 
-#: admin/options.php:60
+#: admin/options.php:62
 msgid "Save option success"
 msgstr ""
 
-#: admin/options.php:116
+#: admin/options.php:118
 msgid "Save slider successfull!"
 msgstr ""
 
 #: admin/settings.php:35
 msgid "Website title"
+msgstr ""
+
+#: admin/settings.php:65
+msgid "Google Font For  Title"
 msgstr ""
 
 #: admin/slider.php:41
@@ -125,19 +129,19 @@ msgstr ""
 msgid "Tagged :"
 msgstr ""
 
-#: functions.php:59
+#: functions.php:73
 msgid "Main Menu"
 msgstr ""
 
-#: functions.php:60
+#: functions.php:74
 msgid "Left Menu"
 msgstr ""
 
-#: functions.php:219
+#: functions.php:250
 msgid "There was a problem with your upload."
 msgstr ""
 
-#: functions.php:223
+#: functions.php:254
 msgid "Where is the file?"
 msgstr ""
 
@@ -187,54 +191,54 @@ msgstr ""
 msgid "Reply"
 msgstr ""
 
-#: inc/global.php:15 inc/global.php:17 inc/global.php:18
+#: inc/global.php:16 inc/global.php:18 inc/global.php:19
 msgid "Partners"
 msgstr "Đối tác"
 
-#: inc/global.php:16
+#: inc/global.php:17
 msgid "Partner"
 msgstr "Đối tác"
 
-#: inc/global.php:19
+#: inc/global.php:20
 #, fuzzy
 msgid "Add New"
 msgstr "Thêm đối tác"
 
-#: inc/global.php:20
+#: inc/global.php:21
 msgid "Add New Partner"
 msgstr "Thêm đối tác"
 
-#: inc/global.php:21
+#: inc/global.php:22
 msgid "New Partner"
 msgstr ""
 
-#: inc/global.php:22
+#: inc/global.php:23
 msgid "Edit Partner"
 msgstr ""
 
-#: inc/global.php:23
+#: inc/global.php:24
 msgid "View Partner"
 msgstr ""
 
-#: inc/global.php:24
+#: inc/global.php:25
 msgid "All Partners"
 msgstr "Đối tác"
 
-#: inc/global.php:25
+#: inc/global.php:26
 msgid "Search Partners"
 msgstr ""
 
-#: inc/global.php:26
+#: inc/global.php:27
 msgid "Parent Partners:"
 msgstr ""
 
-#: inc/global.php:27
+#: inc/global.php:28
 msgid "No partners found."
 msgstr ""
 
-#: inc/global.php:28
+#: inc/global.php:29
 msgid "No partners found in Trash."
-msgstr ""
+msgstr "Không tìm thấy đối tác nào"
 
 #: inc/themes.php:83
 msgid "Sticky"
@@ -264,7 +268,7 @@ msgstr ""
 msgid "Top content."
 msgstr ""
 
-#: inc/widgets.php:35
+#: inc/widgets.php:35 inc/widgets.php:44
 msgid "Footer Sidebar"
 msgstr ""
 
@@ -272,83 +276,87 @@ msgstr ""
 msgid "Main sidebar that appears on the bottom content."
 msgstr ""
 
-#: inc/widgets.php:51 inc/widgets.php:224 inc/widgets.php:286
+#: inc/widgets.php:46
+msgid "Footer sidebar that appears on footer."
+msgstr ""
+
+#: inc/widgets.php:60 inc/widgets.php:233 inc/widgets.php:295
 msgid "A list of your site&#8217;s Pages."
 msgstr ""
 
-#: inc/widgets.php:52
+#: inc/widgets.php:61
 msgid "Rap slider 1"
 msgstr ""
 
-#: inc/widgets.php:115
+#: inc/widgets.php:124
 msgid "Don't have a slide"
 msgstr ""
 
-#: inc/widgets.php:162
+#: inc/widgets.php:171
 msgid "Select Slider"
 msgstr ""
 
-#: inc/widgets.php:168
+#: inc/widgets.php:177
 msgid "Selected Slider"
 msgstr ""
 
-#: inc/widgets.php:176
+#: inc/widgets.php:185
 msgid "No slider"
 msgstr ""
 
-#: inc/widgets.php:183
+#: inc/widgets.php:192
 msgid "Select type effect"
 msgstr ""
 
-#: inc/widgets.php:186
+#: inc/widgets.php:195
 msgid "Slide"
 msgstr ""
 
-#: inc/widgets.php:187
+#: inc/widgets.php:196
 msgid "Fade"
 msgstr ""
 
-#: inc/widgets.php:194
+#: inc/widgets.php:203
 msgid "Select thumbnail size"
 msgstr ""
 
-#: inc/widgets.php:197
+#: inc/widgets.php:206
 msgid "Full"
 msgstr ""
 
-#: inc/widgets.php:198
+#: inc/widgets.php:207
 msgid "Thumbnail"
 msgstr ""
 
-#: inc/widgets.php:203 inc/widgets.php:268 inc/widgets.php:323
+#: inc/widgets.php:212 inc/widgets.php:277 inc/widgets.php:332
 msgid "Title"
 msgstr ""
 
-#: inc/widgets.php:205
+#: inc/widgets.php:214
 msgid "Speed:"
 msgstr ""
 
-#: inc/widgets.php:209
+#: inc/widgets.php:218
 msgid "Show Nav"
 msgstr ""
 
-#: inc/widgets.php:225
+#: inc/widgets.php:234
 msgid "Facebook Fan Page"
 msgstr ""
 
-#: inc/widgets.php:270
+#: inc/widgets.php:279
 msgid "Facebook Page Url"
 msgstr ""
 
-#: inc/widgets.php:274
+#: inc/widgets.php:283
 msgid "Show Posts"
 msgstr ""
 
-#: inc/widgets.php:287
+#: inc/widgets.php:296
 msgid "Twitter Time Line"
 msgstr ""
 
-#: inc/widgets.php:325
+#: inc/widgets.php:334
 msgid "Twiter name"
 msgstr ""
 

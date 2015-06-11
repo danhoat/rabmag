@@ -13,11 +13,11 @@
 		function rab_register_post_type() {
 
 			$labels = array(
-				'name'               => _x( 'Partners', 'post type general name', RAB_DOMAIN ),
-				'singular_name'      => _x( 'Partner', 'post type singular name', RAB_DOMAIN ),
-				'menu_name'          => _x( 'Partners', 'admin menu', RAB_DOMAIN ),
-				'name_admin_bar'     => _x( 'Partners', 'add new on admin bar', RAB_DOMAIN ),
-				'add_new'            => _x( 'Add New', 'partner', RAB_DOMAIN ),
+				'name'               => __( 'Partners',  RAB_DOMAIN ),
+				'singular_name'      => __( 'Partner',  RAB_DOMAIN ),
+				'menu_name'          => __( 'Partners', RAB_DOMAIN ),
+				'name_admin_bar'     => __( 'Partners',  RAB_DOMAIN ),
+				'add_new'            => __( 'Add New', RAB_DOMAIN ),
 				'add_new_item'       => __( 'Add New Partner', RAB_DOMAIN ),
 				'new_item'           => __( 'New Partner', RAB_DOMAIN ),
 				'edit_item'          => __( 'Edit Partner', RAB_DOMAIN ),
