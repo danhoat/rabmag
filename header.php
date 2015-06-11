@@ -14,26 +14,30 @@
 
 	  	</head>
   	<body <?php body_class();?>>
-  	<div class="main-header header-site">
-         <div class="container">
-          <?php if (  get_header_image()  != '' ) { ?>
-            <img src="<?php echo get_header_image() ; ?>" alt="<?php echo( get_bloginfo( 'title' ) ); ?>" />
-          <?php } ?>
-         </div>
-         <nav class="menu-main">
+        <div class="row full-row top-row">
+            <div class="container">
+                 <div class="row">
+                    <div class="col-lg-12">
+                      <?php if (  get_header_image()  != '' ) { ?>
+                        <img src="<?php echo get_header_image() ; ?>" alt="<?php echo( get_bloginfo( 'title' ) ); ?>" />
+                      <?php } ?>
+                     </div>
+                    </div>
 
-           <div class="container">
-                   <?php wp_nav_menu(array( 'theme_location' => apply_filters( RAB_DOMAIN, 'main_menu' ) ,'menu_class' => 'main-menu' ,'container_class' => 'menu-main-menu-container' ));?>
-           </div>
+          	</div>
+             <nav class="menu-main">
 
-         </nav>
+                       <div class="container">
+                               <?php wp_nav_menu(array( 'theme_location' => apply_filters( RAB_DOMAIN, 'main_menu' ) ,'menu_class' => 'main-menu' ,'container_class' => 'menu-main-menu-container' ));?>
+                       </div>
 
-  	</div>
+                    </nav>
+        </div>
 
-    <?php
-    if(is_active_sidebar('header')):
-        echo '<div class="row">';
-        dynamic_sidebar('header');
-        echo '</div>';
-    endif;
-    ?>
+        <?php
+            if(is_active_sidebar('header')):
+                echo '<div class="row">';
+                dynamic_sidebar('header');
+                echo '</div>';
+            endif;
+        ?>

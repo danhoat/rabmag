@@ -9,7 +9,7 @@
  *
  * @return void
 */
-function rab_post_thumbnail() {
+function rab_post_thumbnail( $type ='thumbnail') {
 	if ( post_password_required() || ! has_post_thumbnail() ) {
 		return;
 	}
@@ -22,7 +22,7 @@ function rab_post_thumbnail() {
 		if ( ( ! is_active_sidebar( 'sidebar-2' ) || is_page_template( 'page-templates/full-width.php' ) ) ) {
 			the_post_thumbnail( 'twentyfourteen-full-width' );
 		} else {
-			the_post_thumbnail();
+			the_post_thumbnail($type);
 		}
 	?>
 	</div>
@@ -32,9 +32,9 @@ function rab_post_thumbnail() {
 	<a class="post-thumbnail" href="<?php the_permalink(); ?>">
 	<?php
 		if ( ( ! is_active_sidebar( 'sidebar-2' ) || is_page_template( 'page-templates/full-width.php' ) ) ) {
-			the_post_thumbnail( 'twentyfourteen-full-width' );
+			the_post_thumbnail( $type );
 		} else {
-			the_post_thumbnail();
+			the_post_thumbnail($type);
 		}
 	?>
 	</a>

@@ -20,7 +20,7 @@
             if(have_posts()):
                 echo '<h2>'.get_the_title().'</h2>';
                 the_post();
-                the_content(); 
+                the_content();
                 ?>
                 <div class="post-detail row">
                     <?php get_template_part('template/contact-form');?>
@@ -43,6 +43,3 @@
 
 <?php get_footer();?>
 
-
-
-                    

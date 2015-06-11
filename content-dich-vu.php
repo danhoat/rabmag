@@ -11,8 +11,11 @@
 ?>
 
 <div id="post-<?php the_ID(); ?>" class="post-item">
-	<?php rab_post_thumbnail(); ?>
-	<header class="entry-header">
+	<div class="col-sm-4">
+	<?php rab_post_thumbnail('medium'); ?>
+	</div>
+	<div class="entry-header col-sm-8">
+
 		<?php if ( in_array( 'category', get_object_taxonomies( get_post_type() ) ) && rab_categorized_blog() ) : ?>
 		<div class="entry-meta">
 			<span class="cat-links"><?php echo get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'twentyfourteen' ) ); ?></span>
@@ -41,7 +44,8 @@
 				edit_post_link( __( 'Edit', 'twentyfourteen' ), '<span class="edit-link">', '</span>' );
 			?>
 		</div><!-- .entry-meta -->
-	</header><!-- .entry-header -->
+
+	</div>
 
 	<?php if ( is_search() ) : ?>
 	<div class="entry-summary">
@@ -50,9 +54,6 @@
 	<?php else : ?>
 	<div class="entry-content">
 		<?php
-			if(has_post_thumbnail())
-				the_post_thumbnail();
-			the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentyfourteen' ) );
 			wp_link_pages( array(
 				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentyfourteen' ) . '</span>',
 				'after'       => '</div>',

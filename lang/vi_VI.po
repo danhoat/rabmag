@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: vina\n"
-"POT-Creation-Date: 2015-06-11 21:48+0700\n"
-"PO-Revision-Date: 2015-06-11 21:48+0700\n"
+"POT-Creation-Date: 2015-06-12 05:36+0700\n"
+"PO-Revision-Date: 2015-06-12 05:36+0700\n"
 "Last-Translator: dan <danng@gmail.com>\n"
 "Language-Team: rab <danhoat@gmail.com>\n"
 "Language: vi_VN\n"
@@ -89,44 +89,44 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: content-post.php:18 content.php:18 template/post.php:18
-#: template/post_.php:19
+#: content-dich-vu.php:21 content-post.php:18 content.php:18
+#: template/post.php:18 template/post_.php:19
 msgid ", "
 msgstr ""
 
-#: content-post.php:37 content.php:37 template/post.php:37
-#: template/post_.php:38
+#: content-dich-vu.php:40 content-post.php:37 content.php:37
+#: template/post.php:37 template/post_.php:38
 msgid "Leave a comment"
 msgstr ""
 
-#: content-post.php:37 content.php:37 template/post.php:37
-#: template/post_.php:38
+#: content-dich-vu.php:40 content-post.php:37 content.php:37
+#: template/post.php:37 template/post_.php:38
 msgid "1 Comment"
 msgstr ""
 
-#: content-post.php:37 content.php:37 template/post.php:37
-#: template/post_.php:38
+#: content-dich-vu.php:40 content-post.php:37 content.php:37
+#: template/post.php:37 template/post_.php:38
 msgid "% Comments"
 msgstr ""
 
-#: content-post.php:41 content.php:41 inc/comments.php:55 template/post.php:41
-#: template/post_.php:42
+#: content-dich-vu.php:44 content-post.php:41 content.php:41
+#: inc/comments.php:55 template/post.php:41 template/post_.php:42
 msgid "Edit"
+msgstr ""
+
+#: content-dich-vu.php:58 content-post.php:55 content.php:55
+#: template/post.php:55 template/post_.php:56
+msgid "Pages:"
+msgstr ""
+
+#: content-dich-vu.php:67 content-post.php:64 content.php:64
+#: template/post.php:64 template/post_.php:65
+msgid "Tagged :"
 msgstr ""
 
 #: content-post.php:53 content.php:53 template/post.php:53
 #: template/post_.php:54
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
-#: content-post.php:55 content.php:55 template/post.php:55
-#: template/post_.php:56
-msgid "Pages:"
-msgstr ""
-
-#: content-post.php:64 content.php:64 template/post.php:64
-#: template/post_.php:65
-msgid "Tagged :"
 msgstr ""
 
 #: functions.php:73
@@ -368,13 +368,13 @@ msgstr ""
 msgid "List Product categories"
 msgstr ""
 
-#: index.php:20
-msgid "test language"
-msgstr "kiểm tra ngôn ngữ"
-
 #: single.php:30
 msgid "Related Post"
 msgstr ""
+
+#: template/block-partner.php:9
+msgid "My Parner"
+msgstr "Đối tác của chúng tôi"
 
 #: template/none.php:12
 msgid "Nothing Found"
@@ -397,3 +397,6 @@ msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
+
+#~ msgid "test language"
+#~ msgstr "kiểm tra ngôn ngữ"
