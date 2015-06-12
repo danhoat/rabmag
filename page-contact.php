@@ -1,7 +1,7 @@
 <?php
 
   /**
-  * Template Name: Register Page Template
+  * Template Name: Contact Page Template
   */
 ?>
 
