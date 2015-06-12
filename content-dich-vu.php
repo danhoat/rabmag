@@ -22,15 +22,17 @@
 		</div>
 		<?php
 			endif;
+		?>
 
+		<div class="entry-meta">
+			<?php
 			if ( is_single() ) :
 				the_title( '<h3 class="entry-title">', '</h3>' );
 			else :
 				the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
 			endif;
-		?>
-
-		<div class="entry-meta">
+			?>
+			<?php the_excerpt(); ?>
 			<?php
 				if ( 'post' == get_post_type() )
 					rab_posted_on();
@@ -44,25 +46,27 @@
 				edit_post_link( __( 'Edit', 'twentyfourteen' ), '<span class="edit-link">', '</span>' );
 			?>
 		</div><!-- .entry-meta -->
+		<?php if ( is_search() ) : ?>
+		<div class="entry-summary">
+			<?php the_excerpt(); ?>
+		</div><!-- .entry-summary -->
+		<?php else : ?>
+		<div class="entry-content">
+			<?php
+				wp_link_pages( array(
+					'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentyfourteen' ) . '</span>',
+					'after'       => '</div>',
+					'link_before' => '<span>',
+					'link_after'  => '</span>',
+				) );
+			?>
+		</div><!-- .entry-content -->
+		<?php endif; ?>
+		<?php  _e('Tagged :', RAB_DOMAIN); the_tags( '<footer class="entry-meta"><span class="tag-links">', '', '</span></footer>' ); ?>
 
 	</div>
 
-	<?php if ( is_search() ) : ?>
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
-	<?php else : ?>
-	<div class="entry-content">
-		<?php
-			wp_link_pages( array(
-				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentyfourteen' ) . '</span>',
-				'after'       => '</div>',
-				'link_before' => '<span>',
-				'link_after'  => '</span>',
-			) );
-		?>
-	</div><!-- .entry-content -->
-	<?php endif; ?>
 
-	<?php  _e('Tagged :', RAB_DOMAIN); the_tags( '<footer class="entry-meta"><span class="tag-links">', '', '</span></footer>' ); ?>
+
+	
 </div><!-- #post-## -->
