@@ -35,7 +35,7 @@ if ( 0 == ( $woocommerce_loop['loop'] - 1 ) % $woocommerce_loop['columns'] || 1 
 if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 	$classes[] = 'last';
 ?>
-<div class = "col-md-3 col-md-main product type-product item-product">
+<div class = "col-md-4 col-md-main product type-product item-product">
 
 	<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
 
@@ -48,7 +48,9 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 			 * @hooked woocommerce_show_product_loop_sale_flash - 10
 			 * @hooked woocommerce_template_loop_product_thumbnail - 10
 			 */
-			do_action( 'woocommerce_before_shop_loop_item_title' );
+			//do_action( 'woocommerce_before_shop_loop_item_title' );
+			rab_post_thumbnail('shop_catalog');
+
 		?>
 
 		<h3><?php the_title(); ?></h3>
@@ -60,11 +62,11 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 			 * @hooked woocommerce_template_loop_rating - 5
 			 * @hooked woocommerce_template_loop_price - 10
 			 */
-			do_action( 'woocommerce_after_shop_loop_item_title' );
+			//do_action( 'woocommerce_after_shop_loop_item_title' );
 		?>
 
 	</a>
 
-	<?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
+	<?php //do_action( 'woocommerce_after_shop_loop_item' ); ?>
 
 </div>

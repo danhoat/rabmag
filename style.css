@@ -34,6 +34,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	width: 100%;
 	height: 150px;
 	max-width: 263px;
+	opacity: 0.9;
 }
 body{
 	margin: 0 !important;
