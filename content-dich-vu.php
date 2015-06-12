@@ -62,7 +62,7 @@
 			?>
 		</div><!-- .entry-content -->
 		<?php endif; ?>
-		<?php  _e('Tagged :', RAB_DOMAIN); the_tags( '<footer class="entry-meta"><span class="tag-links">', '', '</span></footer>' ); ?>
+		<?php  //_e('Tagged :', RAB_DOMAIN); the_tags( '<footer class="entry-meta"><span class="tag-links">', '', '</span></footer>' ); ?>
 
 	</div>
 

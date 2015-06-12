@@ -204,7 +204,9 @@ a:hover {
     color: #FF6346;
   }
   .menu-main .menu-main-menu-container li:hover > a:after,
-  .menu-main .menu-main-menu-container li.current-menu-item  > a:after {
+  .menu-main .menu-main-menu-container li.current-menu-item  > a:after,
+  .menu-main .menu-main-menu-container li.current-post-parent > a:after
+   {
     left: 0;
     right: 0;
     opacity: 1;
