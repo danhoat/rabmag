@@ -44,7 +44,7 @@
 		'name'          => __( 'Footer Sidebar', 'rabsite' ),
 		'id'            => 'footer',
 		'description'   => __( 'Footer sidebar that appears on footer.', 'rabsite' ),
-		'before_widget' => '<div id="%1$s" class="col-md-2 col-sm-4 col-xs-6 widget %2$s">',
+		'before_widget' => '<div id="%1$s" class="col-md-2 col-sm-4 col-xs-12 col-sm-6 widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h5 class="title-widget">',
 		'after_title'   => '</h5>',
