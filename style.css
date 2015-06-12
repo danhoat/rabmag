@@ -49,6 +49,9 @@ body .form-group  textarea{
 .block-partner h3{
 	font-size: 15px;
 }
+.block-partner .col-xs-12{
+	text-align: center;
+}
 div.full-row{
 	margin: 0 !important;
 }

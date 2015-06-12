@@ -6,11 +6,11 @@
 	// The Loop
 	if ( have_posts() ):
 		echo '<div class ="row block-partner">';
-		echo '<div class ="col-lg-12">';
+		echo '<div class ="col-lg-12 col-sm-12 col-xs-12 ">';
 		echo '<h3 class ="title main-title">'.__('My Parner',RAB_DOMAIN).'</h2>';
 		echo '</div>';
 		while ( have_posts() ) : the_post();
-		    echo ' <div class="col-md-3 portfolio-item">';
+		    echo ' <div class="col-md-3 col-xs-12 col-sm-6 portfolio-item">';
 		    //the_title();
 		    if(has_post_thumbnail())
 		    	the_post_thumbnail('medium');
