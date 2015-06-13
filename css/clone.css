@@ -382,10 +382,14 @@ a:hover {
     margin-top: 15px;
   }
 }
-.main-sidebar .widget_nav_menu {
-  margin-right: -15px;
+.main-sidebar .widget {
+  margin-right: 0px;
   position: relative;
   background: white;
+  overflow: hidden;
+}
+.main-sidebar .widget div.textwidget{
+  padding-left: 15px;
 }
 @media (max-width: 1199px) {
   .main-sidebar .widget_nav_menu {
@@ -578,7 +582,7 @@ a:hover {
   line-height: normal;
   text-transform: uppercase;
   font-family: "museo300", sans-serif;
-  padding: 10px 15px 0 15px;
+  padding: 10px 15px 0 0px;
   font-size: 16px;
   background: none repeat scroll 0% 0% transparent;
   border: medium none;
@@ -1358,8 +1362,8 @@ body.woocommerce .onsale:after {
 .main-page .entry-page {
   background-color: white;
   border: 1px solid #efefef;
-  padding: 15px;
-   text-align: justify;
+  padding: 0 15px 15px 15px;
+  text-align: justify;
 }
 .main-page .entry-title {
   color: #FC6346;
@@ -1458,35 +1462,29 @@ body.woocommerce .onsale:after {
   margin-top: auto;
 }
 .page-header .page-title {
-  color: #5E90AF;
+  color: #FF6F00 ;
   font-size: 22px;
   text-transform: uppercase;
 }
-.sidebar-col {
-  background-color: white;
-  border: 1px solid #EBEEF2;
-  margin-right: -15px;
-  padding: 15px;
-  margin-top: 15px;
-  padding-top: 0;
+.main-sidebar {
+  padding-right: 0;
 }
 @media (max-width: 1170px) {
   .sidebar-col {
     margin-right: 0;
+
   }
 }
-.sidebar-col .widget-title {
+.main-sidebar .widget-title {
   font-size: 16px;
   border: medium none;
   text-transform: uppercase;
-  padding: 10px 15px;
+  padding: 13px 15px;
   font-weight: 400;
   color: #FFF;
-  background-color: #5E90AF;
+  background-color: #FF6F00 ;
   letter-spacing: normal;
   position: relative;
-  margin-left: -15px;
-  margin-right: -15px;
   margin-bottom: 15px;
 }
 .m-t-15 {

@@ -85,4 +85,19 @@ a.post-thumbnail{
 }
 .post-thumbnail img:hover{
  	transform: matrix(1.2, 0, 0, 1.2, 0, 0);
+ 	opacity: 0.8;
+}
+h3.product-title{
+	font-size: 16px;
+	text-transform: uppercase;
+	margin-top: 0;
+}
+.block-partner h3{
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.block-partner  .col-lg-12{
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 0 15px;
 }
