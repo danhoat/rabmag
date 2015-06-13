@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: vina\n"
-"POT-Creation-Date: 2015-06-13 06:27+0700\n"
-"PO-Revision-Date: 2015-06-13 06:28+0700\n"
+"POT-Creation-Date: 2015-06-13 07:08+0700\n"
+"PO-Revision-Date: 2015-06-13 07:08+0700\n"
 "Last-Translator: dan <danng@gmail.com>\n"
 "Language-Team: rab <danhoat@gmail.com>\n"
 "Language: vi_VN\n"
@@ -129,87 +129,87 @@ msgstr ""
 msgid "Tagged :"
 msgstr ""
 
-#: functions.php:76
+#: functions.php:78
 msgid "Main Menu"
 msgstr ""
 
-#: functions.php:77
+#: functions.php:79
 msgid "Left Menu"
 msgstr ""
 
-#: functions.php:104
+#: functions.php:106
 msgid "This field is required 123"
 msgstr "Không được để rỗng"
 
-#: functions.php:105
+#: functions.php:107
 msgid "Please fix this field."
 msgstr ""
 
-#: functions.php:106
+#: functions.php:108
 msgid "Please enter a valid email address."
 msgstr ""
 
-#: functions.php:107
+#: functions.php:109
 msgid "Please enter a valid URL."
 msgstr ""
 
-#: functions.php:108
+#: functions.php:110
 msgid "Please enter a valid date."
 msgstr ""
 
-#: functions.php:109
+#: functions.php:111
 msgid "Please enter a valid date (ISO)."
 msgstr ""
 
-#: functions.php:110
+#: functions.php:112
 msgid "Please enter a valid number."
 msgstr ""
 
-#: functions.php:111
+#: functions.php:113
 msgid "Please enter only digits."
 msgstr ""
 
-#: functions.php:112
+#: functions.php:114
 msgid "Please enter a valid credit card number."
 msgstr ""
 
-#: functions.php:113
+#: functions.php:115
 msgid "Please enter the same value again."
 msgstr ""
 
-#: functions.php:114
+#: functions.php:116
 msgid "Please enter a value with a valid extension."
 msgstr ""
 
-#: functions.php:115
+#: functions.php:117
 msgid "Please enter no more than {0} characters."
 msgstr ""
 
-#: functions.php:116
+#: functions.php:118
 msgid "Please enter at least {0} characters."
 msgstr ""
 
-#: functions.php:117
+#: functions.php:119
 msgid "Please enter a value between {0} and {1} characters long."
 msgstr ""
 
-#: functions.php:118
+#: functions.php:120
 msgid "Please enter a value between {0} and {1}."
 msgstr ""
 
-#: functions.php:119
+#: functions.php:121
 msgid "Please enter a value less than or equal to {0}."
 msgstr ""
 
-#: functions.php:120
+#: functions.php:122
 msgid "Please enter a value greater than or equal to {0}."
 msgstr ""
 
-#: functions.php:297
+#: functions.php:304
 msgid "There was a problem with your upload."
 msgstr ""
 
-#: functions.php:301
+#: functions.php:308
 msgid "Where is the file?"
 msgstr ""
 
@@ -307,6 +307,19 @@ msgstr ""
 #: inc/global.php:29
 msgid "No partners found in Trash."
 msgstr "Không tìm thấy đối tác nào"
+
+#: inc/rab_ajax_action.php:9
+msgid "Vui long nhap thong tin"
+msgstr ""
+
+#: inc/rab_ajax_action.php:16
+msgid "The email has been sent successfull"
+msgstr ""
+
+#: inc/rab_ajax_action.php:18
+#, fuzzy
+msgid "Send mail fail"
+msgstr "Upload lỗi"
 
 #: inc/themes.php:83
 msgid "Sticky"
