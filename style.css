@@ -75,11 +75,14 @@ div.top-row .row{
 	bottom: -11px;
 	position: absolute;
 }
+a.post-thumbnail{
+	overflow: hidden;
+	display: block;
+}
 .post-thumbnail img{
- transition: all 2.75s cubic-bezier(0, 0.83, 0.17, 1) 0s;
+ 	transition: all 2.75s cubic-bezier(0, 0.83, 0.17, 1) 0s;
     width: 100%;
 }
 .post-thumbnail img:hover{
- 	opacity: 0.2;
- 	transition: scale(1.4, 1.4);
+ 	transform: matrix(1.2, 0, 0, 1.2, 0, 0);
 }
