@@ -7,33 +7,51 @@
  * Adds Foo_Widget widget.
  */
 class RAB_Slider_Widget extends WP_Widget {
+	static $args_default = array( 'speed' => 400, 'title' => '', 'nav' =>0 , 'effect' => 'slide', 'slide' => '0','size' => 'full', 'cat'=> 0);
 	protected $list_slider = null;
 	function __construct() {
 
-		$this->list_slider = RAB_Option::get_slider();
 
-		$widget_ops = array('classname' => 'rab_slider', 'description' => __( 'A list of your site&#8217;s Pages.',RAB_DOMAIN) );
-		parent::__construct('slider', __('Rap slider 1',RAB_DOMAIN), $widget_ops);
+		$this->list_slider = RAB_Option::get_slider();
+		$widget_ops = array( 'classname' => 'rab_slider', 'description' => __( 'A list of your site&#8217;s Pages.',RAB_DOMAIN) );
+		parent::__construct( 'slider', __('Rap slider 1',RAB_DOMAIN), $widget_ops);
+		add_action( 'wp_print_footer_scripts', array($this, 'extract_value_to_js'), 15 );
 
 		//add_action('wp_footer',array($this,'add_flex_script_footer'));
 	}
-	function add_flex_script_footer(){
 
-		$args = $this->get_settings();
+	/**
+	 * extract value in widget setting to js.
+	 * @return [type] [description]
+	 */
+	function extract_value_to_js(){
+		//get setting in widgets;
+		$settings = $this->get_settings();
+
+		$settings = wp_parse_args( $settings, self::$args_default );
+		extract($settings);
+
+		//get all widget setting  of this class.
+		//
 		$options = get_option('widget_slider',array());
-		unset($options['_multiwidget']);
+
+		unset($options['_multiwidget']); // because this is a key in array value all widget.
+
 		if($options){
+			// if exist a rab slider widget.
 			?>
 			<script type = "text/javascript">
 				(function($){
 
 					$(document).ready(function(){
-						<?php
+							<?php
 							foreach ($options as $key => $widget) {
-								extract($widget);
-								$nav = (isset($nav) && $nav==1) ? 'true' : 'false';
+								if(empty($widget))
+									continue;
 
-						 		$class = '.slider-'.$key; ?>
+								$nav = (isset($nav) && $nav==1) ? 'true' : 'false';
+								$class = '.slider-'.$key;
+								?>
 						 		$('<?php echo $class;?>').flexslider({
 					              	animation: '<?php echo $effect;?>',
 					              	animationSpeed:<?php echo $widget['speed'];?>,
@@ -53,13 +71,13 @@ class RAB_Slider_Widget extends WP_Widget {
 			</script>
 			<?php
 		}
-	}
 
+	}
 	function widget( $args, $instance ) {
 
 		wp_enqueue_script('jquery.flexslider');
 		wp_enqueue_style('flex.slider');
-		wp_enqueue_style('flex.demo');
+
 		extract( $args );
 
 		echo $before_widget;
@@ -76,15 +94,14 @@ class RAB_Slider_Widget extends WP_Widget {
 				if(is_numeric($cat))
 					$query.='&cat='.$cat;
 
-
 				query_posts($query);
 				if(have_posts()){
 					echo '<ul class="slides">';
 					while(have_posts()){
 						the_post();
 						echo '<li>';
-						the_title();
-						rab_post_thumbnail();
+						echo '<h5 class="widget-title">'.get_the_title().'</h5>';
+						rab_post_thumbnail('meidum');
 						echo'</li>';
 					}
 					echo '</ul>';
@@ -99,42 +116,29 @@ class RAB_Slider_Widget extends WP_Widget {
 	}
 
 	function update( $new_instance, $old_instance ) {
+
 		$instance = $old_instance;
+		// var_dump($old_instance);
+		// var_dump($instance);
+		// var_dump($new_instance);
+		//die();
 		return $new_instance;
 	}
 
 	function form( $instance ) {
-		//Defaults
-		$instance = wp_parse_args( (array) $instance , array( 'speed' => 400, 'title' => '', 'nav' =>0 , 'effect' => 'slide', 'slide' => '0','size' => 'full') );
+
+		$instance = wp_parse_args( (array) $instance ,  self::$args_default);
 		$title = esc_attr( $instance['title'] );
 		extract($instance);
-
+		// echo '<pre>';
+		// var_dump($instance);
+		// echo '</pre>';
+		$cat = $instance['cat'];
 	?>
-		<p>
-			<label for="<?php echo $this->get_field_id('cat'); ?>"><?php _e('Select Category',RAB_DOMAIN); ?>:</label>
-			<select name="<?php echo $this->get_field_name("cat");?>">
-				<?php
-
-				if(is_array($this->list_slider) && !empty($this->list_slider)){
-
-					echo '<option value="0">'.__('Selected Slider',RAB_DOMAIN).'</option>';
-					foreach ($this->list_slider as $key => $title) {?>
-
-						<option value="<?php echo $key;?>" <?php selected($key,$slide);?> > <?php echo $title;?> </option>
-						<?php
-					}
-				} else {
-
-					echo '<option value="0">'.__('No slider',RAB_DOMAIN).'</option>';
-				}
-				?>
-			</select>
-
-		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id('effect'); ?>"><?php _e('Select type effect',RAB_DOMAIN);?> : </label>
 			<?php
-				$arg= array('name' => 'cat','selected' => 0);
+				$args = array('name' =>  $this->get_field_name('cat'),'selected' => $cat);
 				wp_dropdown_categories( $args );
 			?>
 
