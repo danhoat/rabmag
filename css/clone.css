@@ -1475,7 +1475,8 @@ body.woocommerce .onsale:after {
 
   }
 }
-.main-sidebar .widget-title {
+.main-sidebar .widget-title,
+.main-title {
   font-size: 16px;
   border: medium none;
   text-transform: uppercase;
@@ -1485,6 +1486,7 @@ body.woocommerce .onsale:after {
   background-color: #FF6F00 ;
   letter-spacing: normal;
   position: relative;
+  margin-top: 10px;
   margin-bottom: 15px;
 }
 .m-t-15 {

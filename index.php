@@ -9,19 +9,23 @@
 <div class="row full-row">
     <div class="container main-page">
         <div class="row">
-            <?php get_sidebar();?>
+        <?php
+            if(is_active_sidebar('top_content')){
+                echo '<div class="col-lg-12 top-sidebar">';
+                    dynamic_sidebar('top_content');
+                echo '</div>';
+            }
+        ?>
+
+        <?php get_sidebar();?>
             <div class="col-lg-9 main-content">
                 <div class="entry-page">
                     <?php
-                    if(is_active_sidebar('top_content')){
-                        echo '<div class="row">';
-                        dynamic_sidebar('top_content');
-                        echo '</div>';
-                    }
+
                     do_action("rab_before_loop");
 
                     if(have_posts()):
-
+                        echo '<h3 class ="main-title widget-title">Sản phẩm</h3>';
                         while(have_posts()): the_post();
 
                             $format     = apply_filters("post_format_default",get_post_format() );

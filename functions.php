@@ -222,9 +222,10 @@ Class RAB_Site{
 
 	function rab_widgets_init(){
 
-		register_widget( 'RAB_Widget_Product_Categories');
-		register_widget( 'RAB_Facebook_Fan_Page');
-		register_widget( 'RAB_Twitter_Time_line');
+		register_widget( 'RAB_Widget_Product_Categories' );
+		register_widget( 'RAB_Facebook_Fan_Page' );
+		register_widget( 'RAB_Twitter_Time_line' );
+		register_widget( 'RAB_Slider_Widget' );
 
 	}
 	/**
