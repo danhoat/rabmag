@@ -1,23 +1,29 @@
 (function($){
-	jQuery(document).ready(function(){
-		jQuery('form.form-contact').validate({
-			rules	: {
-				user_name	: "required",
-				user_email	: "required"
-			},
-			messages	: {
-				user_name	: 'vui long nhap họ tên',
-				user_pass	:'vui long nhập'
-			},
-			highlight: function(element, errorClass) {
-				$(element).parent().addClass('error');
-				$(element).parent().find('span.icon').show();
-			},
-			unhighlight: function(element, errorClass) {
-				$(element).parent().removeClass('error');
-				$(element).parent().find('span.icon').hide();
-				//$(element).parent().find('span.line-correct').show();
-			}
-		});
+	$(document).ready(function(){
+
+
+		var val = $('form.form-contact').validate();
+		$('form.form-contact').submit(function(){
+			var val = $('form.form-contact').validate();
+			var data = $( this ).serialize();
+
+			if(!val.form())
+				return false;
+
+			console.log(data);
+			 jQuery.ajax({
+
+		         type : "POST",
+		         url : rab_global.ajaxUrl,
+		         data : data,
+		         success: function(response) {
+		         	console.log(response);
+		         }
+		      });
+
+			 return false;
+		})
+
+
 	});
 })(jQuery);

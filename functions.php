@@ -12,6 +12,8 @@ require get_template_directory() . '/class/class_post.php';
 require get_template_directory() . '/inc/index.php';
 require get_template_directory() . '/woo/index.php';
 require get_template_directory() . '/admin/options.php';
+require get_template_directory() . '/inc/rab_ajax_action.php';
+
 
 
 if(is_admin()){
@@ -47,6 +49,7 @@ Class RAB_Site{
 
 		$this->add_action( 'wp_enqueue_scripts', 'rab_enqueue_scripts' );
 		$this->add_action( 'wp_print_scripts', 'rab_deenqueue_scripts' );
+		$this->add_action( 'wp_print_footer_scripts', 'rab_print_footer_scripts', 13);
 		/** END SCRIPT  */
 
 		$this->add_action( 'widgets_init', 'rab_widgets_init' );
@@ -87,6 +90,47 @@ Class RAB_Site{
 		//wp_dequeue_script('jquery');
 	}
 	/**
+	 * print js into footer theme. Need use varial PHP to generator it.
+	 * @return javasript in footer
+	 * @version 1.0
+	 * @author danng
+	 */
+	function rab_print_footer_scripts(){
+		?>
+		<script type="text/javascript">
+
+			(function($){
+				$(document).ready(function(){
+
+					jQuery.extend(jQuery.validator.messages	, {
+					    required: "<?php _e("This field is required 123", RAB_DOMAIN); ?>",
+					    remote: "<?php _e("Please fix this field.",RAB_DOMAIN); ?>",
+					    email: "<?php _e("Please enter a valid email address.",RAB_DOMAIN); ?>",
+					    url: "<?php _e("Please enter a valid URL.",RAB_DOMAIN);?>",
+					    date: "<?php _e("Please enter a valid date.",RAB_DOMAIN); ?>",
+					    dateISO: "<?php _e("Please enter a valid date (ISO).",RAB_DOMAIN);?>",
+					    number: "<?php _e("Please enter a valid number.",RAB_DOMAIN);?>",
+					    digits: "<?php _e("Please enter only digits.", RAB_DOMAIN) ?>",
+					    creditcard:"<?php _e("Please enter a valid credit card number.", RAB_DOMAIN); ?>",
+					    equalTo: "<?php _e("Please enter the same value again.", RAB_DOMAIN); ?>",
+					    accept: "<?php _e("Please enter a value with a valid extension.", RAB_DOMAIN);?>",
+					    maxlength: jQuery.validator.format("<?php _e("Please enter no more than {0} characters.", RAB_DOMAIN);?>" ),
+					    minlength: jQuery.validator.format("<?php _e("Please enter at least {0} characters.", RAB_DOMAIN); ?>" ),
+					    rangelength: jQuery.validator.format("<?php _e("Please enter a value between {0} and {1} characters long.", RAB_DOMAIN); ?>"),
+					    range: jQuery.validator.format("<?php _e("Please enter a value between {0} and {1}.", RAB_DOMAIN); ?>"),
+					    max: jQuery.validator.format("<?php _e("Please enter a value less than or equal to {0}." ,RAB_DOMAIN); ?>"),
+					    min: jQuery.validator.format("<?php _e("Please enter a value greater than or equal to {0}.", RAB_DOMAIN); ?>")
+					});
+
+				})
+
+			})(jQuery);
+		</script>
+
+		<?php
+
+	}
+	/**
 	 * register new script, style and enquee js to theme
 	 * @author danng
 	 * @version 1.0
@@ -104,6 +148,11 @@ Class RAB_Site{
 		wp_enqueue_style( 'rab-style', get_stylesheet_uri() );
 		wp_enqueue_script( 'jquery.validatio');
 		wp_enqueue_script( 'front');
+		wp_localize_script( 'front','rab_global',
+			array(
+				'ajaxUrl' => admin_url( 'admin-ajax.php' ),
+			)
+		);
 
 	}
 

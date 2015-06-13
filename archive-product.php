@@ -25,7 +25,7 @@ get_header( 'shop' ); ?>
 		do_action( 'woocommerce_before_main_content' );
 		do_action( 'woocommerce_sidebar' );
 	?>
-		<div class="col-lg-9 main-content">
+		<div class="col-lg-12 main-content">
 			<div class="entry-page">
 			<?php woocommerce_breadcrumb(); ?>
 			<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>

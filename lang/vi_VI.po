@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: vina\n"
-"POT-Creation-Date: 2015-06-12 05:36+0700\n"
-"PO-Revision-Date: 2015-06-12 05:36+0700\n"
+"POT-Creation-Date: 2015-06-13 06:27+0700\n"
+"PO-Revision-Date: 2015-06-13 06:28+0700\n"
 "Last-Translator: dan <danng@gmail.com>\n"
 "Language-Team: rab <danhoat@gmail.com>\n"
 "Language: vi_VN\n"
@@ -94,34 +94,29 @@ msgstr ""
 msgid ", "
 msgstr ""
 
-#: content-dich-vu.php:40 content-post.php:37 content.php:37
+#: content-dich-vu.php:42 content-post.php:37 content.php:37
 #: template/post.php:37 template/post_.php:38
 msgid "Leave a comment"
 msgstr ""
 
-#: content-dich-vu.php:40 content-post.php:37 content.php:37
+#: content-dich-vu.php:42 content-post.php:37 content.php:37
 #: template/post.php:37 template/post_.php:38
 msgid "1 Comment"
 msgstr ""
 
-#: content-dich-vu.php:40 content-post.php:37 content.php:37
+#: content-dich-vu.php:42 content-post.php:37 content.php:37
 #: template/post.php:37 template/post_.php:38
 msgid "% Comments"
 msgstr ""
 
-#: content-dich-vu.php:44 content-post.php:41 content.php:41
+#: content-dich-vu.php:46 content-post.php:41 content.php:41
 #: inc/comments.php:55 template/post.php:41 template/post_.php:42
 msgid "Edit"
 msgstr ""
 
-#: content-dich-vu.php:58 content-post.php:55 content.php:55
+#: content-dich-vu.php:57 content-post.php:55 content.php:55
 #: template/post.php:55 template/post_.php:56
 msgid "Pages:"
-msgstr ""
-
-#: content-dich-vu.php:67 content-post.php:64 content.php:64
-#: template/post.php:64 template/post_.php:65
-msgid "Tagged :"
 msgstr ""
 
 #: content-post.php:53 content.php:53 template/post.php:53
@@ -129,19 +124,92 @@ msgstr ""
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: functions.php:73
+#: content-post.php:64 content.php:64 template/post.php:64
+#: template/post_.php:65
+msgid "Tagged :"
+msgstr ""
+
+#: functions.php:76
 msgid "Main Menu"
 msgstr ""
 
-#: functions.php:74
+#: functions.php:77
 msgid "Left Menu"
 msgstr ""
 
-#: functions.php:250
+#: functions.php:104
+msgid "This field is required 123"
+msgstr "Không được để rỗng"
+
+#: functions.php:105
+msgid "Please fix this field."
+msgstr ""
+
+#: functions.php:106
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: functions.php:107
+msgid "Please enter a valid URL."
+msgstr ""
+
+#: functions.php:108
+msgid "Please enter a valid date."
+msgstr ""
+
+#: functions.php:109
+msgid "Please enter a valid date (ISO)."
+msgstr ""
+
+#: functions.php:110
+msgid "Please enter a valid number."
+msgstr ""
+
+#: functions.php:111
+msgid "Please enter only digits."
+msgstr ""
+
+#: functions.php:112
+msgid "Please enter a valid credit card number."
+msgstr ""
+
+#: functions.php:113
+msgid "Please enter the same value again."
+msgstr ""
+
+#: functions.php:114
+msgid "Please enter a value with a valid extension."
+msgstr ""
+
+#: functions.php:115
+msgid "Please enter no more than {0} characters."
+msgstr ""
+
+#: functions.php:116
+msgid "Please enter at least {0} characters."
+msgstr ""
+
+#: functions.php:117
+msgid "Please enter a value between {0} and {1} characters long."
+msgstr ""
+
+#: functions.php:118
+msgid "Please enter a value between {0} and {1}."
+msgstr ""
+
+#: functions.php:119
+msgid "Please enter a value less than or equal to {0}."
+msgstr ""
+
+#: functions.php:120
+msgid "Please enter a value greater than or equal to {0}."
+msgstr ""
+
+#: functions.php:297
 msgid "There was a problem with your upload."
 msgstr ""
 
-#: functions.php:254
+#: functions.php:301
 msgid "Where is the file?"
 msgstr ""
 
@@ -372,7 +440,7 @@ msgstr ""
 msgid "Related Post"
 msgstr ""
 
-#: template/block-partner.php:9
+#: template/block-partner.php:10
 msgid "My Parner"
 msgstr "Đối tác của chúng tôi"
 

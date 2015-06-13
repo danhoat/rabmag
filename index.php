@@ -2,6 +2,8 @@
 /**
  * index template default
  */
+//$link = get_post_type_archive_link('product');
+
 ?>
 <?php get_header(); ?>
 <div class="row full-row">
