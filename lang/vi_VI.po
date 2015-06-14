@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: vina\n"
-"POT-Creation-Date: 2015-06-13 07:08+0700\n"
-"PO-Revision-Date: 2015-06-13 07:08+0700\n"
+"POT-Creation-Date: 2015-06-14 07:52+0700\n"
+"PO-Revision-Date: 2015-06-14 07:53+0700\n"
 "Last-Translator: dan <danng@gmail.com>\n"
 "Language-Team: rab <danhoat@gmail.com>\n"
 "Language: vi_VN\n"
@@ -205,11 +205,11 @@ msgstr ""
 msgid "Please enter a value greater than or equal to {0}."
 msgstr ""
 
-#: functions.php:304
+#: functions.php:305
 msgid "There was a problem with your upload."
 msgstr ""
 
-#: functions.php:308
+#: functions.php:309
 msgid "Where is the file?"
 msgstr ""
 
@@ -361,83 +361,31 @@ msgstr ""
 msgid "Footer sidebar that appears on footer."
 msgstr ""
 
-#: inc/widgets.php:60 inc/widgets.php:233 inc/widgets.php:295
+#: inc/widgets.php:62 inc/widgets.php:124 inc/widgets/post-slider.php:16
 msgid "A list of your site&#8217;s Pages."
 msgstr ""
 
-#: inc/widgets.php:61
-msgid "Rap slider 1"
-msgstr ""
-
-#: inc/widgets.php:124
-msgid "Don't have a slide"
-msgstr ""
-
-#: inc/widgets.php:171
-msgid "Select Slider"
-msgstr ""
-
-#: inc/widgets.php:177
-msgid "Selected Slider"
-msgstr ""
-
-#: inc/widgets.php:185
-msgid "No slider"
-msgstr ""
-
-#: inc/widgets.php:192
-msgid "Select type effect"
-msgstr ""
-
-#: inc/widgets.php:195
-msgid "Slide"
-msgstr ""
-
-#: inc/widgets.php:196
-msgid "Fade"
-msgstr ""
-
-#: inc/widgets.php:203
-msgid "Select thumbnail size"
-msgstr ""
-
-#: inc/widgets.php:206
-msgid "Full"
-msgstr ""
-
-#: inc/widgets.php:207
-msgid "Thumbnail"
-msgstr ""
-
-#: inc/widgets.php:212 inc/widgets.php:277 inc/widgets.php:332
-msgid "Title"
-msgstr ""
-
-#: inc/widgets.php:214
-msgid "Speed:"
-msgstr ""
-
-#: inc/widgets.php:218
-msgid "Show Nav"
-msgstr ""
-
-#: inc/widgets.php:234
+#: inc/widgets.php:63
 msgid "Facebook Fan Page"
 msgstr ""
 
-#: inc/widgets.php:279
+#: inc/widgets.php:106 inc/widgets.php:161 inc/widgets/post-slider.php:158
+msgid "Title"
+msgstr ""
+
+#: inc/widgets.php:108
 msgid "Facebook Page Url"
 msgstr ""
 
-#: inc/widgets.php:283
+#: inc/widgets.php:112
 msgid "Show Posts"
 msgstr ""
 
-#: inc/widgets.php:296
+#: inc/widgets.php:125
 msgid "Twitter Time Line"
 msgstr ""
 
-#: inc/widgets.php:334
+#: inc/widgets.php:163
 msgid "Twiter name"
 msgstr ""
 
@@ -447,6 +395,34 @@ msgstr ""
 
 #: inc/widgets/category-product.php:16
 msgid "List Product categories"
+msgstr ""
+
+#: inc/widgets/post-slider.php:17
+msgid "Rap slider 1"
+msgstr ""
+
+#: inc/widgets/post-slider.php:140
+msgid "Select type effect"
+msgstr ""
+
+#: inc/widgets/post-slider.php:149
+msgid "Select thumbnail size"
+msgstr ""
+
+#: inc/widgets/post-slider.php:152
+msgid "Full"
+msgstr ""
+
+#: inc/widgets/post-slider.php:153
+msgid "Thumbnail"
+msgstr ""
+
+#: inc/widgets/post-slider.php:160
+msgid "Speed:"
+msgstr ""
+
+#: inc/widgets/post-slider.php:164
+msgid "Show Nav"
 msgstr ""
 
 #: single.php:30
