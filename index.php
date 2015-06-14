@@ -30,11 +30,11 @@
                         echo '<h3 class ="main-title widget-title">Sản phẩm</h3>';
                         while(have_posts()): the_post();
                             if( $i%3 == 2)
-                                $class .="col-right-product";
+                                $class ="col-md-4 col-right-product";
                             else if($i%3 == 1)
-                                $class .= "col-center-product";
+                                $class = "col-md-4 col-center-product";
                             else
-                                $class .='col-left-product';
+                                $class ='col-md-4 col-left-product';
 
                             $format     = apply_filters("post_format_default",get_post_format() );
                             get_template_part( 'content', $format );

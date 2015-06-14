@@ -1,107 +1,54 @@
 <?php
 /**
- * The Template for displaying product archives, including the main shop page which is a post type archive.
- *
- * Override this template by copying it to yourtheme/woocommerce/archive-product.php
- *
- * @author 		WooThemes
- * @package 	WooCommerce/Templates
- * @version     2.0.0
+ * index template default
  */
+//$link = get_post_type_archive_link('product');
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+?>
+<?php get_header(); ?>
+<div class="row full-row">
+    <div class="container main-page">
+        <div class="row">
 
-get_header( 'shop' ); ?>
-	
-	<?php
-		/**
-		 * woocommerce_before_main_content hook
-		 *
-		 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
-		 * @hooked woocommerce_breadcrumb - 20
-		 */
-		do_action( 'woocommerce_before_main_content' );
-		//do_action( 'woocommerce_sidebar' );
-	?>
-		<div class="col-lg-12 main-content">
-			<div class="entry-page">
-			<?php woocommerce_breadcrumb(); ?>
-			<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
+            <div class="col-lg-12 main-content">
+                <div class="entry-page">
+                    <?php
 
-				<h1 class="page-title"><?php woocommerce_page_title(); ?></h1>
+                    do_action("rab_before_loop");
 
-			<?php endif; ?>
+                    if(have_posts()):
+                        $i = 0;
+                        $class ='col-md-3 ';
+                        echo '<h3 class ="main-title widget-title">Sản phẩm</h3>';
+                        while(have_posts()): the_post();
+                            if( $i%4 == 3)
+                                $class ="col-md-3 col-right-product";
+                            else if($i%4 == 2 || $i%3 == 1)
+                                $class = "col-md-3 col-center-product";
+                            else
+                                $class ='col-md-3 col-left-product';
 
-			<?php do_action( 'woocommerce_archive_description' ); ?>
-
-			<?php if ( have_posts() ) : ?>
-
-				<?php
-					/**
-					 * woocommerce_before_shop_loop hook
-					 *
-					 * @hooked woocommerce_result_count - 20
-					 * @hooked woocommerce_catalog_ordering - 30
-					 */
-					do_action( 'woocommerce_before_shop_loop' );
-				?>
-
-				<?php woocommerce_product_loop_start(); ?>
-
-					<?php woocommerce_product_subcategories(); ?>
-					<?php $class =''; $i = 0; ?>
-					<?php while ( have_posts() ) : the_post(); ?>
-						<?php
-							if( $i % 4 == 3)
-                                $class .="col-md-3 col-right-product";
-                            else if ( $i%4 == 1 || $i%4 == 2 )
-                                $class .= "col-md-3 col-center-product";
-                            else if($i %4 == 0)
-                                $class .='col-md-3 col-left-product';
-
+                            $format     = apply_filters("post_format_default",get_post_format() );
+                            get_template_part( 'content', $format );
                             $i ++;
+                        endwhile;
+                        rab_pagination();
 
-                        ?>
-						<?php wc_get_template_part( 'content', 'product' ); ?>
+                    else :
+                        get_template_part('template/none' );
 
-					<?php endwhile; // end of the loop. ?>
+                    endif;
 
-				<?php woocommerce_product_loop_end(); ?>
+                    ?>
+                    <?php do_action("rab_after_loop") ?>
 
-				<?php
-					/**
-					 * woocommerce_after_shop_loop hook
-					 *
-					 * @hooked woocommerce_pagination - 10
-					 */
-					do_action( 'woocommerce_after_shop_loop' );
-				?>
+                </div> <!-- .endtry end !-->
 
-			<?php elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) : ?>
+            </div> <!-- end . col-lg-9 !-->
+        </div> <!--end .row !-->
+        <?php get_template_part('template/block-partner' ); ?>
 
-				<?php wc_get_template( 'loop/no-products-found.php' ); ?>
+    </div> <!-- End main-content!-->
+</div> <!-- full row !-->
 
-			<?php endif; ?>
-
-		<?php
-			/**
-			 * woocommerce_after_main_content hook
-			 *
-			 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
-			 */
-			echo '</div></div>';
-			do_action( 'woocommerce_after_main_content' );
-	?>
-
-	<?php
-		/**
-		 * woocommerce_sidebar hook
-		 *
-		 * @hooked woocommerce_get_sidebar - 10
-		 */
-		
-	?>
-
-<?php get_footer( 'shop' ); ?>
+<?php get_footer();?>

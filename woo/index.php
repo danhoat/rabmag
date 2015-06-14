@@ -44,6 +44,7 @@ if(class_exists('WooCommerce')){
 		}
 
 		function woocommerce_enqueue_styles_override($args){
+			return false;
 
 		            $args['woocommerce-general'] =  array(
 		                'src'     => str_replace( array( 'http:', 'https:' ), '', get_template_directory_uri() ) . '/woocommerce.css',
