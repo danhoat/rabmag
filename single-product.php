@@ -1,33 +1,34 @@
-<?php ob_start(); ?>
-  <?php get_header();?>
-    <div class="container main-wrap">
-        <div class="main-content">
-            <?php get_sidebar();?>
-            <div id="main-content" class="col-sm-8 blog-main">
-                <div class="single-content">
-                    <?php
+<?php get_header(); ?>
+
+<div class="container main-page">
+    <div class="row">
+        <?php get_sidebar();?>
+        <div class="col-lg-9 main-content">
+            <div class="entry-page">
+
+                <?php
+
+                do_action("rab_before_loop");
+
+                if(have_posts()):
+                    echo '<h1 class="title">'.get_the_title().'</h2>';
                     the_post();
-                    echo '<h1 class="post-title title">'.get_the_title().'</h1>';
-                    echo'<div class="post-headding">';
-                    the_author().' &nbsp;  '.the_date();
-                    comments_number( 'no comments', '%s comment', '% comments' );
-                    echo '</div>';
-                    echo '<div class="post-content ">';
-                    if(has_post_thumbnail())
-                        the_post_thumbnail();
+                    echo '<div class="content">';
                     the_content();
                     echo '</div>';
-                    // echo '<div class="post-comment">';
-                    //     comments_template();
-                    // echo'</div>';
-                    ?>
+                else :
+                    get_template_part('template/none' );
 
-                </div>
+                endif;
 
-            </div>
+                ?>
+                <?php do_action("rab_after_loop") ?>
 
+            </div> <!-- .endtry end !-->
 
         </div>
-    </div> <!-- End main-content!-->
+    </div> <!-- .row !-->
 
-   <?php get_footer();?>
+</div> <!-- End main-content!-->
+
+<?php get_footer();?>

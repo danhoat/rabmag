@@ -458,6 +458,9 @@ a:hover {
   .entry-header .entry-title{
     margin-top: 0;
   }
+  .form-group .col-sm-2{
+    text-align: right;
+  }
 
 }
 .main-sidebar .widget_nav_menu ul {
