@@ -61,6 +61,8 @@ Class RAB_Site{
 		//$this->add_action( 'excerpt_more', 'new_excerpt_more');
 		$this->add_action( 'get_the_excerpt', 'new_excerpt_more');
 
+		//$this->add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
 	}
 	/**
 	 * catch hook after_setup_theme and process.
@@ -270,6 +272,10 @@ Class RAB_Site{
 	function new_excerpt_more($more) {
        	global $post;
 		return $more.'<p><a class="moretag" href="'. get_permalink($post->ID) . '">'.__('Read more',RAB_DOMAIN).'&nbsp; &#155; <span>&#155;</span> </a></p>';
+	}
+
+	function custom_excerpt_length( $length ) {
+			return 20;
 	}
 	/**
 	 * [__destruct description]

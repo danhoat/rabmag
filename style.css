@@ -193,5 +193,10 @@ body .notification .container .msg{
 	clear: both;
 }
 .top-row{
-	background: #eb911f;
+}
+img{
+	height: auto;
+}
+.widget .flexslider .post-thumbnail img{
+	padding-bottom: 5px;
 }

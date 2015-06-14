@@ -389,6 +389,7 @@ a:hover {
   overflow: hidden;
   margin-bottom: 15px;
   padding-bottom: 15px;
+  line-height: 21px;
 }
 .main-sidebar .widget div.textwidget{
   padding-left: 15px;
@@ -1422,6 +1423,7 @@ body.woocommerce .onsale:after {
   padding: 0 0px 15px 0px;
   text-align: justify;
   display: table;
+  line-height: 23px;
   width: 100%;
 }
 .main-page .entry-title {
