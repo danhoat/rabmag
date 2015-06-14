@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: vina\n"
-"POT-Creation-Date: 2015-06-14 08:19+0700\n"
-"PO-Revision-Date: 2015-06-14 08:27+0700\n"
+"POT-Creation-Date: 2015-06-14 08:39+0700\n"
+"PO-Revision-Date: 2015-06-14 08:39+0700\n"
 "Last-Translator: dan <danng@gmail.com>\n"
 "Language-Team: rab <danhoat@gmail.com>\n"
 "Language: vi_VN\n"
@@ -434,8 +434,8 @@ msgid "Related Post"
 msgstr ""
 
 #: template/block-partner.php:10
-msgid "My Parner"
-msgstr "Đối tác của chúng tôi"
+msgid "Our Parner"
+msgstr "Đối tác của Nam Hà Phát"
 
 #: template/none.php:12
 msgid "Nothing Found"

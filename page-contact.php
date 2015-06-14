@@ -16,7 +16,7 @@
                 do_action("rab_before_loop");
 
                 if(have_posts()):
-                    echo '<h2>'.get_the_title().'</h2>';
+                    echo '<h2 class="main-title">'.get_the_title().'</h2>';
                     the_post();
                     the_content();
                     ?>

@@ -413,6 +413,9 @@ a:hover {
     padding-left: 7.5px;
     padding-right: 7.5px;
   }
+  .item-product{
+    padding-top: 0;
+  }
 }
 .main-sidebar .widget_nav_menu ul {
   margin: auto;
