@@ -1490,16 +1490,16 @@ body.woocommerce .onsale:after {
 }
 .main-sidebar .widget-title,
 .main-title {
-  font-size: 16px;
+  font-size: 13px;
+  font-weight: bold;
   border: medium none;
   text-transform: uppercase;
   padding: 9px 15px;
-  font-weight: 400;
   color: #FFF;
   background-color: #FF6F00 ;
   letter-spacing: normal;
   position: relative;
-  margin-top: 10px;
+  margin-top: 0px;
   margin-bottom: 15px;
 }
 .m-t-15 {

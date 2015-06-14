@@ -55,6 +55,12 @@ Class RAB_Site{
 		$this->add_action( 'widgets_init', 'rab_widgets_init' );
 		$this->add_filter( 'post_thumbnail_html', 'rab_thumbnail_html', 10, 3 );
 
+		/**
+		 * Filter content
+		 */
+		//$this->add_action( 'excerpt_more', 'new_excerpt_more');
+		$this->add_action( 'get_the_excerpt', 'new_excerpt_more');
+
 	}
 	/**
 	 * catch hook after_setup_theme and process.
@@ -239,6 +245,15 @@ Class RAB_Site{
 		}
 		return $html;
 
+	}
+	/**
+	 * add the button readmore when use code the_excerpt.
+	 * @param  the button reamore html.
+	 * @return  html of buton readmore
+	 */
+	function new_excerpt_more($more) {
+       	global $post;
+		return $more.'<a class="moretag" href="'. get_permalink($post->ID) . '">'.__('Read more',RAB_DOMAIN).'</a>';
 	}
 	/**
 	 * [__destruct description]
