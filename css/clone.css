@@ -1422,6 +1422,7 @@ body.woocommerce .onsale:after {
   padding: 0 0px 15px 0px;
   text-align: justify;
   display: table;
+  width: 100%;
 }
 .main-page .entry-title {
   color: #FC6346;
