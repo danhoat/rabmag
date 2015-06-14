@@ -25,13 +25,13 @@
                     </div>
 
           	</div>
-             <nav class="menu-main">
+            <nav class="menu-main">
 
-                       <div class="container">
-                               <?php wp_nav_menu(array( 'theme_location' => apply_filters( RAB_DOMAIN, 'main_menu' ) ,'menu_class' => 'main-menu' ,'container_class' => 'menu-main-menu-container' ));?>
-                       </div>
+               <div class="container">
+                       <?php wp_nav_menu(array( 'theme_location' => apply_filters( RAB_DOMAIN, 'main_menu' ) ,'menu_class' => 'main-menu' ,'container_class' => 'menu-main-menu-container' ));?>
+               </div>
 
-                    </nav>
+            </nav>
         </div>
 
         <?php

@@ -1,4 +1,18 @@
 (function($){
+	function showNotice(params) {
+
+            // remove existing notification
+            jQuery('div.notification').remove();
+            $('body').prepend('<div class="notification"><div class="container"><div class="msg">'+params.msg+'</div></div></div>');
+            $notification = $('div.notification');
+            $notification.hide().prependTo('body')
+                .fadeIn('fast')
+                .delay(1000)
+                .fadeOut(3000, function() {
+                    jQuery(this).remove();
+                });
+    }
+
 	$(document).ready(function(){
 
 		var val = $('form.form-contact').validate({
@@ -36,7 +50,7 @@
 		        },
 		        success: function(response) {
 		        	$btn.button('reset');
-		        	console.log(response);
+		        	showNotice(response);
 		        }
 		      });
 

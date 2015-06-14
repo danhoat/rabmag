@@ -162,3 +162,21 @@ body.page .main-page .entry-page{
 	display: block;
 	clear: both;
 }
+body .notification{
+	top: 0;
+	height: 39px;
+	width: 100%;
+	position: fixed;
+	z-index: 2;
+	background: red;
+	display:none;
+}
+body .notification .container{
+	z-index: 10;
+	margin: 0  auto;
+}
+body .notification .container .msg{
+	text-align: center;
+	height: 39px;
+	line-height: 39px;
+}
