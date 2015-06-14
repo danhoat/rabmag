@@ -3,7 +3,7 @@
 	function showNotification(params) {
 
             // remove existing notification
-            //jQuery('div.notification').remove();
+            jQuery('div.notification').remove();
             var $class = 'success';
             if(!params.success)
             	$class = 'fail';
@@ -13,7 +13,7 @@
                 .fadeIn('fast')
                 .delay(1000)
                 .fadeOut(3000, function() {
-                   // jQuery(this).remove();
+                   jQuery(this).remove();
                 });
     }
 
