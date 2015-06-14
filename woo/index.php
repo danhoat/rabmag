@@ -7,7 +7,7 @@ if(class_exists('WooCommerce')){
 			add_filter( "post_format_default", array($this,"rab_get_post_format"));
 			//add_action( "rab_before_loop", array($this,"rab_before_loop"));
 			//add_action( "rab_after_loop", array($this,"rab_after_loop"));
-			add_filter( "woocommerce_enqueue_styles", array($this,"woocommerce_enqueue_styles_override"),12 );
+			//add_filter( "woocommerce_enqueue_styles", array($this,"woocommerce_enqueue_styles_override"),12 );
 			add_filter('body_class', array($this,'multisite_body_classes') );
 
 			add_filter("woocommerce_output_related_products_args", array($this, "woocommerce_output_related_products_args_custom") );
