@@ -17,26 +17,28 @@
                         the_post_thumbnail();
                     the_content();
                     echo '</div>';
-                    echo '<div class="post-comment">';
-                        comments_template();
-                    echo'</div>';
+                    // echo '<div class="post-comment">';
+                    //     comments_template();
+                    // echo'</div>';
                     ?>
 
                 </div>
+                <!--
                 <div class="full-width">
                     <?php
-                    query_posts('post_type=post&post_status=publish&posts_per_page=8');
-                    if(have_posts()):
-                        echo '<h2>'.__('Related Post', RAB_DOMAIN).'</h2>';
-                        echo '<ul class="list-unstyled">';
-                        while(have_posts()): the_post();
-                            echo '<li><h5><a href="'.get_the_title().'"> '.get_the_title().'</a></h5></li>';
-                        endwhile;
-                        echo '</ul>';
-                    endif;
+                    // query_posts('post_type=post&post_status=publish&posts_per_page=8');
+                    // if(have_posts()):
+                    //     echo '<h2>'.__('Related Post', RAB_DOMAIN).'</h2>';
+                    //     echo '<ul class="list-unstyled">';
+                    //     while(have_posts()): the_post();
+                    //         echo '<li><h5><a href="'.get_the_title().'"> '.get_the_title().'</a></h5></li>';
+                    //     endwhile;
+                    //     echo '</ul>';
+                    // endif;
                     ?>
 
                 </div>
+                !-->
 
             </div>
 
