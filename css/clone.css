@@ -1431,7 +1431,7 @@ body.woocommerce .onsale:after {
   border: 0px solid #efefef;
   padding: 0 0px 15px 0px;
   text-align: justify;
-  display: table;
+  display: block;
   line-height: 23px;
   width: 100%;
 }
