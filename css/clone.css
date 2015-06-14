@@ -388,6 +388,7 @@ a:hover {
   background: white;
   overflow: hidden;
   margin-bottom: 15px;
+  padding-bottom: 15px;
 }
 .main-sidebar .widget div.textwidget{
   padding-left: 15px;
