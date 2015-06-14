@@ -3,7 +3,10 @@
 
             // remove existing notification
             jQuery('div.notification').remove();
-            $('body').prepend('<div class="notification"><div class="container"><div class="msg">'+params.msg+'</div></div></div>');
+            var $class = 'success';
+            if(!params.success)
+            	$class = 'fail';
+            $('body').prepend('<div class="notification '+$class+'"><div class="container"><div class="msg">'+params.msg+'</div></div></div>');
             $notification = $('div.notification');
             $notification.hide().prependTo('body')
                 .fadeIn('fast')

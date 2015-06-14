@@ -181,7 +181,7 @@ a:hover {
     border-right: 1px solid #EBEEF2;
     color: #353D41;
     background-color: transparent !important;
-    transition: all 350ms;
+    1transition1: all 350ms;
     position: relative;
   }
   .menu-main .menu-main-menu-container li a:after {
