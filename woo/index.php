@@ -1,4 +1,5 @@
 <?php
+require get_template_directory() . '/woo/remove_filter.php';
 if(class_exists('WooCommerce')){
 
 	class RAB_Woo{

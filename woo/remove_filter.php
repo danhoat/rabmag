@@ -12,9 +12,12 @@ function paulund_remove_default_image_sizes( $sizes) {
 }
 add_filter('intermediate_image_sizes_advanced', 'paulund_remove_default_image_sizes', 13);
 
-add_action( 'after_setup_theme', 'remove_woo_action_hook', 15);
+add_action( 'init', 'remove_woo_action_hook', 105);
 function remove_woo_action_hook(){
 	remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
 	remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
+	remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+	remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+	remove_action( 'wp_enqueue_scripts', array( 'WC_Frontend_Scripts', 'load_scripts' ) );
 }
 ?>
