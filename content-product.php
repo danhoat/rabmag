@@ -38,7 +38,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 <div class = " col-md-main product type-product item-product <?php echo $class;?> ">
 
 	<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
-	<h3 class="product-title"><?php the_title(); ?></h3>
+	<h5 class="product-title"><?php the_title(); ?></h5>
 	<a href="<?php the_permalink(); ?>">
 
 		<?php
