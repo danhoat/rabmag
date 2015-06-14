@@ -3,7 +3,7 @@
 define('TEMPLATEURL', get_bloginfo('template_url') );
 define('TEMPLATE_PATH',get_template_directory());
 if(!defined('RAB_DOMAIN'))
-define('RAB_DOMAIN','RAB_DOMAIN');
+define('RAB_DOMAIN','rab_domain');
 
 define('RAB_VERSION','1.0');
 
@@ -38,8 +38,8 @@ Class RAB_Site{
 
 		$this->add_action( 'after_setup_theme', 'after_setup_rabtheme' );
 		$this->add_action( 'init','rab_init_first', 1 );
-		$this->add_action( 'init','rab_init_second', 2 );
-		$this->add_action( 'init','rab_init_thirst', 3 );
+		$this->add_action( 'init','rab_init_second', 5 );
+		$this->add_action( 'init','rab_init_thirst', 10 );
 		$this->add_action( 'wp_head', 'rab_wp_head' );
 
 		//$this->add_action( 'wp_footer', 'rab_wp_footer');
@@ -180,7 +180,7 @@ Class RAB_Site{
 
 	function rab_init_first(){
 
-		load_textdomain('RAB_DOMAIN', get_template_directory().'/lang/vi_VI.mo');
+		load_textdomain(RAB_DOMAIN, get_template_directory().'/lang/vi_VI.mo');
 
 		rab_register_post_type();
 	}

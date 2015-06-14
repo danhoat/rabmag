@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: vina\n"
-"POT-Creation-Date: 2015-06-14 12:51+0700\n"
-"PO-Revision-Date: 2015-06-14 16:28+0700\n"
+"POT-Creation-Date: 2015-06-14 19:40+0700\n"
+"PO-Revision-Date: 2015-06-14 19:40+0700\n"
 "Last-Translator: dan <danng@gmail.com>\n"
 "Language-Team: rab <danhoat@gmail.com>\n"
 "Language: vi_VN\n"
@@ -16,32 +16,34 @@ msgstr ""
 "X-Poedit-KeywordsList: _x;_e;__\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: admin/functions.php:89
-msgid "Uplaod file fail"
+#: admin/functions.php:87
+#, fuzzy
+msgid "Upload file fail"
 msgstr "Upload lỗi"
 
-#: admin/functions.php:95
+#: admin/functions.php:93
 msgid "Uplaoded file success"
-msgstr ""
+msgstr "Upload thành công"
 
-#: admin/functions.php:104
+#: admin/functions.php:102
 msgid "You don't allow access!"
-msgstr ""
+msgstr "Không có quyền xử lý"
 
-#: admin/functions.php:138 admin/settings.php:8 admin/settings.php:9
+#: admin/functions.php:136 admin/settings.php:8 admin/settings.php:9
+#, fuzzy
 msgid "Rab Settings"
 msgstr "Cài đặt"
 
-#: admin/functions.php:155
+#: admin/functions.php:153
 #, php-format
 msgid "%s"
 msgstr ""
 
-#: admin/functions.php:156
+#: admin/functions.php:154
 msgid "Describe the function of menu"
 msgstr ""
 
-#: admin/functions.php:157
+#: admin/functions.php:155
 msgid "About Us"
 msgstr ""
 
@@ -57,8 +59,24 @@ msgstr ""
 msgid "Website title"
 msgstr ""
 
+#: admin/settings.php:41
+msgid "Select files"
+msgstr ""
+
+#: admin/settings.php:55
+msgid "Website Description"
+msgstr ""
+
+#: admin/settings.php:60
+msgid "Copyright footer"
+msgstr ""
+
 #: admin/settings.php:65
 msgid "Google Font For  Title"
+msgstr ""
+
+#: admin/settings.php:78
+msgid "Save"
 msgstr ""
 
 #: admin/slider.php:41
@@ -71,7 +89,7 @@ msgstr ""
 
 #: admin/slider.php:52
 msgid "Save Slider"
-msgstr ""
+msgstr "Lưu"
 
 #: comments.php:42
 msgid "Comment navigation"
@@ -102,12 +120,12 @@ msgstr ""
 #: content-dich-vu.php:42 content-post.php:37 content.php:37
 #: template/post.php:37 template/post_.php:38
 msgid "1 Comment"
-msgstr ""
+msgstr "1 ý kiến"
 
 #: content-dich-vu.php:42 content-post.php:37 content.php:37
 #: template/post.php:37 template/post_.php:38
 msgid "% Comments"
-msgstr ""
+msgstr "% ý kiến"
 
 #: content-dich-vu.php:46 content-post.php:41 content.php:41
 #: inc/comments.php:55 template/post.php:41 template/post_.php:42
@@ -251,7 +269,7 @@ msgstr ""
 
 #: global/form-login.php:46
 msgid "Lost your password?"
-msgstr ""
+msgstr "Quên mật khẩu"
 
 #: inc/comments.php:23
 msgid "Pingback:"
@@ -302,7 +320,7 @@ msgstr ""
 
 #: inc/global.php:23
 msgid "Edit Partner"
-msgstr ""
+msgstr "Sửa"
 
 #: inc/global.php:24
 msgid "View Partner"
@@ -332,11 +350,11 @@ msgstr "Không tìm thấy đối tác nào"
 msgid "Please enter your information"
 msgstr ""
 
-#: inc/rab_ajax_action.php:17
+#: inc/rab_ajax_action.php:30
 msgid "Email has been sent successfull"
 msgstr "Gửi mail thành công"
 
-#: inc/rab_ajax_action.php:19
+#: inc/rab_ajax_action.php:33
 msgid "Send mail fail"
 msgstr "Gửi mail lỗi"
 
@@ -442,7 +460,7 @@ msgstr ""
 
 #: inc/widgets/post-slider.php:164
 msgid "Show Nav"
-msgstr ""
+msgstr "Hiển thị thanh điều hướng"
 
 #: template/block-partner.php:10
 msgid "Our Parner"
@@ -466,7 +484,7 @@ msgstr "Địa chỉ của bạn"
 
 #: template/contact-form.php:20
 msgid "Your phone number: (*)"
-msgstr "gĐiện thoại:(*)"
+msgstr "Điện thoại:(*)"
 
 #: template/contact-form.php:23
 msgid "Your phone number"
@@ -517,6 +535,17 @@ msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
+
+#, fuzzy
+#~ msgid "Rab Settings 123"
+#~ msgstr "Cài đặt"
+
+#, fuzzy
+#~ msgid "Rab Settings a"
+#~ msgstr "Cài đặt"
+
+#~ msgid "Rab Settings b"
+#~ msgstr "Cài đặt 123 222"
 
 #~ msgid "test language"
 #~ msgstr "kiểm tra ngôn ngữ"

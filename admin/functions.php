@@ -61,10 +61,10 @@ class RM_BackEnd{
 
 		wp_enqueue_style('admin.css');
 		$rab_globals = array(
-								'ajaxUrl' 				=>	admin_url('admin-ajax.php'),
-								'flash_swf_url'       	=> includes_url( 'js/plupload/plupload.flash.swf' ),
-								'silverlight_xap_url'	=> includes_url( 'js/plupload/plupload.silverlight.xap' ),
-						);
+			'ajaxUrl' 				=>	admin_url('admin-ajax.php'),
+			'flash_swf_url'       	=> includes_url( 'js/plupload/plupload.flash.swf' ),
+			'silverlight_xap_url'	=> includes_url( 'js/plupload/plupload.silverlight.xap' ),
+		);
 
 		?>
 		<script type="text/javascript">
@@ -76,8 +76,6 @@ class RM_BackEnd{
 
 	function rab_admin_scripts(){
 		wp_enqueue_script('jquery');
-		//wp_enqueue_script('backbone');
-		//wp_enqueue_script('underscore');
 		wp_enqueue_script('plupload-all');
 		wp_enqueue_script('rab.js');
 		wp_enqueue_script('admin.js');
@@ -86,7 +84,7 @@ class RM_BackEnd{
 	public function rab_upload_logo(){
 
 		check_admin_logged();
-		$resp = array('success'=> false,'msg'=>__('Uplaod file fail',RAB_DOMAIN));
+		$resp = array('success'=> false,'msg'=>__('Upload file fail',RAB_DOMAIN));
 
 		$att_id = rab_access_upload_file($_FILES['file']);
 
@@ -108,10 +106,10 @@ abstract class RAB_Add_Menu_Backend {
 	protected $slug;
 
 	function __construct($args = array()){
-		$this->slug = $args['slug'];
-		$this->default = $args;
-		add_action( 'admin_menu', array($this,'add_sub_menu') );
-		add_action('rab_left_menu',array($this,'rab_left_menu') );
+		$this->slug 	= $args['slug'];
+		$this->default 	= $args;
+		add_action( 'admin_menu', array( $this,'add_sub_menu' ) );
+		add_action( 'rab_left_menu',array( $this,'rab_left_menu' ) );
 		if(isset($_GET['page']) == $args['slug'])
 		add_action('admin_head', array($this,'page_load_scripts') );
 
@@ -135,7 +133,7 @@ abstract class RAB_Add_Menu_Backend {
 		$args = $this->default;
 		extract($args);
 		if($slug == "rab-settings")
-			add_menu_page( __('Rab Settings',RAB_DOMAIN), 'Rab Settings', 'manage_options', 'rab-settings', array($this,'menu_view'), '' , 4 );	
+			add_menu_page( __('Rab Settings',RAB_DOMAIN),  __('Rab Settings',RAB_DOMAIN), 'manage_options', 'rab-settings', array($this,'menu_view'), '' , 4 );	
 		else
 			add_submenu_page( 'rab-settings', $page_title , $menu_title , 'manage_options', $slug, array($this,'menu_view') ); 
 	}

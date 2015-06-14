@@ -10,7 +10,7 @@
 			wp_send_json(array('success' => true, 'msg' => __('Please enter your information', RAB_DOMAIN)));
 		}
 		$ad_email 	= get_option('admin_email');
-		$message 	= __('Email liên hệ từ website % <br />');
+		$message 	= 'Email liên hệ từ website % <br />';
 		$message 	.= 'Thông tin liên hệ:<br />Họ và tên:[user_name].<br /> Số điện thoại: [user_phone].<br /> Email: [user_email].<br /> Địa chỉ: [user_address].<br /> Nội dung:[content]';
 
 		$message  	= str_replace("[user_name]", $request['user_name'], $message);
