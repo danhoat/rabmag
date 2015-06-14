@@ -25,14 +25,14 @@
                     </div>
 
           	</div>
-            <nav class="menu-main">
-
-               <div class="container">
-                       <?php wp_nav_menu(array( 'theme_location' => apply_filters( RAB_DOMAIN, 'main_menu' ) ,'menu_class' => 'main-menu' ,'container_class' => 'menu-main-menu-container' ));?>
-               </div>
-
-            </nav>
         </div>
+         <nav class="menu-main">
+
+           <div class="container">
+                   <?php wp_nav_menu(array( 'theme_location' => apply_filters( RAB_DOMAIN, 'main_menu' ) ,'menu_class' => 'main-menu' ,'container_class' => 'menu-main-menu-container' ));?>
+           </div>
+
+        </nav>
 
         <?php
             if(is_active_sidebar('header')):

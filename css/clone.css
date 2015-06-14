@@ -41,7 +41,7 @@ body {
   z-index: 1;
 }
 .block-ser .box-services:hover * {
-  color: #FF6346 !important;
+  color: #eb911f !important;
 }
 .block-ser .box-services .media-body {
   padding-left: 10px;
@@ -150,7 +150,7 @@ a:hover {
 }
 @media (min-width: 992px) {
   .menu-main {
-    border-bottom: 1px solid #EBEEF2;
+    border-bottom: 1px solid #eb911f;
   }
   .menu-main ul {
     margin: auto;
@@ -187,7 +187,7 @@ a:hover {
   .menu-main .menu-main-menu-container li a:after {
     height: 4px;
     content: "";
-    background: #FF6346;
+    background: #eb911f;
     left: 50%;
     right: 50%;
     position: absolute;
@@ -197,11 +197,11 @@ a:hover {
   }
   .menu-main .menu-main-menu-container li:hover:after ,
   .menu-main .menu-main-menu-container li.current-menu-item:after{
-    color: #FF6346;
+    color: #eb911f;
   }
   .menu-main .menu-main-menu-container li:hover > a ,
   .menu-main .menu-main-menu-container li.current-menu-item a{
-    color: #FF6346;
+    color: #eb911f;
   }
   .menu-main .menu-main-menu-container li:hover > a:after,
   .menu-main .menu-main-menu-container li.current-menu-item  > a:after,
@@ -286,7 +286,7 @@ a:hover {
 @media (max-width: 991px) {
   .menu-main-menu-container {
     position: fixed;
-    background: #FF6346;
+    background: #eb911f;
     z-index: 99999;
     top: 0;
     left: 0;
@@ -416,6 +416,8 @@ a:hover {
   }
   .item-product{
     padding-top: 0;
+    padding-left: 10px;
+    padding-right: 10px;
 
   }
   .form-group label.error{
@@ -525,7 +527,7 @@ a:hover {
   .main-sidebar .widget_nav_menu .mcategory li:hover > a,
   .main-sidebar .widget_nav_menu .menu li:hover > a:before,
   .main-sidebar .widget_nav_menu .mcategory li:hover > a:before {
-    color: #FF6346 !important;
+    color: #eb911f !important;
   }
   .main-sidebar .widget_nav_menu .menu li:hover .sub-menu,
   .main-sidebar .widget_nav_menu .mcategory li:hover .sub-menu {
@@ -605,7 +607,7 @@ a:hover {
   height: 20px;
   border-radius: 100%;
   background-color: #79A3BD;
-  border: medium none #FF6346;
+  border: medium none #eb911f;
   top: 25%;
   right: 10px;
 }
@@ -625,7 +627,7 @@ a:hover {
   border: 1px solid #ebebeb;
 }
 .footer-site {
-  background: none repeat scroll 0% 0% #202020;
+  background: none repeat scroll 0% 0% #333333;
   color: #949595;
   font-weight: 400;
 }
@@ -668,7 +670,7 @@ a:hover {
   padding: 0px 0px 0px 15px;
 }
 .footer-site .footer-top ul li:hover a {
-  color: #FF6346;
+  color: #eb911f;
 }
 .footer-site .footer-bottom {
   border-top: 1px solid #2B2B2B;
@@ -703,7 +705,7 @@ img {
   height: 36px;
   font-family: "museo300", sans-serif;
   border: medium none;
-  background: none repeat scroll 0% 0% #FF6346;
+  background: none repeat scroll 0% 0% #eb911f;
   box-shadow: none;
   text-transform: uppercase;
   color: white;
@@ -769,7 +771,7 @@ img {
   margin: auto 2px;
 }
 .block-categroy-home .block-item .owl-buttons .fa:hover {
-  color: #FF6346;
+  color: #eb911f;
 }
 .block-categroy-home ul.products {
   margin-bottom: 0;
@@ -894,7 +896,7 @@ img {
 }
 .btn-dark:hover {
   color: white;
-  background: #FF6346;
+  background: #eb911f;
 }
 .btn {
   border-radius: 0;
@@ -1068,7 +1070,7 @@ img {
   margin: auto 2px;
 }
 .list-product .block-item .owl-buttons .fa:hover {
-  color: #FF6346;
+  color: #eb911f;
 }
 .list-product ul.products {
   margin-bottom: 0;
@@ -1212,7 +1214,7 @@ font-weight: bold;
   font-style: italic;
 }
 a:hover {
-  color: #FF6346;
+  color: #eb911f;
 }
 body.woocommerce .onsale {
   z-index: 999;
@@ -1251,7 +1253,7 @@ body.woocommerce .onsale:after {
   margin-top: 15px;
   padding-top: 10px;
   margin-bottom: 10px;
-  color: #FF6346;
+  color: #eb911f;
   text-transform: uppercase;
   font-style: normal;
 }
@@ -1260,7 +1262,7 @@ body.woocommerce .onsale:after {
   font-style: normal;
 }
 .single-product .woocommerce-breadcrumb a:hover {
-  color: #FF6346;
+  color: #eb911f;
 }
 .single-product .woocommerce-breadcrumb span {
   padding-left: 3px;
@@ -1282,7 +1284,7 @@ body.woocommerce .onsale:after {
   margin-right: 10px !important;
 }
 .single-product .price {
-  color: #FF6346 !important;
+  color: #eb911f !important;
   margin-bottom: 15px;
   font-weight: 600;
   font-size: 20px !important;
@@ -1350,7 +1352,7 @@ body.woocommerce .onsale:after {
   width: 72px !important;
 }
 .title-tab {
-  color: #FF6346;
+  color: #eb911f;
   font-size: 18px;
   text-transform: uppercase;
   margin-bottom: 15px;
@@ -1406,7 +1408,7 @@ body.woocommerce .onsale:after {
   margin: auto 2px;
 }
 .related .owl-buttons .fa:hover {
-  color: #FF6346;
+  color: #eb911f;
 }
 .woocommerce-pagination {
   margin-bottom: 15px;
@@ -1425,10 +1427,10 @@ body.woocommerce .onsale:after {
   width: 100%;
 }
 .main-page .entry-title {
-  color: #FC6346;
+  color: #eb911f;
   font-size: 17px;
   text-transform: uppercase;
-  border-bottom: 2px solid #FC6346;
+  border-bottom: 2px solid #eb911f;
   padding-bottom: 7px;
 }
 .main-page .product-name * {
@@ -1443,10 +1445,10 @@ body.woocommerce .onsale:after {
   display: none;
 }
 .main-page .cart_totals h2 {
-  color: #FC6346;
+  color: #eb911f;
   text-align: center;
   text-transform: uppercase;
-  border-bottom: 2px solid #FC6346;
+  border-bottom: 2px solid #eb911f;
   padding-bottom: 7px;
   margin-bottom: 7px;
 }
@@ -1456,7 +1458,7 @@ body.woocommerce .onsale:after {
 }
 .main-page .cart_totals .order-total .amount {
   font-size: 22px;
-  color: #FC6346;
+  color: #eb911f;
 }
 .cart-subtotal {
   display: none;
@@ -1490,7 +1492,7 @@ body.woocommerce .onsale:after {
   box-sizing: content-box;
 }
 .woocommerce .order_details {
-  border-left: 5px solid #FC6346;
+  border-left: 5px solid #eb911f;
   padding-left: 15px;
 }
 .woocommerce .order_details li {
@@ -1503,10 +1505,10 @@ body.woocommerce .onsale:after {
   padding-left: 5px;
 }
 .title-style1 {
-  color: #FC6346;
+  color: #eb911f;
   font-size: 14px;
   text-transform: uppercase;
-  border-bottom: 1px solid #FC6346;
+  border-bottom: 1px solid #eb911f;
   padding-bottom: 5px;
   margin-bottom: 15px;
 }
@@ -1521,7 +1523,7 @@ body.woocommerce .onsale:after {
   margin-top: auto;
 }
 .page-header .page-title {
-  color: #FF6F00 ;
+  color: #eb911f ;
   font-size: 22px;
   text-transform: uppercase;
 }
@@ -1542,7 +1544,7 @@ body.woocommerce .onsale:after {
   text-transform: uppercase;
   padding: 9px 15px;
   color: #FFF;
-  background-color: #FF6F00 ;
+  background-color: #eb911f ;
   letter-spacing: normal;
   position: relative;
   margin-top: 0px;
