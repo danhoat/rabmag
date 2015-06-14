@@ -21,5 +21,28 @@
 
 	// Reset Query
 	wp_reset_query();
+	add_action('wp_footer','add_flex_slider', 16);
+	function add_flex_slider(){
+		?>
+		<script type = "text/javascript">
+			(function($){
+
+				$(document).ready(function(){
+			 		$('.block-partner').flexslider({
+		              	animation: 'slide',
+		              	animationSpeed:400,
+		              	animationLoop: true,
+		              	itemWidth: '100%',
+		              	slideshowSpeed : 5000,
+		              	itemMargin: 0,
+		                controlNav: true,
+		                slideshow: true,
+
+		            });
+				});
+			})(jQuery);
+		</script>
+		<?php
+	}
 ?>
 

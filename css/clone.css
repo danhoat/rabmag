@@ -387,11 +387,12 @@ a:hover {
   position: relative;
   background: white;
   overflow: hidden;
+  margin-bottom: 15px;
 }
 .main-sidebar .widget div.textwidget{
   padding-left: 15px;
 }
-@media (max-width: 1199px) {
+@media (min-width: 992px) {
   .main-sidebar .widget_nav_menu {
     position: relative;
     top: 0;
@@ -399,6 +400,18 @@ a:hover {
     min-width: 260px;
     margin-bottom: 15px;
     margin-right: 0;
+  }
+  .col-left-product{
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .col-right-product {
+    margin-right: 0;
+    padding-right: 0;
+  }
+  .col-center-product{
+    padding-left: 7.5px;
+    padding-right: 7.5px;
   }
 }
 .main-sidebar .widget_nav_menu ul {
@@ -1362,7 +1375,7 @@ body.woocommerce .onsale:after {
 .main-page .entry-page {
   background-color: white;
   border: 1px solid #efefef;
-  padding: 0 15px 15px 15px;
+  padding: 0 0px 15px 0px;
   text-align: justify;
 }
 .main-page .entry-title {
@@ -1480,7 +1493,7 @@ body.woocommerce .onsale:after {
   font-size: 16px;
   border: medium none;
   text-transform: uppercase;
-  padding: 13px 15px;
+  padding: 9px 15px;
   font-weight: 400;
   color: #FFF;
   background-color: #FF6F00 ;

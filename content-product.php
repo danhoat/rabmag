@@ -11,7 +11,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-global $product, $woocommerce_loop;
+global $product, $woocommerce_loop, $class;
 
 // Store loop count we're currently on
 if ( empty( $woocommerce_loop['loop'] ) )
@@ -35,7 +35,7 @@ if ( 0 == ( $woocommerce_loop['loop'] - 1 ) % $woocommerce_loop['columns'] || 1 
 if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 	$classes[] = 'last';
 ?>
-<div class = "col-md-4 col-md-main product type-product item-product">
+<div class = " col-md-4 col-md-main product type-product item-product <?php echo $class;?> ">
 
 	<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
 	<h3 class="product-title"><?php the_title(); ?></h3>

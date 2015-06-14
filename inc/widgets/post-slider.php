@@ -101,7 +101,8 @@ class RAB_Slider_Widget extends WP_Widget {
 						the_post();
 						echo '<li>';
 						echo '<h5 class="widget-title">'.get_the_title().'</h5>';
-						rab_post_thumbnail('meidum');
+						rab_post_thumbnail('medium');
+						the_excerpt();
 						echo'</li>';
 					}
 					echo '</ul>';
