@@ -23,11 +23,11 @@
                     <?php
 
                     do_action("rab_before_loop");
-
+                    query_posts( 'post_type=product&posts_per_page=9' );
                     if(have_posts()):
                         $i = 0;
                         $class ='col-md-4 ';
-                        echo '<h3 class ="main-title widget-title">Sản phẩm</h3>';
+                        echo '<h3 class ="title">Sản phẩm</h3>';
                         while(have_posts()): the_post();
                             if( $i%3 == 2)
                                 $class ="col-md-4 col-right-product";
@@ -40,7 +40,7 @@
                             get_template_part( 'content', $format );
                             $i ++;
                         endwhile;
-                        rab_pagination();
+                       // rab_pagination();
 
                     else :
                         get_template_part('template/none' );
