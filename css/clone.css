@@ -431,11 +431,11 @@ a:hover {
     overflow: hidden;
     display: block;
   }
-  .entry-page .post-thumbnail img{
+  .item-product .post-thumbnail img{
     transition: all 2.75s cubic-bezier(0, 0.83, 0.17, 1) 0s;
     width: 100%;
   }
-  .entry-page  .post-thumbnail img:hover{
+  .item-product img:hover{
     transform: matrix(1.2, 0, 0, 1.2, 0, 0);
     opacity: 1;
   }

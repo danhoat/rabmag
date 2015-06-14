@@ -10,6 +10,18 @@
         <?php get_sidebar();?>
         <div class="col-lg-9 main-content">
             <div class="entry-page">
+                <header class="archive-header">
+                    <h1 class="archive-title title"><?php echo single_cat_title( '', false ); ?></h1>
+
+                    <?php
+                        // Show an optional term description.
+                        $term_description = term_description();
+                        if ( ! empty( $term_description ) ) :
+                            printf( '<div class="taxonomy-description col-lg-12">%s</div>', $term_description );
+                        endif;
+                    ?>
+                </header><!-- .archive-header -->
+
                 <?php
                 if(is_active_sidebar('top_content')){
                     echo '<div class="row">';

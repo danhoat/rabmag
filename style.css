@@ -169,7 +169,7 @@ body .notification{
 	height: 39px;
 	width: 100%;
 	position: fixed;
-	z-index: 2;
+	z-index: 999999;
 	background: #ff6f00;
 	display:none;
 }

@@ -1,5 +1,6 @@
 (function($){
-	function showNotice(params) {
+
+	function showNotification(params) {
 
             // remove existing notification
             //jQuery('div.notification').remove();
@@ -53,7 +54,7 @@
 		        },
 		        success: function(response) {
 		        	$btn.button('reset');
-		        	showNotice(response);
+		        	showNotification(response);
 		        }
 		      });
 
