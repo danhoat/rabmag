@@ -253,7 +253,7 @@ Class RAB_Site{
 	 */
 	function new_excerpt_more($more) {
        	global $post;
-		return $more.'<a class="moretag" href="'. get_permalink($post->ID) . '">'.__('Read more',RAB_DOMAIN).'</a>';
+		return $more.'<p><a class="moretag" href="'. get_permalink($post->ID) . '">'.__('Read more',RAB_DOMAIN).'&nbsp; &#155; <span>&#155;</span> </a></p>';
 	}
 	/**
 	 * [__destruct description]

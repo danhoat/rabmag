@@ -164,3 +164,20 @@ box-shadow:         0px 0px 2px 0px rgba(50, 50, 50, 0.5);}
 .rab_slider  img{
 	max-height: 159px;
 }
+.main-page a {
+	color: #ff6f00;
+}
+.flexslider a.moretag{
+	padding: 1px 2px 0px 8px;
+	border-radius: 1px;
+	float: right;
+	background: #ff6f00;
+	color: #fff;
+}
+.flexslider a.moretag span{
+	visibility: hidden;
+}
+.flexslider a.moretag:hover span{
+	visibility: visible;
+}
+}
