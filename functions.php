@@ -109,7 +109,7 @@ Class RAB_Site{
 				$(document).ready(function(){
 
 					jQuery.extend(jQuery.validator.messages	, {
-					    required: "<?php _e("This field is required 123", RAB_DOMAIN); ?>",
+					    required: "<?php _e("This field is required", RAB_DOMAIN); ?>",
 					    remote: "<?php _e("Please fix this field.",RAB_DOMAIN); ?>",
 					    email: "<?php _e("Please enter a valid email address.",RAB_DOMAIN); ?>",
 					    url: "<?php _e("Please enter a valid URL.",RAB_DOMAIN);?>",
@@ -156,8 +156,14 @@ Class RAB_Site{
 		wp_enqueue_script( 'front');
 		wp_localize_script( 'front','rab_global',
 			array(
-				'ajaxUrl' => admin_url( 'admin-ajax.php' ),
+				'ajaxUrl' 	=> admin_url( 'admin-ajax.php' ),
+				'validate' 	=> array(
+					'required_user_name' => __('The user name field is required',RAB_DOMAIN),
+					'required_user_email' => __('The email field is required',RAB_DOMAIN),
+					'required_required_content' => __('The content field is required',RAB_DOMAIN),
+				)
 			)
+
 		);
 
 	}

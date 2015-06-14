@@ -1,9 +1,22 @@
 (function($){
 	$(document).ready(function(){
 
-		var val = $('form.form-contact').validate();
+		var val = $('form.form-contact').validate({
+				rules: {
+                        user_name: "required",
+                   },
+                 messages: {
+                 		user_name : rab_global.validate.required,
+						user_email :{
+                 			required : rab_global.validate.required_user_email,
+                 		// 	email    : 'Chưa đúng định dạng email'
+                 		},
+                 		content :rab_global.validate.required_content,
+                    }
+			});
+
 		$('form.form-contact').submit(function(){
-			var val = $('form.form-contact').validate();
+
 			var data = $( this ).serialize();
 
 			if(!val.form())

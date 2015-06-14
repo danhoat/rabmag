@@ -1,6 +1,7 @@
 <?php
 
 	add_action( 'wp_ajax_nopriv_rab_contact', 'rab_contact' );
+	add_action( 'wp_ajax_rab_contact', 'rab_contact' );
 
 	function rab_contact(){
 
