@@ -417,11 +417,11 @@ a:hover {
     padding-top: 0;
   }
   .form-group label.error{
-  font-size: 12px;
-  font-weight: normal;
-  bottom: -11px;
-  position: absolute;
-}
+      font-size: 12px;
+      font-weight: normal;
+      bottom: -11px;
+      position: absolute;
+    }
   a.post-thumbnail{
     overflow: hidden;
     display: block;
@@ -450,6 +450,11 @@ a:hover {
     margin-bottom: 0;
     padding: 0 15px;
   }
+
+  .entry-header .entry-title{
+    margin-top: 0;
+  }
+
 }
 .main-sidebar .widget_nav_menu ul {
   margin: auto;
