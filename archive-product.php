@@ -8,45 +8,34 @@
 <?php get_header(); ?>
 <div class="row full-row">
     <div class="container main-page">
+	    <div class=" main-content">
+	            <?php
+	            echo '<h3 class ="main-title widget-title">Sản phẩm</h3>';
 
+	            do_action("rab_before_loop");
 
-            <div class=" main-content">
-                <div class="entry-page1">
-                    <?php
-                    echo '<h3 class ="main-title widget-title">Sản phẩm</h3>';
-                    do_action("rab_before_loop");
-                    echo '<div class="row">';
-		                    if(have_posts()):
-		                        $i = 0;
-		                        $class ='col-md-3 ';
-		                        
-		                        while(have_posts()): the_post();
-		                            // if( $i%4 == 3)
-		                            //     $class ="col-md-3 col-right-product";
-		                            // else if($i%4 == 2 || $i%3 == 1)
-		                            //     $class = "col-md-3 col-center-product";
-		                            // else
-		                            //     $class ='col-md-3 col-left-product';
+	            echo '<div class="row">';
 
-		                            $format     = apply_filters("post_format_default",get_post_format() );
-		                            get_template_part( 'content', $format );
-		                            $i ++;
-		                        endwhile;
-		                        rab_pagination();
+	                    if(have_posts()):
+	                        $i = 0;
+	                        $class ='col-md-3 ';
 
-		                    else :
-		                        get_template_part('template/none' );
+	                        while(have_posts()): the_post();
+	                            $format     = apply_filters("post_format_default",get_post_format() );
+	                            get_template_part( 'content', $format );
+	                            $i ++;
+	                        endwhile;
+	                        rab_pagination();
 
-		                    endif;
+	                    else :
+	                        get_template_part('template/none' );
 
-		                    ?>
-		                    <?php do_action("rab_after_loop") ?>
-					</div>
-                </div> <!-- .endtry end !-->
+	                    endif;
 
-            </div> <!-- end . col-lg-9 !-->
-
-        <?php get_template_part('template/block-partner' ); ?>
+	                    ?>
+	                    <?php do_action("rab_after_loop") ?>
+	        </div> <!-- .main-content end !-->
+	    </div> <!-- end . col-lg-9 !-->
 
     </div> <!-- End main-content!-->
 </div> <!-- full row !-->
