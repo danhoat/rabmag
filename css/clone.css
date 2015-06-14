@@ -627,8 +627,14 @@ a:hover {
 }
 .footer-site {
   background: none repeat scroll 0% 0% #333333;
-  color: #949595;
+  color: #f6f6f6;
   font-weight: 400;
+}
+.footer-site .textwidget a{
+  color: #f6f6f6;
+}
+.footer-site .textwidget a:hover{
+  color: #eb911f;
 }
 .footer-site p {
   margin-bottom: 5px;
@@ -639,7 +645,6 @@ a:hover {
   position: relative;
   line-height: normal;
   text-transform: uppercase;
-  font-family: "museo300", sans-serif;
   padding: 10px 15px 0 0px;
   font-size: 16px;
   background: none repeat scroll 0% 0% transparent;
@@ -659,14 +664,15 @@ a:hover {
 .footer-site .footer-top ul li {
   list-style: none;
 }
+
 .footer-site .footer-top ul li a {
   line-height: 30px;
   display: block;
   white-space: nowrap;
-  color: #949595;
   background: url("../images/icon-menu.png") no-repeat scroll 0px 10px transparent;
   line-height: 26px;
   padding: 0px 0px 0px 15px;
+  color: #a9a9a9;
 }
 .footer-site .footer-top ul li:hover a {
   color: #eb911f;

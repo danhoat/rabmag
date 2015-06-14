@@ -145,7 +145,7 @@ box-shadow:         0px 0px 2px 0px rgba(50, 50, 50, 0.5);}
 	padding: 1px 2px 0px 8px;
 	border-radius: 1px;
 	float: right;
-	background: #ff6f00;
+	background: #eb911f;
 	color: #fff;
 }
 .flexslider a.moretag span{
@@ -170,7 +170,7 @@ body .notification{
 	width: 100%;
 	position: fixed;
 	z-index: 999999;
-	background: #ff6f00;
+	background: #eb911f;
 	display:none;
 }
 body .notification .container{
