@@ -26,15 +26,15 @@
 
                     if(have_posts()):
                         $i = 0;
-                        $class ='';
+                        $class ='col-md-4 ';
                         echo '<h3 class ="main-title widget-title">Sản phẩm</h3>';
                         while(have_posts()): the_post();
                             if( $i%3 == 2)
-                                $class ="col-right-product";
+                                $class .="col-right-product";
                             else if($i%3 == 1)
-                                $class = "col-center-product";
+                                $class .= "col-center-product";
                             else
-                                $class ='col-left-product';
+                                $class .='col-left-product';
 
                             $format     = apply_filters("post_format_default",get_post_format() );
                             get_template_part( 'content', $format );

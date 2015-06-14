@@ -6,7 +6,7 @@
 	function rab_contact(){
 
 		$request = $_POST;
-		if( is_null($_POST['user_name']) || is_null($request['user_email']) ){
+		if( is_null($_POST['user_name']) || is_null($request['user_email']) || is_null($request['content']) ){
 			wp_send_json(array('success' => true, 'msg' => __('Please enter your information', RAB_DOMAIN)));
 		}
 		$ad_email 	= get_option('admin_email');
@@ -23,14 +23,15 @@
 			'Reply-To' => $request['user_email']
 		);
 
-		$mail 		= wp_mail($ad_email, 'Contact from website', $message, $headers);
+		$mail = wp_mail($ad_email, 'Contact from website', $message, $headers);
 
-		if($mail){
+		if ( $mail ){
+			$auto = wp_mail($request['user_email'], 'Email tự động từ %', 'Chúng tôi đã nhận được thông tin từ quý khách. Chúng tôi sẽ xem xét và liên hệ bạn sớm nhất có thể. <br /> Cám ơn! .');
 			wp_send_json(array('success' => true, 'msg' => __('Email has been sent successfull', RAB_DOMAIN)));
-			wp_mail($$request['user_email'], 'Cảm ơn đã liên hệ tới %', 'Chúng tôi dã nhận được thông tin của quý khách.');
-		}
-		else
+
+		} else {
 			wp_send_json(array('success' => false, 'msg' => __('Send mail fail', RAB_DOMAIN)));
+		}
 	}
 
 ?>

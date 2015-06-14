@@ -23,7 +23,7 @@ get_header( 'shop' ); ?>
 		 * @hooked woocommerce_breadcrumb - 20
 		 */
 		do_action( 'woocommerce_before_main_content' );
-		do_action( 'woocommerce_sidebar' );
+		//do_action( 'woocommerce_sidebar' );
 	?>
 		<div class="col-lg-12 main-content">
 			<div class="entry-page">
@@ -51,9 +51,19 @@ get_header( 'shop' ); ?>
 				<?php woocommerce_product_loop_start(); ?>
 
 					<?php woocommerce_product_subcategories(); ?>
-
+					<?php $class =''; $i = 0; ?>
 					<?php while ( have_posts() ) : the_post(); ?>
+						<?php
+							if( $i % 4 == 3)
+                                $class .="col-md-3 col-right-product";
+                            else if ( $i%4 == 1 || $i%4 == 2 )
+                                $class .= "col-md-3 col-center-product";
+                            else if($i %4 == 0)
+                                $class .='col-md-3 col-left-product';
 
+                            $i ++;
+
+                        ?>
 						<?php wc_get_template_part( 'content', 'product' ); ?>
 
 					<?php endwhile; // end of the loop. ?>
