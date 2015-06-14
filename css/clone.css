@@ -421,6 +421,8 @@ a:hover {
       font-weight: normal;
       bottom: -11px;
       position: absolute;
+      color: red;
+      font-style:italic;
     }
   a.post-thumbnail{
     overflow: hidden;

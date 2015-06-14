@@ -151,6 +151,13 @@ Class RAB_Site{
 		wp_register_script( 'demo',TEMPLATEURL.'/js/demo.js',array('jquery','jquery.flexslider'));
 		wp_register_style( 'flex.slider',TEMPLATEURL.'/css/flexslider.css');
 
+		/**
+		 * BOOTSTRAP JAVASCRIPT
+		 */
+		wp_register_script( 'bootstrap-js',get_stylesheet_directory_uri().'/bootstrap/js/bootstrap.min.js');
+		wp_register_script( 'bootstrap-button-js',get_stylesheet_directory_uri().'/bootstrap/js/bootstrap.min.js', array('bootstrap-js'));
+
+		//END BOOTSTRAP
 		wp_enqueue_style( 'rab-style', get_stylesheet_uri() );
 		wp_enqueue_script( 'jquery.validatio');
 		wp_enqueue_script( 'front');
@@ -158,14 +165,16 @@ Class RAB_Site{
 			array(
 				'ajaxUrl' 	=> admin_url( 'admin-ajax.php' ),
 				'validate' 	=> array(
-					'required_user_name' => __('The user name field is required',RAB_DOMAIN),
-					'required_user_email' => __('The email field is required',RAB_DOMAIN),
+					'required_user_name' 		=> __('The user name field is required',RAB_DOMAIN),
+					'required_user_email' 		=> __('The email field is required',RAB_DOMAIN),
 					'required_required_content' => __('The content field is required',RAB_DOMAIN),
-					'required_phone' => __('The number phone field is required',RAB_DOMAIN),
+					'required_phone' 			=> __('The number phone field is required',RAB_DOMAIN),
 				)
 			)
 
 		);
+
+		wp_enqueue_script( 'bootstrap-button-js' );
 
 	}
 
@@ -204,8 +213,8 @@ Class RAB_Site{
 			</style>
 		<?php
 
-			wp_enqueue_style('bootraps-css', get_stylesheet_directory_uri().'/css/bootstrap.css');
-			wp_enqueue_style('bootraps-grid', get_stylesheet_directory_uri().'/css/grid.css');
+			wp_enqueue_style('bootraps-css', get_stylesheet_directory_uri().'/bootstrap/css/bootstrap.css');
+			wp_enqueue_style('bootraps-grid', get_stylesheet_directory_uri().'/bootstrap/css/grid.css');
 			wp_enqueue_style('front-rab', get_stylesheet_directory_uri().'/font/css/font-awesome.min.css');
 			wp_enqueue_style('rab-style-custom', get_stylesheet_directory_uri().'/custom.css');
 			wp_enqueue_style('rab-style-clone', get_stylesheet_directory_uri().'/css/clone.css');
@@ -213,7 +222,7 @@ Class RAB_Site{
 	public function rab_wp_footer(){
 		wp_enqueue_script('jquery.ajax');
 		$http  = is_ssl() ? 'https'  : 'http';
-		wp_enqueue_script('bootstrap-js',get_stylesheet_directory_uri().'/js/bootstrap.min.js');
+		wp_enqueue_script('bootstrap-js',get_stylesheet_directory_uri().'/bootstrap/js/bootstrap.min.js');
 		wp_enqueue_style('google-fonts',$http.'://fonts.googleapis.com/css?family=PT+Sans+Narrow');
 		wp_enqueue_style('google-font-content',$http.'://fonts.googleapis.com/css?family=Open+Sans&subset=latin,vietnamese');
 	}

@@ -16,19 +16,26 @@
                     }
 			});
 
+		var $btn = $('form.form-contact').find(".btn");
+
 		$('form.form-contact').submit(function(){
 
 			var data = $( this ).serialize();
 
 			if(!val.form())
 				return false;
+			var $btn = $('form.form-contact').find(".btn");
 
 			jQuery.ajax({
 
 		        type : "POST",
 		        url : rab_global.ajaxUrl,
 		        data : data,
+		        beforeSend: function(){
+		        	$btn.button('loading');
+		        },
 		        success: function(response) {
+		        	$btn.button('reset');
 		        	console.log(response);
 		        }
 		      });

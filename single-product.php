@@ -1,52 +1,33 @@
-<?php
-/**
- * The Template for displaying all single products.
- *
- * Override this template by copying it to yourtheme/woocommerce/single-product.php
- *
- * @author 		WooThemes
- * @package 	WooCommerce/Templates
- * @version     1.6.4
- */
+<?php ob_start(); ?>
+  <?php get_header();?>
+    <div class="container main-wrap">
+        <div class="main-content">
+            <?php get_sidebar();?>
+            <div id="main-content" class="col-sm-8 blog-main">
+                <div class="single-content">
+                    <?php
+                    the_post();
+                    echo '<h1 class="post-title title">'.get_the_title().'</h1>';
+                    echo'<div class="post-headding">';
+                    the_author().' &nbsp;  '.the_date();
+                    comments_number( 'no comments', '%s comment', '% comments' );
+                    echo '</div>';
+                    echo '<div class="post-content ">';
+                    if(has_post_thumbnail())
+                        the_post_thumbnail();
+                    the_content();
+                    echo '</div>';
+                    // echo '<div class="post-comment">';
+                    //     comments_template();
+                    // echo'</div>';
+                    ?>
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+                </div>
 
-get_header( 'shop' ); ?>
+            </div>
 
-	<?php
-		/**
-		 * woocommerce_before_main_content hook
-		 *
-		 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
-		 * @hooked woocommerce_breadcrumb - 20
-		 */
-		do_action( 'woocommerce_before_main_content' );
-	?>
 
-		<?php while ( have_posts() ) : the_post(); ?>
+        </div>
+    </div> <!-- End main-content!-->
 
-			<?php wc_get_template_part( 'content', 'single-product' ); ?>
-
-		<?php endwhile; // end of the loop. ?>
-
-	<?php
-		/**
-		 * woocommerce_after_main_content hook
-		 *
-		 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
-		 */
-		do_action( 'woocommerce_after_main_content' );
-	?>
-
-	<?php
-		/**
-		 * woocommerce_sidebar hook
-		 *
-		 * @hooked woocommerce_get_sidebar - 10
-		 */
-		do_action( 'woocommerce_sidebar' );
-	?>
-
-<?php get_footer( 'shop' ); ?>
+   <?php get_footer();?>

@@ -14,10 +14,13 @@ h1{
 .title{
 	font-family: 'PT Sans Narrow',sans-serif;
 	text-transform: uppercase;
-
+	border-bottom: 1px solid #ff6f00;
+	border-bottom: 1px solid red;
 }
 .post-title, .post-title a, .title, .title a{
 	text-align: justify;
+	margin-top: 0;
+
 }
 
 

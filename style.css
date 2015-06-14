@@ -44,6 +44,12 @@ body .form-group input.form-control{
 	height: 40px;
 	border-radius: 3px;
 }
+.form-group .col-sm-2{
+	text-align: right;
+}
+.form-group  label{
+	font-weight: normal;
+}
 body .form-group  textarea{
 	border-radius: 3px;
 }

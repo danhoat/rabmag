@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: vina\n"
-"POT-Creation-Date: 2015-06-14 09:21+0700\n"
-"PO-Revision-Date: 2015-06-14 09:22+0700\n"
+"POT-Creation-Date: 2015-06-14 12:13+0700\n"
+"PO-Revision-Date: 2015-06-14 12:14+0700\n"
 "Last-Translator: dan <danng@gmail.com>\n"
 "Language-Team: rab <danhoat@gmail.com>\n"
 "Language: vi_VN\n"
@@ -205,31 +205,31 @@ msgstr ""
 msgid "Please enter a value greater than or equal to {0}."
 msgstr ""
 
-#: functions.php:161
+#: functions.php:168
 msgid "The user name field is required"
 msgstr "Vui lòng nhập họ tên"
 
-#: functions.php:162
+#: functions.php:169
 msgid "The email field is required"
 msgstr "Vui lòng nhập email"
 
-#: functions.php:163
+#: functions.php:170
 msgid "The content field is required"
 msgstr "Vui lòng nhập nội dung"
 
-#: functions.php:164
+#: functions.php:171
 msgid "The number phone field is required"
 msgstr "Vui lòng nhập số điện thoại"
 
-#: functions.php:263
+#: functions.php:272
 msgid "Read more"
 msgstr "Xem thêm"
 
-#: functions.php:327
+#: functions.php:336
 msgid "There was a problem with your upload."
 msgstr ""
 
-#: functions.php:331
+#: functions.php:340
 msgid "Where is the file?"
 msgstr ""
 
@@ -445,13 +445,17 @@ msgstr ""
 msgid "Show Nav"
 msgstr ""
 
-#: single.php:30
-msgid "Related Post"
-msgstr ""
-
 #: template/block-partner.php:10
 msgid "Our Parner"
 msgstr "Đối tác của Nam Hà Phát"
+
+#: template/contact-form.php:48
+msgid "Sending..."
+msgstr "Đang gửi ..."
+
+#: template/contact-form.php:48
+msgid "Send"
+msgstr "Gửi"
 
 #: template/none.php:12
 msgid "Nothing Found"
