@@ -10,11 +10,25 @@
 			wp_send_json(array('success' => true, 'msg' => __('Please enter your information', RAB_DOMAIN)));
 		}
 		$ad_email 	= get_option('admin_email');
+		$message 	= __('Email liên hệ từ website % <br />');
+		$message 	.= 'Thông tin liên hệ:<br />Họ và tên:[user_name].<br /> Số điện thoại: [user_phone].<br /> Email: [user_email].<br /> Địa chỉ: [user_address].<br /> Nội dung:[content]';
 
-		$mail 		= wp_mail($ad_email, 'Contact from website', ' noi dung');
+		$message  	= str_replace("[user_name]", $request['user_name'], $message);
+		$message  	= str_replace("[user_address]", $request['user_address'], $message);
+		$message  	= str_replace("[user_email]", $request['user_email'], $message);
+		$message  	= str_replace("[user_phone]", $request['user_phone'], $message);
+		$message  	= str_replace("[content]", $request['content'], $message);
 
-		if($mail)
+		$headers = array(
+			'Reply-To' => $request['user_email']
+		);
+
+		$mail 		= wp_mail($ad_email, 'Contact from website', $message, $headers);
+
+		if($mail){
 			wp_send_json(array('success' => true, 'msg' => __('Email has been sent successfull', RAB_DOMAIN)));
+			wp_mail($$request['user_email'], 'Cảm ơn đã liên hệ tới %', 'Chúng tôi dã nhận được thông tin của quý khách.');
+		}
 		else
 			wp_send_json(array('success' => false, 'msg' => __('Send mail fail', RAB_DOMAIN)));
 	}

@@ -168,7 +168,7 @@ body .notification{
 	width: 100%;
 	position: fixed;
 	z-index: 2;
-	background: red;
+	background: #ff6f00;
 	display:none;
 }
 body .notification .container{
@@ -179,4 +179,9 @@ body .notification .container .msg{
 	text-align: center;
 	height: 39px;
 	line-height: 39px;
+	color: #fff;
+	opacity: 1;
+	font-size: 13px;
+	font-weight: bold;
+	text-transform:uppercase;
 }
