@@ -4,13 +4,8 @@
  * @param  [type] $sizes [description]
  * @return [type]        [description]
  */
-function paulund_remove_default_image_sizes( $sizes) {
-    unset( $sizes['shop_thumbnail']);
-    unset( $sizes['shop_catalog']);
-    unset( $sizes['shop_single']);
-    return $sizes;
-}
-add_filter('intermediate_image_sizes_advanced', 'paulund_remove_default_image_sizes', 13);
+
+
 
 add_action( 'init', 'remove_woo_action_hook', 105);
 function remove_woo_action_hook(){

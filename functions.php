@@ -62,6 +62,11 @@ Class RAB_Site{
 		$this->add_action( 'get_the_excerpt', 'new_excerpt_more');
 
 		//$this->add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+		
+		/**
+		 * Thumbnail filter
+		 */
+		$this->add_filter( 'intermediate_image_sizes_advanced', 'paulund_remove_default_image_sizes', 103 );
 
 	}
 	/**
@@ -79,7 +84,7 @@ Class RAB_Site{
 		//     'minify' => true
 		// ) );
 		add_theme_support('post-thumbnails' );
-		add_image_size( 'thumbnail-show', '207','207', true );
+		//add_image_size( 'thumbnail-show', '207','207', true );
 		add_theme_support('custom-header');
 		add_theme_support('post-formats');
 		$locations 	= array(
@@ -276,6 +281,20 @@ Class RAB_Site{
 
 	function custom_excerpt_length( $length ) {
 			return 20;
+	}
+
+	/**
+	 * remove size of post thumbnail.
+	 * @param  [type] $sizes [description]
+	 * @return [type]        [description]
+	 */
+	function paulund_remove_default_image_sizes( $sizes) {
+	    unset( $sizes['shop_thumbnail']);
+	    unset( $sizes['shop_catalog']);
+	    unset( $sizes['shop_single']);
+	    unset( $sizes['thumbnail']);
+
+	    return $sizes;
 	}
 	/**
 	 * [__destruct description]
