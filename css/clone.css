@@ -416,8 +416,6 @@ a:hover {
   }
   .item-product{
     padding-top: 0;
-    padding-left: 10px;
-    padding-right: 10px;
 
   }
   .form-group label.error{
@@ -1427,10 +1425,10 @@ body.woocommerce .onsale:after {
   width: 100%;
 }
 .main-page .entry-title {
-  color: #eb911f;
+  color: #FC6346;
   font-size: 17px;
   text-transform: uppercase;
-  border-bottom: 2px solid #eb911f;
+  border-bottom: 2px solid #FC6346;
   padding-bottom: 7px;
 }
 .main-page .product-name * {
@@ -1445,10 +1443,10 @@ body.woocommerce .onsale:after {
   display: none;
 }
 .main-page .cart_totals h2 {
-  color: #eb911f;
+  color: #FC6346;
   text-align: center;
   text-transform: uppercase;
-  border-bottom: 2px solid #eb911f;
+  border-bottom: 2px solid #FC6346;
   padding-bottom: 7px;
   margin-bottom: 7px;
 }
@@ -1458,7 +1456,7 @@ body.woocommerce .onsale:after {
 }
 .main-page .cart_totals .order-total .amount {
   font-size: 22px;
-  color: #eb911f;
+  color: #FC6346;
 }
 .cart-subtotal {
   display: none;
@@ -1492,7 +1490,7 @@ body.woocommerce .onsale:after {
   box-sizing: content-box;
 }
 .woocommerce .order_details {
-  border-left: 5px solid #eb911f;
+  border-left: 5px solid #FC6346;
   padding-left: 15px;
 }
 .woocommerce .order_details li {
@@ -1505,10 +1503,10 @@ body.woocommerce .onsale:after {
   padding-left: 5px;
 }
 .title-style1 {
-  color: #eb911f;
+  color: #FC6346;
   font-size: 14px;
   text-transform: uppercase;
-  border-bottom: 1px solid #eb911f;
+  border-bottom: 1px solid #FC6346;
   padding-bottom: 5px;
   margin-bottom: 15px;
 }
