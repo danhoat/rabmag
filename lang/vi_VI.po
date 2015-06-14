@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: vina\n"
-"POT-Creation-Date: 2015-06-14 12:13+0700\n"
-"PO-Revision-Date: 2015-06-14 12:14+0700\n"
+"POT-Creation-Date: 2015-06-14 12:51+0700\n"
+"PO-Revision-Date: 2015-06-14 12:51+0700\n"
 "Last-Translator: dan <danng@gmail.com>\n"
 "Language-Team: rab <danhoat@gmail.com>\n"
 "Language: vi_VN\n"
@@ -329,17 +329,16 @@ msgid "No partners found in Trash."
 msgstr "Không tìm thấy đối tác nào"
 
 #: inc/rab_ajax_action.php:10
-msgid "Vui long nhap thong tin"
+msgid "Please enter your information"
 msgstr ""
 
 #: inc/rab_ajax_action.php:17
-msgid "The email has been sent successfull"
-msgstr ""
+msgid "Email has been sent successfull"
+msgstr "Gửi mail thành công"
 
 #: inc/rab_ajax_action.php:19
-#, fuzzy
 msgid "Send mail fail"
-msgstr "Upload lỗi"
+msgstr "Gửi mail lỗi"
 
 #: inc/themes.php:83
 msgid "Sticky"
@@ -449,6 +448,46 @@ msgstr ""
 msgid "Our Parner"
 msgstr "Đối tác của Nam Hà Phát"
 
+#: template/contact-form.php:4
+msgid "Your name: (*)"
+msgstr "Họ tên: (*)"
+
+#: template/contact-form.php:7
+msgid "your name"
+msgstr "Tên của bạn"
+
+#: template/contact-form.php:12
+msgid "Address:"
+msgstr "Địa chỉ: "
+
+#: template/contact-form.php:15
+msgid "Your address"
+msgstr "Địa chỉ của bạn"
+
+#: template/contact-form.php:20
+msgid "Your phone number: (*)"
+msgstr "Điện thoại:"
+
+#: template/contact-form.php:23
+msgid "Your phone number"
+msgstr "Điện thoại"
+
+#: template/contact-form.php:28
+msgid "Email: (*)"
+msgstr ""
+
+#: template/contact-form.php:31
+msgid "Your Email"
+msgstr "Email của bạn"
+
+#: template/contact-form.php:37
+msgid "Content: (*)"
+msgstr "Nội dung:(*)"
+
+#: template/contact-form.php:40
+msgid "content"
+msgstr "Nội dung"
+
 #: template/contact-form.php:48
 msgid "Sending..."
 msgstr "Đang gửi ..."
@@ -459,7 +498,7 @@ msgstr "Gửi"
 
 #: template/none.php:12
 msgid "Nothing Found"
-msgstr ""
+msgstr "Không tìm thấy"
 
 #: template/none.php:18
 #, php-format
