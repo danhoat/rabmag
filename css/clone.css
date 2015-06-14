@@ -431,8 +431,7 @@ a:hover {
   }
   .entry-page .post-thumbnail img{
     transition: all 2.75s cubic-bezier(0, 0.83, 0.17, 1) 0s;
-    opacity: 0.9;
-      width: 100%;
+    width: 100%;
   }
   .entry-page  .post-thumbnail img:hover{
     transform: matrix(1.2, 0, 0, 1.2, 0, 0);
@@ -1425,7 +1424,7 @@ body.woocommerce .onsale:after {
 }
 .main-page .entry-title {
   color: #FC6346;
-  font-size: 20px;
+  font-size: 17px;
   text-transform: uppercase;
   border-bottom: 2px solid #FC6346;
   padding-bottom: 7px;

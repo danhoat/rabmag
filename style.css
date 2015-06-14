@@ -187,3 +187,8 @@ body .notification .container .msg{
 	font-weight: bold;
 	text-transform:uppercase;
 }
+.post-item{
+	display: table;
+	width: 100%;
+	clear: both;
+}
