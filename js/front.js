@@ -6,12 +6,13 @@
                         user_name: "required",
                    },
                  messages: {
-                 		user_name : rab_global.validate.required,
+                 		user_name : rab_global.validate.required_user_name,
 						user_email :{
                  			required : rab_global.validate.required_user_email,
                  		// 	email    : 'Chưa đúng định dạng email'
                  		},
-                 		content :rab_global.validate.required_content,
+                 		content 	: rab_global.validate.required_content,
+                 		user_phone 	: rab_global.validate.required_phone,
                     }
 			});
 

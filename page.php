@@ -18,7 +18,9 @@
                 if(have_posts()):
                     echo '<h2 class="main-title">'.get_the_title().'</h2>';
                     the_post();
+                    echo '<div class="content">';
                     the_content();
+                    echo '</div>';
                 else :
                     get_template_part('template/none' );
 

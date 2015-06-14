@@ -161,6 +161,7 @@ Class RAB_Site{
 					'required_user_name' => __('The user name field is required',RAB_DOMAIN),
 					'required_user_email' => __('The email field is required',RAB_DOMAIN),
 					'required_required_content' => __('The content field is required',RAB_DOMAIN),
+					'required_phone' => __('The number phone field is required',RAB_DOMAIN),
 				)
 			)
 

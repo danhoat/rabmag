@@ -69,40 +69,7 @@ div.top-row .row{
 		padding-bottom: 0;
 	}
 }
-.form-group label.error{
-	font-size: 12px;
-	font-weight: normal;
-	bottom: -11px;
-	position: absolute;
-}
-a.post-thumbnail{
-	overflow: hidden;
-	display: block;
-}
-.entry-page .post-thumbnail img{
- 	transition: all 2.75s cubic-bezier(0, 0.83, 0.17, 1) 0s;
- 	opacity: 0.9;
-    width: 100%;
-}
-.entry-page  .post-thumbnail img:hover{
- 	transform: matrix(1.2, 0, 0, 1.2, 0, 0);
- 	opacity: 1;
-}
-h3.product-title{
-	font-size: 16px;
-	text-transform: uppercase;
-	margin-top: 0;
-	text-align: center;
-}
-.block-partner h3{
-	margin-top: 0;
-	margin-bottom: 0;
-}
-.block-partner  .col-lg-12{
-	margin-top: 0;
-	margin-bottom: 0;
-	padding: 0 15px;
-}
+
 
 .tparrows.default.miami-light 				{ 	width:23px; height:44px;  padding-top: 50px; padding-bottom: 50px; background: transparent; }
 .tparrows.default.miami-light:after 		{	position:absolute;  line-height: 50px; text-align: center;  font-family: "revicons"; color: #fff; color:#aaa; font-size:50px; top:0px;left:0px;z-index:0; width:23px; height:44px;   -webkit-transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out; -moz-transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out; -o-transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out; -ms-transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;  }
@@ -181,4 +148,7 @@ box-shadow:         0px 0px 2px 0px rgba(50, 50, 50, 0.5);}
 .flexslider a.moretag:hover span{
 	visibility: visible;
 }
+
+body.page .main-page .entry-page{
+	padding: 0 5px;
 }

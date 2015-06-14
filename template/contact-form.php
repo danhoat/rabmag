@@ -15,6 +15,14 @@
             <input class="form-control" id="user_address" name="user_address">
         </div>
     </div>
+     <div class="form-group">
+        <div class="col-sm-2">
+            <label for="user_email">Số điện thoại :</label>
+        </div>
+        <div class="col-sm-9">
+            <input type="text" class="form-control required " name="user_phone" id="user_phone">
+        </div>
+    </div>
     <div class="form-group">
         <div class="col-sm-2">
             <label for="user_email">Email :</label>
@@ -23,6 +31,7 @@
             <input type="email" class="form-control required email" name="user_email" id="user_email">
         </div>
     </div>
+
     <div class="form-group">
         <div class="col-sm-2">
             <label for="content">Nội dung</label>

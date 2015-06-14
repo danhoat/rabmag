@@ -416,6 +416,40 @@ a:hover {
   .item-product{
     padding-top: 0;
   }
+  .form-group label.error{
+  font-size: 12px;
+  font-weight: normal;
+  bottom: -11px;
+  position: absolute;
+}
+  a.post-thumbnail{
+    overflow: hidden;
+    display: block;
+  }
+  .entry-page .post-thumbnail img{
+    transition: all 2.75s cubic-bezier(0, 0.83, 0.17, 1) 0s;
+    opacity: 0.9;
+      width: 100%;
+  }
+  .entry-page  .post-thumbnail img:hover{
+    transform: matrix(1.2, 0, 0, 1.2, 0, 0);
+    opacity: 1;
+  }
+  h3.product-title{
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-top: 0;
+    text-align: center;
+  }
+  .block-partner h3{
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .block-partner  .col-lg-12{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0 15px;
+  }
 }
 .main-sidebar .widget_nav_menu ul {
   margin: auto;
