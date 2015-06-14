@@ -157,6 +157,8 @@ box-shadow:         0px 0px 2px 0px rgba(50, 50, 50, 0.5);}
 
 body.page .main-page .entry-page{
 	padding: 0 5px;
+	width: 100%;
+	display: table;
 }
 .form-group{
 	display: block;
