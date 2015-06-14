@@ -23,7 +23,7 @@
                         while(have_posts()): the_post();
                             if( $i%4 == 3)
                                 $class ="col-md-3 col-right-product";
-                            else if($i%4 == 2 || $i%3 == 1)
+                            else if($i%4 == 2 || $i%4 == 1)
                                 $class = "col-md-3 col-center-product";
                             else
                                 $class ='col-md-3 col-left-product';
