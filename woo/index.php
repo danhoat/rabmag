@@ -35,13 +35,13 @@ if(class_exists('WooCommerce')){
 			?>
 			<div class="content-product row">
 				<div class="products">
-			<?php 
+			<?php
 		}
 		function rab_after_loop(){
 			?>
 				</div>
 			</div>
-			<?php 
+			<?php
 		}
 
 		function woocommerce_enqueue_styles_override($args){
@@ -70,13 +70,12 @@ if(class_exists('WooCommerce')){
 		// danng 
 		function pre_get_posts( $query ) {
 
-		  
 
 		    if( !$query->is_main_query()  ) 
 
 		        return $query;
 
-		    if( is_home() || is_search()  )    	
+		    if( is_home() || is_search()  )
 		    	$query->set('post_type','product');
 
 		    $orderby = isset($_GET['orderby']) ? $_GET['orderby'] : '';

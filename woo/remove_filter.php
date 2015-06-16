@@ -5,8 +5,6 @@
  * @return [type]        [description]
  */
 
-
-
 add_action( 'init', 'remove_woo_action_hook', 105);
 function remove_woo_action_hook(){
 	remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );

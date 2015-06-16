@@ -23,6 +23,7 @@ if(is_admin()){
 
 
 Class RAB_Site{
+
 	protected $options = null;
 	/**
 	 * auto run init theme.
@@ -33,7 +34,9 @@ Class RAB_Site{
 	public function add_filter( $tag, $function_to_add, $priority = 10, $accepted_args =1 ){
 		add_filter( $tag, array( $this, $function_to_add), $priority, $accepted_args );
 	}
+
 	public function __construct(){
+
 		$this->options = RAB_Option::get_option();
 
 		$this->add_action( 'after_setup_theme', 'after_setup_rabtheme' );
@@ -62,11 +65,10 @@ Class RAB_Site{
 		$this->add_action( 'get_the_excerpt', 'new_excerpt_more');
 
 		//$this->add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
-		
 		/**
 		 * Thumbnail filter
 		 */
-		$this->add_filter( 'intermediate_image_sizes_advanced', 'paulund_remove_default_image_sizes', 103 );
+		$this->add_filter( 'intermediate_image_sizes_advanced', 'rab_remove_default_image_sizes', 103 );
 
 	}
 	/**
@@ -288,7 +290,7 @@ Class RAB_Site{
 	 * @param  [type] $sizes [description]
 	 * @return [type]        [description]
 	 */
-	function paulund_remove_default_image_sizes( $sizes) {
+	function rab_remove_default_image_sizes( $sizes) {
 	    unset( $sizes['shop_thumbnail']);
 	    unset( $sizes['shop_catalog']);
 	    unset( $sizes['shop_single']);
@@ -306,65 +308,6 @@ Class RAB_Site{
 
 new RAB_Site();
 
-function rab_access_upload_file($file, $author = 0, $parent=0, $mimes=array() ){
 
-	global $user_ID;
-	$author = ( 0 == $author || !is_numeric($author) ) ? $user_ID : $author;
-
-	if( isset($file['name']) && $file['size'] > 0){
-
-		// setup the overrides
-		$overrides['test_form']	= false;
-		if( !empty($mimes) && is_array($mimes) ){
-			$overrides['mimes']	= $mimes;
-		}
-
-		if(!function_exists( 'wp_handle_upload' )) {
-			require_once(ABSPATH . "wp-admin" . '/includes/file.php');
-			//require_once ABSPATH.'/wp-admin/includes/file.php';
-		}
-		// this function also check the filetype & return errors if having any
-		$uploaded_file	=	wp_handle_upload( $file, $overrides );
-
-		//if there was an error quit early
-		if ( isset( $uploaded_file['error'] )) {
-			return new WP_Error( 'upload_error', $uploaded_file['error'] );
-		}
-		elseif(isset($uploaded_file['file'])) {
-
-			// The wp_insert_attachment function needs the literal system path, which was passed back from wp_handle_upload
-			$file_name_and_location = $uploaded_file['file'];
-
-			// Generate a title for the image that'll be used in the media library
-			$file_title_for_media_library = preg_replace('/\.[^.]+$/', '', basename($file['name']));
-
-			$wp_upload_dir = wp_upload_dir();
-
-			// Set up options array to add this file as an attachment
-			$attachment = array(
-				'guid'				=> $uploaded_file['url'],
-				'post_mime_type'	=> $uploaded_file['type'],
-				'post_title'		=> $file_title_for_media_library,
-				'post_content'		=> '',
-				'post_status'		=> 'inherit',
-				'post_author'		=> $author
-			);
-
-			// Run the wp_insert_attachment function. This adds the file to the media library and generates the thumbnails. If you wanted to attch this image to a post, you could pass the post id as a third param and it'd magically happen.
-			$attach_id = wp_insert_attachment( $attachment, $file_name_and_location, $parent );
-			require_once(ABSPATH . "wp-admin" . '/includes/image.php');
-			$attach_data = wp_generate_attachment_metadata( $attach_id, $file_name_and_location );
-			wp_update_attachment_metadata($attach_id,  $attach_data);
-			return $attach_id;
-
-		} else { // wp_handle_upload returned some kind of error. the return does contain error details, so you can use it here if you want.
-			return new WP_Error( 'upload_error', __( 'There was a problem with your upload.', RAB_DOMAIN ) );
-		}
-	}
-	else { // No file was passed
-		return new WP_Error( 'upload_error', __( 'Where is the file?', RAB_DOMAIN ) );
-	}
-
-}
 
 ?>

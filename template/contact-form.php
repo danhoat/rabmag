@@ -1,3 +1,5 @@
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnItNSWrIltaIHAY4UCjzbuNJsIophxnc"></script>
+
 <div class="map">
 </div>
 <form role="form" name="frm-contact" id="form-contact" class="form form-contact" method="POST" style="display:none">
