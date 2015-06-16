@@ -9,6 +9,7 @@
 class RAB_Slider_Widget extends WP_Widget {
 	static $args_default = array( 'speed' => 400, 'title' => '', 'nav' =>0 , 'effect' => 'slide', 'slide' => '0','size' => 'full', 'cat'=> 0);
 	protected $list_slider = null;
+
 	function __construct() {
 
 
@@ -17,7 +18,6 @@ class RAB_Slider_Widget extends WP_Widget {
 		parent::__construct( 'slider', __('Rap slider 1',RAB_DOMAIN), $widget_ops);
 		add_action( 'wp_print_footer_scripts', array($this, 'extract_value_to_js'), 15 );
 
-		//add_action('wp_footer',array($this,'add_flex_script_footer'));
 	}
 
 	/**
@@ -31,8 +31,8 @@ class RAB_Slider_Widget extends WP_Widget {
 		$settings = wp_parse_args( $settings, self::$args_default );
 		extract($settings);
 
-		//get all widget setting  of this class.
-		//
+		//get all widget setting  of this Widget.
+
 		$options = get_option('widget_slider',array());
 
 		unset($options['_multiwidget']); // because this is a key in array value all widget.
