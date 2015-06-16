@@ -36,7 +36,7 @@ Class RAB_Settings extends RAB_Add_Menu_Backend{
 					 	<input type="text" value="<?php echo $site_title;?>"  class="option" name="site_title" />
 					</div>
 
-					<div class="form-item">
+					<div class="form-item" style="display:none;">
 						<div id="container">
 						    <a id="pickfiles" href="#">[<?php _e('Select files',RAB_DOMAIN);?>]</a>
 						</div>

@@ -150,7 +150,7 @@ abstract class RAB_Add_Menu_Backend {
 		   		</div>
 		   		<div class="wrap-right-rab">
 		   			<div class="row heading">
-						<h2 class="title"> <?php printf(__('%s',RAB_DOMAIN),$default['page_title']);?></h2>
+						<h2 class="title"> <?php printf(__('%s',RAB_DOMAIN), $default['page_title']);?></h2>
 						<span><?php _e('Describe the function of menu','RAB_DOMAIN');?></span>
 						<?php  _e('About Us','RAB_DOMAIN'); ?>
 					</div>
