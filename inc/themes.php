@@ -70,7 +70,8 @@ function rab_categorized_blog() {
 		return false;
 	}
 }
-if ( ! function_exists( 'twentyfourteen_posted_on' ) ) :
+
+if ( ! function_exists( 'rab_posted_on' ) ) :
 /**
  * Print HTML with meta information for the current post-date/time and author.
  *
