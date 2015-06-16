@@ -212,3 +212,14 @@ body.archive a.moretag{
 .footer-site .row.footer-top{
 	margin-top: 0;
 }
+#slider.flexslider{
+	margin-bottom: 10px;
+}
+#carousel{
+	width: 92%;
+	margin: 0 auto;
+}
+
+#slider img{
+	max-height: 350px;
+}

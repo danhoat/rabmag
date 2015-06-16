@@ -2,7 +2,7 @@
 
 <div class="container main-page">
     <div class="row">
-        <?php get_sidebar();?>
+       
         <div class="col-lg-9 main-content">
             <div class="entry-page">
 
@@ -13,6 +13,7 @@
                 if(have_posts()):
                     echo '<h1 class="title">'.get_the_title().'</h2>';
                     the_post();
+                    get_template_part('template/product-image');
                     echo '<div class="content">';
                     the_content();
                     echo '</div>';
@@ -27,6 +28,7 @@
             </div> <!-- .endtry end !-->
 
         </div>
+         <?php get_sidebar();?>
     </div> <!-- .row !-->
 
 </div> <!-- End main-content!-->
