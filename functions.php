@@ -82,16 +82,16 @@ Class RAB_Site{
 		    'develop' => true,
 		    'watch'  => true
 		) );
-		// add_theme_support( 'less', array(
-		//     'minify' => true
-		// ) );
+
 		add_theme_support('post-thumbnails' );
 		//add_image_size( 'thumbnail-show', '207','207', true );
 		add_theme_support('custom-header');
 		add_theme_support('post-formats');
+
 		$locations 	= array(
 			'main_menu' =>__('Main Menu',RAB_DOMAIN),
 			'left_menu' =>__('Left Menu',RAB_DOMAIN) );
+
 		register_nav_menus( $locations );
 	}
 
@@ -189,7 +189,7 @@ Class RAB_Site{
 
 	function rab_init_first(){
 
-		load_textdomain(RAB_DOMAIN, get_template_directory().'/lang/vi_VI.mo');
+		//load_textdomain(RAB_DOMAIN, get_template_directory().'/lang/vi_VI.mo');
 
 		rab_register_post_type();
 	}
