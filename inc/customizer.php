@@ -145,3 +145,30 @@ function twentyfourteen_admin_header_image() {
 <?php
 }
 endif; // twentyfourteen_admin_header_image
+function ra_customize_register( $wp_customize ) {
+   //All our sections, settings, and controls will be added here
+   	$wp_customize->add_control(
+		'your_control_id',
+		array(
+			'label'    => __( 'Control Label 123', 'mytheme' ),
+			'section'  => 'your_section_id',
+			'settings' => 'your_setting_id',
+			'type'     => 'radio',
+			'choices'  => array(
+				'left'  => 'left',
+				'right' => 'right',
+			),
+		)
+	);
+	$wp_customize->add_section( 'mytheme_new_section_name' , array(
+	    'title'      => __('Visible Section Name','mytheme'),
+	    'priority'   => 30,
+		)
+	);
+	$wp_customize->add_control('themename_text_test', array(
+        'label'      => __('Text Test', 'themename'),
+        'section'    => 'themename_color_scheme',
+        'settings'   => 'themename_theme_options[text_test]',
+    ));
+}
+add_action('customize_register', 'ra_customize_register');
