@@ -19,7 +19,7 @@
                     <div class="row">
                         <div class="col-md-3">
                             <?php if (  get_header_image()  != '' ) { ?>
-                        <img src="<?php echo get_header_image() ; ?>" alt="<?php echo( get_bloginfo( 'title' ) ); ?>" />
+                                <a href="<?php echo home_url();?>">    <img src="<?php echo get_header_image() ; ?>" alt="<?php echo( get_bloginfo( 'title' ) ); ?>" /> </a>
                         <?php } ?>
                         </div>
                         <div class="col-md-9">
