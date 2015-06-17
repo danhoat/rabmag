@@ -101,3 +101,11 @@ function add_post_class($class){
 	return $class;
 
 }
+function rab_get_sidebar($layout){
+	
+	if($lyout == 'left_column'){
+		get_sidebar();
+	} else {
+		
+	}
+}

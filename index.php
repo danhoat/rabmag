@@ -9,21 +9,20 @@
 <div class="row full-row">
     <div class="container main-page">
         <div class="row">
-        <?php
-            if(is_active_sidebar('top_content')){
-                echo '<div class="col-lg-12 top-sidebar">';
-                    dynamic_sidebar('top_content');
-                echo '</div>';
-            }
+            <?php
+                if(is_active_sidebar('top_content')){
+                    echo '<div class="col-lg-12 top-sidebar">';
+                        dynamic_sidebar('top_content');
+                    echo '</div>';
+                }
 
-            $theme_layout = get_theme_mod('theme_layout', 'left_column');
-        ?>
+                $theme_layout = get_theme_mod('theme_layout', 'left_column');
+            ?>
 
-        <?php get_sidebar();?>
+            <?php get_sidebar();?>
             <div class="col-lg-9 main-content">
                 <div class="entry-page">
                     <?php
-
                     do_action("rab_before_loop");
                     query_posts( 'post_type=product&posts_per_page=9' );
                     if(have_posts()):
