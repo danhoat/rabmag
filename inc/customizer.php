@@ -145,30 +145,54 @@ function ra_admin_header_image() {
 <?php
 }
 endif; // ra_admin_header_image
+
+
 function ra_customize_register( $wp_customize ) {
-   //All our sections, settings, and controls will be added here
-   	$wp_customize->add_control(
-		'your_control_id',
-		array(
-			'label'    => __( 'Control Label 123', 'mytheme' ),
-			'section'  => 'your_section_id',
-			'settings' => 'your_setting_id',
-			'type'     => 'radio',
-			'choices'  => array(
-				'left'  => 'left',
-				'right' => 'right',
-			),
-		)
-	);
-	$wp_customize->add_section( 'mytheme_new_section_name' , array(
-	    'title'      => __('Visible Section Name','mytheme'),
-	    'priority'   => 30,
-		)
-	);
-	$wp_customize->add_control('themename_text_test', array(
-        'label'      => __('Text Test', 'themename'),
-        'section'    => 'themename_color_scheme',
-        'settings'   => 'themename_theme_options[text_test]',
-    ));
+	// Add custom description to Colors and Background sections.
+	$wp_customize->get_section( 'colors' )->description           = __( 'Background may only be visible on wide screens.', 'twentyfourteen' );
+	$wp_customize->get_section( 'background_image' )->description = __( 'Background may only be visible on wide screens.', 'twentyfourteen' );
+
+	// Add postMessage support for site title and description.
+	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+
+	// Rename the label to "Site Title Color" because this only affects the site title in this theme.
+	$wp_customize->get_control( 'header_textcolor' )->label = __( 'Site Title Color', 'twentyfourteen' );
+
+	// Rename the label to "Display Site Title & Tagline" in order to make this option extra clear.
+	$wp_customize->get_control( 'display_header_text' )->label = __( 'Display Site Title &amp; Tagline', 'twentyfourteen' );
+
+	// Add the featured content section in case it's not already there.
+	$wp_customize->add_section( 'featured_content', array(
+		'title'       => __( 'Select layout ', RAB_DOMAIN ),
+		'description' => sprintf( __('Choose the layout display in your website', RAB_DOMAIN)),
+		'priority'    => 130,
+	) );
+
+	// Add the featured content layout setting and control.
+	$wp_customize->add_setting( 'featured_content_layout', array(
+		'default'           => 'one',
+		'sanitize_callback' => 'ra_sanitize_layout',
+	) );
+
+	$wp_customize->add_control( 'featured_content_layout', array(
+		'label'   => __( 'Layout', RAB_DOMAIN),
+		'section' => 'featured_content',
+		'type'    => 'select',
+		'choices' => array(
+			'one'   		=> __( 'Only one column',   RAB_DOMAIN ),
+			'left_column' 	=> __( 'Left column', RAB_DOMAIN),
+			'rigt_column' 	=> __( 'Right column', RAB_DOMAIN),
+		),
+	) );
 }
-add_action('customize_register', 'ra_customize_register');
+add_action( 'customize_register', 'ra_customize_register' );
+
+function ra_sanitize_layout( $layout ) {
+	if ( ! in_array( $layout, array( 'one','left_column', 'rigt_column' ) ) ) {
+		$layout = 'left_column';
+	}
+
+	return $layout;
+}
