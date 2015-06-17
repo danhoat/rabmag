@@ -15,6 +15,8 @@
                     dynamic_sidebar('top_content');
                 echo '</div>';
             }
+
+            $theme_layout = get_theme_mod('theme_layout', 'left_column');
         ?>
 
         <?php get_sidebar();?>

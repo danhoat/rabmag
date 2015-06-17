@@ -166,17 +166,19 @@ function ra_customize_register( $wp_customize ) {
 	// Add the featured content section in case it's not already there.
 	$wp_customize->add_section( 'featured_content', array(
 		'title'       => __( 'Select layout ', RAB_DOMAIN ),
-		'description' => sprintf( __('Choose the layout display in your website', RAB_DOMAIN)),
+		'description' => sprintf( __('Select number column layout you wnat to apply into your website', RAB_DOMAIN)),
 		'priority'    => 130,
 	) );
 
 	// Add the featured content layout setting and control.
-	$wp_customize->add_setting( 'featured_content_layout', array(
+	$wp_customize->add_setting( 'theme_layout', array(
 		'default'           => 'one',
 		'sanitize_callback' => 'ra_sanitize_layout',
+		'type' 				=> 'theme_mod',
+
 	) );
 
-	$wp_customize->add_control( 'featured_content_layout', array(
+	$wp_customize->add_control( 'theme_layout', array(
 		'label'   => __( 'Layout', RAB_DOMAIN),
 		'section' => 'featured_content',
 		'type'    => 'select',
