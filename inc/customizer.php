@@ -16,7 +16,7 @@
  * @uses twentyfourteen_admin_header_style()
  * @uses twentyfourteen_admin_header_image()
  */
-function twentyfourteen_custom_header_setup() {
+function ra_custom_header_setup() {
 	/**
 	 * Filter Twenty Fourteen custom-header support arguments.
 	 *
@@ -45,16 +45,16 @@ function twentyfourteen_custom_header_setup() {
 		'admin-preview-callback' => 'twentyfourteen_admin_header_image',
 	) ) );
 }
-add_action( 'after_setup_theme', 'twentyfourteen_custom_header_setup' );
+//add_action( 'after_setup_theme', 'ra_custom_header_setup' );
 
-if ( ! function_exists( 'twentyfourteen_header_style' ) ) :
+if ( ! function_exists( 'ra_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog
  *
- * @see twentyfourteen_custom_header_setup().
+ * @see ra_custom_header_setup().
  *
  */
-function twentyfourteen_header_style() {
+function ra_header_style() {
 	$text_color = get_header_textcolor();
 
 	// If no custom color for text is set, let's bail.
@@ -91,15 +91,15 @@ function twentyfourteen_header_style() {
 endif; // twentyfourteen_header_style
 
 
-if ( ! function_exists( 'twentyfourteen_admin_header_style' ) ) :
+if ( ! function_exists( 'ra_admin_header_style' ) ) :
 /**
  * Style the header image displayed on the Appearance > Header screen.
  *
- * @see twentyfourteen_custom_header_setup()
+ * @see ra_custom_header_setup()
  *
  * @since Twenty Fourteen 1.0
  */
-function twentyfourteen_admin_header_style() {
+function ra_admin_header_style() {
 ?>
 	<style type="text/css" id="twentyfourteen-admin-header-css">
 	.appearance_page_custom-header #headimg {
@@ -126,15 +126,15 @@ function twentyfourteen_admin_header_style() {
 }
 endif; // twentyfourteen_admin_header_style
 
-if ( ! function_exists( 'twentyfourteen_admin_header_image' ) ) :
+if ( ! function_exists( 'ra_admin_header_image' ) ) :
 /**
  * Create the custom header image markup displayed on the Appearance > Header screen.
  *
- * @see twentyfourteen_custom_header_setup()
+ * @see ra_custom_header_setup()
  *
  * @since Twenty Fourteen 1.0
  */
-function twentyfourteen_admin_header_image() {
+function ra_admin_header_image() {
 ?>
 	<div id="headimg">
 		<?php if ( get_header_image() ) : ?>
@@ -144,7 +144,7 @@ function twentyfourteen_admin_header_image() {
 	</div>
 <?php
 }
-endif; // twentyfourteen_admin_header_image
+endif; // ra_admin_header_image
 function ra_customize_register( $wp_customize ) {
    //All our sections, settings, and controls will be added here
    	$wp_customize->add_control(
