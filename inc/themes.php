@@ -238,7 +238,7 @@ function add_post_class($class){
 		}
 	}
 	else { // No file was passed
-		return new WP_Error( 'upload_error', __( 'Where is the file?', RAB_DOMAIN ) );
+		return new WP_Error( 'upload_error', __( 'Template file update isssue?', RAB_DOMAIN ) );
 	}
 
 }
