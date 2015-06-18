@@ -30,19 +30,22 @@
                     if(have_posts()):
                         $i = 0;
 
-
                         echo '<h3 class ="title">'.__('Products', RAB_DOMAIN).'</h3>';
                         while(have_posts()): the_post();
-                            if( $i % 1 == 0)
-                                $class =$col_bootrap."col-left-product";
+
+                            if( $i % $number_column == 0)
+                                $class =$col_bootrap." col-left-product";
+
                             else if($i % $number_column == $number_column -1)
-                                $class = $col_bootrap."col-md-4 col-right-product";
+                                $class = $col_bootrap."col-right-product";
+
                             else
-                                $class =$col_bootrap.' col-md-4 col-center-product';
+                                $class =$col_bootrap.'col-center-product';
 
                             $format     = apply_filters("post_format_default",get_post_format() );
                             get_template_part( 'content', $format );
                             $i ++;
+
                         endwhile;
                        // rab_pagination();
 
