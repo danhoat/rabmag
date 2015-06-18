@@ -242,3 +242,17 @@ function add_post_class($class){
 	}
 
 }
+
+if( !function_exists( 'rab_sidebar') ) :
+
+	function ra_sidebar(){
+
+		global $theme_layout;
+
+		if($theme_layout != 'one-column'){
+			get_sidebar();
+		}
+
+	}
+
+endif;

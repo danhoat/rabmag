@@ -172,7 +172,7 @@ function ra_customize_register( $wp_customize ) {
 
 	// Add the featured content layout setting and control.
 	$wp_customize->add_setting( 'theme_layout', array(
-		'default'           => 'one',
+		'default'           => 'left-sidebar',
 		'sanitize_callback' => 'ra_sanitize_layout',
 		'type' 				=> 'theme_mod',
 
@@ -183,17 +183,18 @@ function ra_customize_register( $wp_customize ) {
 		'section' => 'featured_content',
 		'type'    => 'select',
 		'choices' => array(
-			'one'   		=> __( 'Only one column',   RAB_DOMAIN ),
-			'left_column' 	=> __( 'Left column', RAB_DOMAIN),
-			'rigt_column' 	=> __( 'Right column', RAB_DOMAIN),
+			'one-column'   	=> __( 'Only one column',   RAB_DOMAIN ),
+			'left-sidebar' 	=> __( 'Left column', RAB_DOMAIN),
+			'right-sidebar' => __( 'Right column', RAB_DOMAIN),
 		),
 	) );
 }
 add_action( 'customize_register', 'ra_customize_register' );
 
 function ra_sanitize_layout( $layout ) {
-	if ( ! in_array( $layout, array( 'one','left_column', 'rigt_column' ) ) ) {
-		$layout = 'left_column';
+	var_dump($layout);
+	if ( ! in_array( $layout, array( 'one-column','left-sidebar', 'right-sidebar' ) ) ) {
+		$layout = 'left-sidebar';
 	}
 
 	return $layout;

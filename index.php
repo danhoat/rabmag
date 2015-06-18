@@ -6,6 +6,10 @@
 
 ?>
 <?php get_header(); ?>
+<?php
+    global $number_column, $col_bootrap, $content_class;
+
+?>
 <div class="row full-row">
     <div class="container main-page">
         <div class="row">
@@ -15,27 +19,26 @@
                         dynamic_sidebar('top_content');
                     echo '</div>';
                 }
-
-                $theme_layout = get_theme_mod('theme_layout', 'left_column');
             ?>
 
-            <?php get_sidebar();?>
-            <div class="col-lg-9 main-content">
+            <?php  ra_sidebar();?>
+            <div class="<?php echo $content_class;?> main-content">
                 <div class="entry-page">
                     <?php
                     do_action("rab_before_loop");
                     query_posts( 'post_type=product&posts_per_page=9' );
                     if(have_posts()):
                         $i = 0;
-                        $class ='col-md-4 ';
+
+
                         echo '<h3 class ="title">'.__('Products', RAB_DOMAIN).'</h3>';
                         while(have_posts()): the_post();
-                            if( $i%3 == 2)
-                                $class ="col-md-4 col-right-product";
-                            else if($i%3 == 1)
-                                $class = "col-md-4 col-center-product";
+                            if( $i % 1 == 0)
+                                $class =$col_bootrap."col-left-product";
+                            else if($i % $number_column == $number_column -1)
+                                $class = $col_bootrap."col-md-4 col-right-product";
                             else
-                                $class ='col-md-4 col-left-product';
+                                $class =$col_bootrap.' col-md-4 col-center-product';
 
                             $format     = apply_filters("post_format_default",get_post_format() );
                             get_template_part( 'content', $format );

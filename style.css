@@ -232,3 +232,8 @@ body.archive a.moretag{
 #slider img{
 	max-height: 350px;
 }
+.col-lg-3.right-sidebar{
+	float: right;
+	padding-left: 0;
+	padding-right: 15px;
+}
