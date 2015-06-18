@@ -23,7 +23,7 @@
 
             <?php  ra_sidebar();?>
             <div class="<?php echo $content_class;?> main-content">
-                <div class="entry-page">
+               
                     <?php
                     do_action("rab_before_loop");
                     query_posts( 'post_type=product&posts_per_page=9' );
@@ -57,7 +57,7 @@
                     ?>
                     <?php do_action("rab_after_loop") ?>
 
-                </div> <!-- .endtry end !-->
+    
 
             </div> <!-- end . col-lg-9 !-->
         </div> <!--end .row !-->
