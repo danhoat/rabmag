@@ -69,6 +69,7 @@ Class RAB_Site{
 		 * Thumbnail filter
 		 */
 		$this->add_filter( 'intermediate_image_sizes_advanced', 'rab_remove_default_image_sizes', 103 );
+		$this->add_filter('wp_title', 'ra_wp_title', 10 , 2 );
 
 	}
 	/**
@@ -148,7 +149,6 @@ Class RAB_Site{
 					    itemMargin: 0,
 					    asNavFor: '#slider'
 					  });
-					 
 					  $('#slider').flexslider({
 					    animation: "slide",
 					    controlNav: false,
@@ -305,6 +305,27 @@ Class RAB_Site{
 	function custom_excerpt_length( $length ) {
 			return 20;
 	}
+	function ra_wp_title( $title, $sep ) {
+	global $paged, $page;
+
+	if ( is_feed() )
+		return $title;
+
+	// Add the site name.
+	$title .= get_bloginfo( 'name' );
+
+	// Add the site description for the home/front page.
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) )
+		$title = "$title $sep $site_description";
+
+	// Add a page number if necessary.
+	if ( $paged >= 2 || $page >= 2 )
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'twentythirteen' ), max( $paged, $page ) );
+
+	return $title;
+}
+
 
 	/**
 	 * remove size of post thumbnail.
