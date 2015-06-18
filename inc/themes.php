@@ -291,7 +291,6 @@ if( !function_exists( 'ra_list_google_fonts' )):
 				'url'   => 'http://fonts.googleapis.com/css?family=Lato',
 				'title' =>'Lato',
 			)
-			
 		));
 
 		if( isset($google_fonts[$index]) )

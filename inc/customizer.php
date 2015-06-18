@@ -192,7 +192,7 @@ function ra_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'ra_customize_register' );
 
 function ra_sanitize_layout( $layout ) {
-	var_dump($layout);
+
 	if ( ! in_array( $layout, array( 'one-column','left-sidebar', 'right-sidebar' ) ) ) {
 		$layout = 'left-sidebar';
 	}
