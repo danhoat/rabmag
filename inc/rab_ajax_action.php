@@ -26,7 +26,7 @@
 		$mail = wp_mail($ad_email, 'Contact from website', $message, $headers);
 
 		if ( $mail ){
-			$auto = wp_mail($request['user_email'], 'Email tự động từ %', 'Chúng tôi đã nhận được thông tin từ quý khách. Chúng tôi sẽ xem xét và liên hệ bạn sớm nhất có thể. <br /> Cám ơn! .');
+			$auto = wp_mail($request['user_email'], 'Email auto sent from abc.com. Thak for your time to contact with us.');
 			wp_send_json(array('success' => true, 'msg' => __('Email has been sent successfull', RAB_DOMAIN)));
 
 		} else {

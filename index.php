@@ -28,7 +28,7 @@
                     if(have_posts()):
                         $i = 0;
                         $class ='col-md-4 ';
-                        echo '<h3 class ="title">Sản phẩm</h3>';
+                        echo '<h3 class ="title">'.__('Products', RAB_DOMAIN).'</h3>';
                         while(have_posts()): the_post();
                             if( $i%3 == 2)
                                 $class ="col-md-4 col-right-product";
