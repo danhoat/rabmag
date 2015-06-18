@@ -8,12 +8,9 @@
  */
 class RAB_Slider_Widget extends WP_Widget {
 	static $args_default = array( 'speed' => 400, 'title' => '', 'nav' =>0 , 'effect' => 'slide', 'slide' => '0','size' => 'full', 'cat'=> 0);
-	protected $list_slider = null;
 
 	function __construct() {
 
-
-		$this->list_slider = RAB_Option::get_slider();
 		$widget_ops = array( 'classname' => 'rab_slider', 'description' => __( 'A list of your site&#8217;s Pages.',RAB_DOMAIN) );
 		parent::__construct( 'slider', __('Rap slider 1',RAB_DOMAIN), $widget_ops);
 		add_action( 'wp_print_footer_scripts', array($this, 'extract_value_to_js'), 15 );

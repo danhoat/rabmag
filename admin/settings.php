@@ -71,8 +71,8 @@ Class RAB_Settings extends RAB_Add_Menu_Backend{
 					</div>
 
 					<div class="form-item">
-						<label>Google Analytics Script</label>
-					 	<textarea class="option" cols="36"  rows="10" name="site_google_script"><?php echo stripslashes($rab_google_analytic);?></textarea> 
+						<label><?php _e('Google Analytics Script', RAB_DOMAIN);?></label>
+					 	<textarea class="option" cols="36"  rows="10" name="<?php echo RAB_Option::RA_GOOLE_ANALYTIC;?>"><?php echo stripslashes($rab_google_analytic);?></textarea> 
 					</div>
 					<div class="form-item">
 						<button class="btn button"> <?php _e('Save',RAB_DOMAIN);?> </button>

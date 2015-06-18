@@ -4,9 +4,11 @@ class RAB_Option{
 	const RAB_SITE_OPTION 			= 'rab_sites';
 	const RAB_SITE_SOCIALS 	 		= 'rab_socials';
 	const RAB_SLIDER 	 			= 'rab_slider';
+	const RA_GOOLE_ANALYTIC     	= 'rab_google_analytic';
 	protected static 	$df_options = null;
 
 	function __construct(){
+
 		self::$df_options = array(
 						'site_title' 			=> __(get_option('blogname'),RAB_DOMAIN ),
 						'site_description' 		=> __(get_option('blogdescription'),RAB_DOMAIN),
@@ -14,10 +16,10 @@ class RAB_Option{
 						'rab_coppyright_text' 	=>'',
 						'site_google_script' 	=> '',
 						'site_google_font' 		=> array('title'=>'PT Sans','url'=> 'http://fonts.googleapis.com/css?family=Open+Sans'),
-						'rab_google_analytic' 	=> '',
+						self::RA_GOOLE_ANALYTIC 		=> '',
 					);
-		add_action('wp_ajax_save-option',array($this,'rab_save_option') );
-		add_action('wp_ajax_save-slider',array($this,'rab_save_slider') );
+		add_action( 'wp_ajax_save-option', array( $this, 'rab_save_option') );
+		add_action( 'wp_ajax_save-slider', array( $this, 'rab_save_slider') );
 	}
 
 	public function rab_get_option(){
@@ -26,6 +28,7 @@ class RAB_Option{
 
 		return $args;
 	}
+
 	public static function get_option(){
 		$rab_option = new RAB_Option();
 		return $rab_option->rab_get_option();
@@ -100,28 +103,14 @@ class RAB_Option{
 		return get_template_directory().'/images/logo.png';
 
 	}
-	function get_option_slider(){
-		return get_option(self::RAB_SLIDER,array());
-	}
-	public static function get_slider(){
-		return get_option(self::RAB_SLIDER,array());
-	}
-	function set_option_slider($slider){
 
-		$options 		=	 $this->get_option_slider();
-		$options[$slider['slide_name']] 	= $slider['slide_title'];
-		update_option(self::RAB_SLIDER,$options);
-
-	}
-	function rab_save_slider(){
-		$this->set_option_slider($_POST);
-		$resp = array('success'=>false,'msg'=>__('Save slider successfull!',RAB_DOMAIN));
-		wp_send_json($resp);
-	}
 }
 function get_logo_url(){
 	$options = new RAB_Option();
 	return $options->get_logo_url();
+}
+function ra_get_google_script(){
+	return get_option(RAB_Option::RA_GOOLE_ANALYTIC,'');
 }
 
 ?>
