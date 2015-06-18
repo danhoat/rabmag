@@ -274,7 +274,24 @@ if( !function_exists( 'ra_list_google_fonts' )):
 			'droid_sans' => array (
 				'url' 	=> 'http://fonts.googleapis.com/css?family=Droid+Sans',
 				'title' => 'Droid Sans'
+			),
+			'droid_sans' => array (
+				'url' 	=> 'http://fonts.googleapis.com/css?family=Droid+Sans',
+				'title' => 'Droid Sans'
+			),
+			'slabo_27px' => array (
+				'url' => 'http://fonts.googleapis.com/css?family=Slabo+27px',
+				'title' =>'Slabo 27px',
+			),
+			'ubuntu' => array (
+				'url'   => 'http://fonts.googleapis.com/css?family=Ubuntu',
+				'title' =>'Ubuntu',
+			),
+			'Lato' => array (
+				'url'   => 'http://fonts.googleapis.com/css?family=Lato',
+				'title' =>'Lato',
 			)
+			
 		));
 
 		if( isset($google_fonts[$index]) )
