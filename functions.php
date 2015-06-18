@@ -1,13 +1,13 @@
 <?php
 
-define('TEMPLATEURL', get_bloginfo('template_url') );
+define('TEMPLATEURL', get_template_directory_uri() );
 define('TEMPLATE_PATH',get_template_directory());
+
 if(!defined('RAB_DOMAIN'))
 define('RAB_DOMAIN','rab_domain');
 
 define('RAB_VERSION','1.0');
 
-require get_template_directory() . '/inc/global.php';
 require get_template_directory() . '/class/class_post.php';
 require get_template_directory() . '/inc/index.php';
 require get_template_directory() . '/woo/index.php';
@@ -83,10 +83,10 @@ Class RAB_Site{
 		    'watch'  => true
 		) );
 
-		add_theme_support('post-thumbnails' );
-		//add_image_size( 'thumbnail-show', '207','207', true );
-		add_theme_support('custom-header');
-		add_theme_support('post-formats');
+		add_theme_support( 'post-thumbnails' );
+		add_theme_support( 'custom-header' );
+		add_theme_support( 'post-formats' );
+		add_theme_support( 'automatic-feed-links' );
 
 		$locations 	= array(
 			'main_menu' =>__('Main Menu',RAB_DOMAIN),
@@ -287,7 +287,7 @@ Class RAB_Site{
 	function rab_thumbnail_html($html, $post_id, $post_image_id){
 
 		if(!has_post_thumbnail($post_id) || empty($html)){
-			$html = '<img src="' . get_bloginfo( 'stylesheet_directory' ) . '/images/no-images.png" title ="'.get_the_title($post_id).'"  alt ="'.get_the_title($post_id).'"  />';
+			$html = '<img src="' . get_stylesheet_directory_uri() . '/images/no-images.png" title ="'.get_the_title($post_id).'"  alt ="'.get_the_title($post_id).'"  />';
 		}
 		return $html;
 

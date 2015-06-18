@@ -10,7 +10,7 @@
     <div class="container main-page">
 	    <div class=" main-content">
 	            <?php
-	            echo '<h1 class ="title">Sản phẩm</h3>';
+	            echo '<h1 class ="title">'.__('Our products',RAB_DOMAIN).'</h3>';
 
 	            do_action("rab_before_loop");
 
