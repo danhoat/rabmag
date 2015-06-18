@@ -228,14 +228,14 @@ Class RAB_Site{
 	 */
 
 	public function rab_wp_head(){
-
-		wp_enqueue_style('google-font',$this->options['site_google_font']['url']);
+		$font = ra_get_google_font();
+		wp_enqueue_style('google-font',$font['url']);
 		echo ra_get_google_script();
 		?>
 
 			<style type="text/css">
 			body p,body,body .post-content{
-					font-family: <?php echo $this->options['site_google_font']['title']?>,Arial,Verdana,sans-serif;
+					font-family: <?php echo $font['title']?>,Arial,Verdana,sans-serif;
 					color: #333;
 					font-size: 14px;
 					outline-color: #333;
@@ -253,8 +253,8 @@ Class RAB_Site{
 		wp_enqueue_script('jquery.ajax');
 		$http  = is_ssl() ? 'https'  : 'http';
 		wp_enqueue_script('bootstrap-js',get_stylesheet_directory_uri().'/bootstrap/js/bootstrap.min.js');
-		wp_enqueue_style('google-fonts',$http.'://fonts.googleapis.com/css?family=PT+Sans+Narrow');
-		wp_enqueue_style('google-font-content',$http.'://fonts.googleapis.com/css?family=Open+Sans&subset=latin,vietnamese');
+		// wp_enqueue_style('google-fonts',$http.'://fonts.googleapis.com/css?family=PT+Sans+Narrow');
+		// wp_enqueue_style('google-font-content',$http.'://fonts.googleapis.com/css?family=Open+Sans&subset=latin,vietnamese');
 	}
 
 	function rab_process_single(){

@@ -256,3 +256,31 @@ if( !function_exists( 'rab_sidebar') ) :
 	}
 
 endif;
+if( !function_exists( 'ra_list_google_fonts' )):
+
+	function ra_list_google_fonts( $index = -1 ){
+
+		$google_fonts =  apply_filters( 'ra_list_google_fonts', array(
+
+			'pt_sans' => array (
+
+				'url' 	=> 'http://fonts.googleapis.com/css?family=PT+Sans',
+				'title' => 'PT Sans'
+			),
+			'open_sans' => array (
+				'url' 	=> 'http://fonts.googleapis.com/css?family=Open+Sans',
+				'title' => 'Open Sans'
+			),
+			'droid_sans' => array (
+				'url' 	=> 'http://fonts.googleapis.com/css?family=Droid+Sans',
+				'title' => 'Droid Sans'
+			)
+		));
+
+		if( isset($google_fonts[$index]) )
+			return $google_fonts[$index];
+
+
+		return $google_fonts;
+	}
+endif;

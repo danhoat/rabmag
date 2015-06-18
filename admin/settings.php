@@ -63,11 +63,17 @@ Class RAB_Settings extends RAB_Add_Menu_Backend{
 
 					<div class="form-item">
 						<label><?php _e('Google Font For  Title',RAB_DOMAIN);?></label>
-					 	<select name="site_google_font" class="option select" >
-					 		<option <?php if($site_google_font['url'] == 'http://fonts.googleapis.com/css?family=PT+Sans') echo 'selected="selected"';?> value="http://fonts.googleapis.com/css?family=PT+Sans">PT Sans</option>
-					 		<option <?php if($site_google_font['url'] == 'http://fonts.googleapis.com/css?family=Open+Sans') echo 'selected="selected"';?> value="http://fonts.googleapis.com/css?family=Open+Sans">Open Sans</option>
-					 		<option <?php if($site_google_font['url'] == 'http://fonts.googleapis.com/css?family=Droid+Sans') echo 'selected="selected"';?> value="http://fonts.googleapis.com/css?family=Droid+Sans">Droid Sans</option>					 	
-					 	</select>
+
+						<?php		$google_fonts = ra_list_google_fonts();			?>
+						<select name="ra_google_font" class="option select" >
+							<?php
+					 		foreach ($google_fonts as $key => $font) { ?>
+
+					 			<option <?php selected( $key, ra_get_google_key_name() ) ?>  value="<?php echo $key;?>"> <?php echo $font['title'];?></option>
+
+					 		<?php	}	?>
+						</select>
+
 					</div>
 
 					<div class="form-item">

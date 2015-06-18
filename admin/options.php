@@ -5,6 +5,7 @@ class RAB_Option{
 	const RAB_SITE_SOCIALS 	 		= 'rab_socials';
 	const RAB_SLIDER 	 			= 'rab_slider';
 	const RA_GOOLE_ANALYTIC     	= 'rab_google_analytic';
+	const RA_GOOLE_FONT         	= 'ra_google_font';
 	protected static 	$df_options = null;
 
 	function __construct(){
@@ -15,8 +16,8 @@ class RAB_Option{
 						'rab_logo'				=> get_template_directory().'/images/logo.png',
 						'rab_coppyright_text' 	=>'',
 						'site_google_script' 	=> '',
-						'site_google_font' 		=> array('title'=>'PT Sans','url'=> 'http://fonts.googleapis.com/css?family=Open+Sans'),
-						self::RA_GOOLE_ANALYTIC 		=> '',
+						self::RA_GOOLE_FONT 	=> '',
+						self::RA_GOOLE_ANALYTIC => '',
 					);
 		add_action( 'wp_ajax_save-option', array( $this, 'rab_save_option') );
 		add_action( 'wp_ajax_save-slider', array( $this, 'rab_save_slider') );
@@ -47,12 +48,12 @@ class RAB_Option{
 			case 'site_description':
 				update_option('blogdescription', $value);
 				break;
-			case 'site_google_font' :
-				$option[$name] = array('title'=>$html,'url'=>$value);
-				break;
+
 
 			default:
-				update_option($name, $value);
+
+			update_option($name, $value);
+
 		}
 
 		update_option(self::RAB_SITE_OPTION, $option);
@@ -111,6 +112,12 @@ function get_logo_url(){
 }
 function ra_get_google_script(){
 	return get_option(RAB_Option::RA_GOOLE_ANALYTIC,'');
+}
+function ra_get_google_key_name(){
+	return  get_option(RAB_Option::RA_GOOLE_FONT,'open_sans');
+}
+function ra_get_google_font(){
+	return ra_list_google_fonts( ra_get_google_key_name() );
 }
 
 ?>
