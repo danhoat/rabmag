@@ -305,7 +305,14 @@ Class RAB_Site{
 	function custom_excerpt_length( $length ) {
 			return 20;
 	}
+	/**
+	 * filter  wp_title default of WordPress
+	 * @param   string $title default title
+	 * @param  character $sep   |
+	 * @return  title text
+	 */
 	function ra_wp_title( $title, $sep ) {
+	
 	global $paged, $page;
 
 	if ( is_feed() )
