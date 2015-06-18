@@ -1,15 +1,11 @@
 <?php
-/**
- * index template default
- */
-//$link = get_post_type_archive_link('product');
+    /**
+     * index template default
+     */
 
 ?>
 <?php get_header(); ?>
-<?php
-    global $number_column, $col_bootrap, $content_class;
-
-?>
+<?php global $number_column, $col_bootrap, $content_class; ?>
 <div class="row full-row">
     <div class="container main-page">
         <div class="row">
@@ -23,7 +19,6 @@
 
             <?php  ra_sidebar();?>
             <div class="<?php echo $content_class;?> main-content">
-               
                     <?php
                     do_action("rab_before_loop");
                     query_posts( 'post_type=product&posts_per_page=9' );
@@ -57,7 +52,6 @@
                     ?>
                     <?php do_action("rab_after_loop") ?>
 
-    
 
             </div> <!-- end . col-lg-9 !-->
         </div> <!--end .row !-->

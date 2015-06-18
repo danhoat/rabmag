@@ -96,17 +96,21 @@ class RAB_Option{
 		update_option(self::RAB_SITE_SOCIALS,$options);
 	}
 	function get_logo_url(){
+
 		$options = $this->get_options_sites();
 		extract($options);
 		$attach = wp_get_attachment_image_src($rab_logo,'full');
+
 		if(isset($attach[0]))
 			return $attach[0];
+
 		return get_template_directory().'/images/logo.png';
 
 	}
 
 }
 function get_logo_url(){
+
 	$options = new RAB_Option();
 	return $options->get_logo_url();
 }
