@@ -37,19 +37,3 @@
                 echo '</div>';
             endif;
         ?>
-        <?php
-
-            global $number_column, $col_bootrap, $content_class, $theme_layout;
-            $theme_layout = get_theme_mod('theme_layout', '');
-
-            $number_column  = 3;
-            $content_class  = 'col-lg-9';
-            $col_bootrap    = "col-md-4 ";
-
-            if($theme_layout == 'one-column'){
-                $number_column = 4;
-                $col_bootrap ="col-md-3 ";
-                $content_class = 'col-lg-12';
-            }
-
-        ?>
