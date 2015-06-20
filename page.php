@@ -16,10 +16,10 @@
                 do_action("rab_before_loop");
 
                 if(have_posts()):
-                    echo '<h1 class="title">'.get_the_title().'</h2>';
+                    echo '<h1 class="title">'.get_the_title().'</h1>';
                     the_post();
                     echo '<div class="content">';
-                    the_content();
+                        the_content();
                     echo '</div>';
                 else :
                     get_template_part('template/none' );

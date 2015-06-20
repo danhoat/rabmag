@@ -12,29 +12,31 @@
         <?php get_sidebar();?>
         <div class="col-lg-9 main-content">
             <div class="entry-page">
+                <div class="content">
                 <?php
-                do_action("rab_before_loop");
 
-                if(have_posts()):
-                    echo '<h1 class="title">'.get_the_title().'</h2>';
-                    the_post();
-                    $content = get_the_content();
-                    if( empty($content) ){
-                        $text = get_option('rab_coppyright_text',true); ?>
-                        <p style="text-align: justify;"><?php echo stripslashes($text);?></p>
-                    <?php  } else{ the_content();} ?>
 
-                    <div class="post-detail row">
-                        <?php get_template_part('template/contact-form');?>
-                    </div>
-                <?php
-                else :
-                    get_template_part('template/none' );
+                    if(have_posts()):
+                        echo '<h1 class="title">'.get_the_title().'</h1>';
+                        the_post();
+                        $content = get_the_content();
+                        if( empty($content) ){
+                            $text = get_option('rab_coppyright_text',true); ?>
+                            <p style="text-align: justify;"><?php echo stripslashes($text);?></p>
+                        <?php  } else{ the_content();} ?>
 
-                endif;
+                        <div class="post-detail row">
+                            <?php get_template_part('template/contact-form');?>
+                        </div>
+                    <?php
+                    else :
+                        get_template_part('template/none' );
 
-                ?>
-                <?php do_action("rab_after_loop") ?>
+                    endif;
+
+                    ?>
+                    <?php do_action("rab_after_loop") ?>
+                </div> <!-- .content !-->
 
             </div> <!-- .endtry end !-->
 
