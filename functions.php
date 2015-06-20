@@ -232,12 +232,12 @@ Class RAB_Site{
         $theme_layout = get_theme_mod('theme_layout', '');
 
         $number_column  = 3;
-        $content_class  = 'col-lg-9';
-        $col_bootrap    = "col-md-4 ";
+        $content_class  = 'col-lg-9 col-md-9';
+        $col_bootrap    = "col-md-4 col-sm-4 col-xs-12 ";
 
         if($theme_layout == 'one-column'){
             $number_column = 4;
-            $col_bootrap ="col-md-3 ";
+            $col_bootrap ="col-md-3 col-sm-4 col-xs-4";
             $content_class = '';
         }
 

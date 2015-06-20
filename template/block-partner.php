@@ -11,7 +11,7 @@
 		echo '</div>';
 		echo '<div class="tabs">';
 			while ( have_posts() ) : the_post();
-			    echo ' <div class="col-md-3 col-xs-12 col-sm-6 portfolio-item">';
+			    echo ' <div class="col-md-3  col-xs-12 col-sm-3 portfolio-item">';
 			    //the_title();
 			    if(has_post_thumbnail())
 			    	the_post_thumbnail('medium');

@@ -81,6 +81,7 @@ div.top-row .row{
 		padding-top: 0;
 		padding-bottom: 0;
 	}
+	
 }
 
 
@@ -239,4 +240,9 @@ body.archive a.moretag{
 }
 .pd-right-none{
 	padding-right: 0 !important;
+}
+@media (max-width: 992px) {
+   .visible-tablet-mobile{
+        display: none !important;
+   	}
 }
