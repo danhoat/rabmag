@@ -1,7 +1,4 @@
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnItNSWrIltaIHAY4UCjzbuNJsIophxnc"></script>
 
-<div class="map">
-</div>
 <form role="form" name="frm-contact" id="form-contact" class="form form-contact" method="POST" style="display:none">
     <div class="form-group">
         <div class="col-sm-2">
@@ -53,9 +50,3 @@
         </div>
     </div>
 </form>
-<?php
-add_action('wp_enqueue_scripts','add_validate_form');
-function add_validate_form(){
-
-}
-?>

@@ -1,7 +1,6 @@
 <?php
-
   /**
-  * Template Name:Custom header
+  * Template Name: Custom header
   */
 ?>
 <?php get_header('inline'); ?>
@@ -9,7 +8,7 @@
 <div class="container main-page">
     <div class="row">
         <?php get_sidebar();?>
-        <div class="col-lg-9 main-content">
+        <div class="col-lg-12 main-content">
             <div class="entry-page">
 
                 <?php

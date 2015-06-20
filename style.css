@@ -237,3 +237,6 @@ body.archive a.moretag{
 	padding-left: 0;
 	padding-right: 15px;
 }
+.pd-right-none{
+	padding-right: 0 !important;
+}

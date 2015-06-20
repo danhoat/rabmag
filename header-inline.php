@@ -13,7 +13,7 @@
         <div class="row full-row top-row">
             <div class="container">
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="pd-right-none col-md-3 ">
                             <?php if (  get_header_image()  != '' ) { ?>
                                 <a href="<?php echo home_url();?>">    <img src="<?php echo get_header_image() ; ?>" alt="<?php echo( get_bloginfo( 'title' ) ); ?>" /> </a>
                         <?php } ?>
