@@ -238,7 +238,7 @@ Class RAB_Site{
         if($theme_layout == 'one-column'){
             $number_column = 4;
             $col_bootrap ="col-md-3 ";
-            $content_class = 'col-lg-12';
+            $content_class = '';
         }
 
 		$font 		  	= ra_get_google_font();
