@@ -7,7 +7,7 @@
 
 <div class="container main-page">
     <div class="row">
-
+         <div class="col-lg-12 main-content">
             <div class="entry-page">
 
                 <?php
@@ -29,6 +29,7 @@
                 <?php do_action("rab_after_loop") ?>
 
             </div> <!-- .endtry end !-->
+        </div>
 
     </div> <!-- .row !-->
 
