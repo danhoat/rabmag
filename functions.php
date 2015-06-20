@@ -228,7 +228,7 @@ Class RAB_Site{
 	 */
 
 	public function rab_wp_head(){
-		 global $number_column, $col_bootrap, $content_class, $theme_layout;
+		global $number_column, $col_bootrap, $content_class, $theme_layout;
         $theme_layout = get_theme_mod('theme_layout', '');
 
         $number_column  = 3;
@@ -241,9 +241,16 @@ Class RAB_Site{
             $content_class = 'col-lg-12';
         }
 
-		$font = ra_get_google_font();
-		wp_enqueue_style('google-font',$font['url']);
-		echo ra_get_google_script();
+		$font 		  	= ra_get_google_font();
+		$google_script 	= ra_get_google_script();
+
+		if( is_array( $font )  ){
+			wp_enqueue_style('google-font',$font['url']);
+			echo ra_get_google_script();
+		}
+
+		if ( !empty( $google_script ) )
+			echo $google_script;
 		?>
 
 			<style type="text/css">
@@ -266,8 +273,6 @@ Class RAB_Site{
 		wp_enqueue_script('jquery.ajax');
 		$http  = is_ssl() ? 'https'  : 'http';
 		wp_enqueue_script('bootstrap-js',get_stylesheet_directory_uri().'/bootstrap/js/bootstrap.min.js');
-		// wp_enqueue_style('google-fonts',$http.'://fonts.googleapis.com/css?family=PT+Sans+Narrow');
-		// wp_enqueue_style('google-font-content',$http.'://fonts.googleapis.com/css?family=Open+Sans&subset=latin,vietnamese');
 	}
 
 	function rab_process_single(){

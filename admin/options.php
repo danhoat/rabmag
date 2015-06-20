@@ -118,9 +118,18 @@ function ra_get_google_script(){
 	return get_option(RAB_Option::RA_GOOLE_ANALYTIC,'');
 }
 function ra_get_google_key_name(){
-	return  get_option(RAB_Option::RA_GOOLE_FONT,'open_sans');
+	return  get_option(RAB_Option::RA_GOOLE_FONT,'');
 }
 function ra_get_google_font(){
+	$index_key = ra_get_google_key_name();
+	/*
+	* when has not set a google font.
+	 */
+	if ( empty($index_key) )
+		return 0;
+	/*
+	* return google font value in  list google font
+	 */
 	return ra_list_google_fonts( ra_get_google_key_name() );
 }
 

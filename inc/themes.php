@@ -258,7 +258,7 @@ if( !function_exists( 'rab_sidebar') ) :
 endif;
 if( !function_exists( 'ra_list_google_fonts' )):
 
-	function ra_list_google_fonts( $index = -1 ){
+	function ra_list_google_fonts( $index = -1 ) {
 
 		$google_fonts =  apply_filters( 'ra_list_google_fonts', array(
 
@@ -287,16 +287,23 @@ if( !function_exists( 'ra_list_google_fonts' )):
 				'url'   => 'http://fonts.googleapis.com/css?family=Ubuntu',
 				'title' =>'Ubuntu',
 			),
-			'Lato' => array (
+			'lato' => array (
 				'url'   => 'http://fonts.googleapis.com/css?family=Lato',
 				'title' =>'Lato',
 			)
+
 		));
 
 		if( isset($google_fonts[$index]) )
 			return $google_fonts[$index];
 
-
 		return $google_fonts;
+	}
+
+endif;
+
+if ( !function_exists( 'ra_google_font') ):
+	function ra_google_font(){
+
 	}
 endif;

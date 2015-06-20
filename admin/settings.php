@@ -66,6 +66,7 @@ Class RAB_Settings extends RAB_Add_Menu_Backend{
 
 						<?php		$google_fonts = ra_list_google_fonts();			?>
 						<select name="ra_google_font" class="option select" >
+							<option value="0">Select Google Font</option>
 							<?php
 					 		foreach ($google_fonts as $key => $font) { ?>
 
