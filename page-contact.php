@@ -14,16 +14,11 @@
             <div class="entry-page">
                 <div class="content">
                 <?php
-
-
                     if(have_posts()):
                         echo '<h1 class="title">'.get_the_title().'</h1>';
                         the_post();
                         $content = get_the_content();
-                        if( empty($content) ){
-                            $text = get_option('rab_coppyright_text',true); ?>
-                            <p style="text-align: justify;"><?php echo stripslashes($text);?></p>
-                        <?php  } else{ the_content();} ?>
+                        ?>
 
                         <div class="post-detail row">
                             <?php get_template_part('template/contact-form');?>

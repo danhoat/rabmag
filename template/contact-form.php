@@ -1,5 +1,5 @@
 
-<form role="form" name="frm-contact" id="form-contact" class="form form-contact" method="POST" style="display:none">
+<form role="form" name="frm-contact" id="form-contact" class="form form-contact" method="POST">
     <div class="form-group">
         <div class="col-sm-2">
             <label for="user_name"><?php _e('Your name: (*)',RAB_DOMAIN);?></label>
